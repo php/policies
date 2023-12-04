@@ -54,8 +54,8 @@ test cases and patch(es) should help.
 
 See the following links for explanation about API and ABI:
 
-  - http://en.wikipedia.org/wiki/Application_programming_interface
-  - http://en.wikipedia.org/wiki/Application_binary_interface
+- http://en.wikipedia.org/wiki/Application_programming_interface
+- http://en.wikipedia.org/wiki/Application_binary_interface
 
 Example time line with only one major version at a time
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
