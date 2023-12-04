@@ -117,14 +117,14 @@ PHP Extension Classification
 All symbols (classes, functions, constants) provided by PHP are part of an
 extension. Extensions can be classified into three categories:
 
-  - Required extensions (including Core and standard). These extensions are
-    always present, and PHP cannot be built without them.
-  - Bundled extensions (including ctype and mbstring). These extensions are
-    part of the php-src distribution, but PHP can be built without them.
-    Bundled extensions can be either enabled or disabled by default.
-  - 3rd-party extensions (including apcu and igbinary). These extensions are
-    not part of the php-src distribution, and either available through PECL,
-    or simply on GitHub.
+- Required extensions (including Core and standard). These extensions are
+  always present, and PHP cannot be built without them.
+- Bundled extensions (including ctype and mbstring). These extensions are
+  part of the php-src distribution, but PHP can be built without them.
+  Bundled extensions can be either enabled or disabled by default.
+- 3rd-party extensions (including apcu and igbinary). These extensions are
+  not part of the php-src distribution, and either available through PECL,
+  or simply on GitHub.
 
 Extensions may move between these three categories over time. hash and json
 recently moved from "bundled" to "required" (though I believe extensions never
