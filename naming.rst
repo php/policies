@@ -42,14 +42,14 @@ While it is stated that abbreviations should be avoided, it is silent on what
 to do if they are used; especially in the case of acronyms/initialisms. There
 are essentially three choices possible now:
 
-  - **PascalCase except Acronyms/Initialisms** — which is how the majority of
-    user-level class names are written, and it matches the approach of many
-    other programming languages.
-  - **Always PascalCase** — which is basically what
-    `PRS-1 <http://www.php-fig.org/psr/psr-1/>`_ defines, however, it would
-    make most of the currently existing user-level class names invalid.
-  - **Do Nothing** — which of course automatically means that any approach is
-    allowed, and the community discussions around this topic will continue.
+- **PascalCase except Acronyms/Initialisms** — which is how the majority of
+  user-level class names are written, and it matches the approach of many
+  other programming languages.
+- **Always PascalCase** — which is basically what
+  `PRS-1 <http://www.php-fig.org/psr/psr-1/>`_ defines, however, it would
+  make most of the currently existing user-level class names invalid.
+- **Do Nothing** — which of course automatically means that any approach is
+  allowed, and the community discussions around this topic will continue.
 
 **IMPORTANT!**: Regardless of the outcome of this RFC, existing user-level
 class names are not required to be changed. Although it would be possible
@@ -73,28 +73,28 @@ they are not widely adopted and recognized as such.
 
 Good:
 
-  * ``Curl``
-  * ``CurlResponse``
-  * ``HTTPStatusCode``
-  * ``URL``
-  * ``BTreeMap`` (B-tree Map)
-  * ``Id`` (Identifier)
-  * ``ID`` (Identity Document)
-  * ``Char`` (Character)
-  * ``Intl`` (Internationalization)
-  * ``Radar`` (Radio Detecting and Ranging)
+- ``Curl``
+- ``CurlResponse``
+- ``HTTPStatusCode``
+- ``URL``
+- ``BTreeMap`` (B-tree Map)
+- ``Id`` (Identifier)
+- ``ID`` (Identity Document)
+- ``Char`` (Character)
+- ``Intl`` (Internationalization)
+- ``Radar`` (Radio Detecting and Ranging)
 
 Bad:
 
-  * ``curl``
-  * ``curl_response``
-  * ``HttpStatusCode``
-  * ``Url``
-  * ``BtreeMap``
-  * ``ID`` (Identifier)
-  * ``CHAR``
-  * ``INTL``
-  * ``RADAR`` (Radio Detecting and Ranging)
+- ``curl``
+- ``curl_response``
+- ``HttpStatusCode``
+- ``Url``
+- ``BtreeMap``
+- ``ID`` (Identifier)
+- ``CHAR``
+- ``INTL``
+- ``RADAR`` (Radio Detecting and Ranging)
 
 
 Namespaces in Extensions
@@ -176,26 +176,26 @@ However, there are a number of 3rd-party extensions making use of namespaces.
 For extensions present in phpstorm-stubs, the following list summarizes in
 what way they utilize namespaces:
 
-  - ``ffi`` (bundled): Uses ``FFI`` namespace, e.g. ``FFI\CType``. Also uses ``FFI`` itself.
-  - ``aerospike``: Uses ``Aerospike`` namespace, e.g. ``Aerospike\Bytes``. Also uses ``Aerospike`` itself.
-  - ``cassandra``: Uses ``Cassandra`` namespace, e.g. ``Cassandra\Table``. Also uses ``Cassandra`` itself.
-  - ``couchbase``: Uses ``Couchbase`` namespace, e.g. ``Couchbase\Document``.
-  - ``crypto``: Uses ``Crypto`` namespace, e.g. ``Crypto\PBKDF2``.
-  - ``decimal``: Uses ``Decimal`` namespace, e.g. ``Decimal\Decimal``.
-  - ``ds``: Uses ``Ds`` namespace, e.g. ``Ds\Collection``.
-  - ``grpc``: Uses ``Grpc`` namespace, e.g. ``Grpc\Server``.
-  - ``http``: Uses ``http`` namespace, e.g. ``http\Client``.
-  - ``mongodb``: Uses ``MongoDB`` namespace, e.g. ``MongoDB\Driver\Manager``.
-  - ``mosquitto``: Uses ``Mosquitto`` namespace, e.g. ``Mosquitto\Client``.
-  - ``mysql_xdevapi``: Uses ``mysql_xdevapi`` namespace, e.g. ``mysql_xdevapi\Collection``.
-  - ``parallel``: Uses ``parallel`` namespace, e.g. ``parallel\Runtime``.
-  - ``parle``: Uses ``Parle`` namespace, e.g. ``Parle\Lexer``.
-  - ``pcov``: Uses ``pcov`` namespace, e.g. ``pcov\start()``.
-  - ``pq``: Uses ``pq`` namespace, e.g. ``pq\Connection``.
-  - ``rdkafka``: Uses ``RdKafka`` namespace, e.g. ``RdKafka\Producer``. Also uses ``RdKafka`` itself, and a handful of ``rd_kafka_*()`` functions.
-  - ``xlswriter``: Uses ``Vtiful\Kernel`` namespace, e.g. ``Vtiful\Kernel\Excel``.
-  - ``yaf``: Uses ``Yaf`` namespace, e.g. ``Yaf\Application``. Also supports aliases in the global namespace, e.g. ``Yaf_Application``.
-  - ``zstd``: Uses ``Zstd`` namespace, e.g. ``Zstd\compress()``. However, it also declares ``zstd_*()`` functions in the global namespace.
+- ``ffi`` (bundled): Uses ``FFI`` namespace, e.g. ``FFI\CType``. Also uses ``FFI`` itself.
+- ``aerospike``: Uses ``Aerospike`` namespace, e.g. ``Aerospike\Bytes``. Also uses ``Aerospike`` itself.
+- ``cassandra``: Uses ``Cassandra`` namespace, e.g. ``Cassandra\Table``. Also uses ``Cassandra`` itself.
+- ``couchbase``: Uses ``Couchbase`` namespace, e.g. ``Couchbase\Document``.
+- ``crypto``: Uses ``Crypto`` namespace, e.g. ``Crypto\PBKDF2``.
+- ``decimal``: Uses ``Decimal`` namespace, e.g. ``Decimal\Decimal``.
+- ``ds``: Uses ``Ds`` namespace, e.g. ``Ds\Collection``.
+- ``grpc``: Uses ``Grpc`` namespace, e.g. ``Grpc\Server``.
+- ``http``: Uses ``http`` namespace, e.g. ``http\Client``.
+- ``mongodb``: Uses ``MongoDB`` namespace, e.g. ``MongoDB\Driver\Manager``.
+- ``mosquitto``: Uses ``Mosquitto`` namespace, e.g. ``Mosquitto\Client``.
+- ``mysql_xdevapi``: Uses ``mysql_xdevapi`` namespace, e.g. ``mysql_xdevapi\Collection``.
+- ``parallel``: Uses ``parallel`` namespace, e.g. ``parallel\Runtime``.
+- ``parle``: Uses ``Parle`` namespace, e.g. ``Parle\Lexer``.
+- ``pcov``: Uses ``pcov`` namespace, e.g. ``pcov\start()``.
+- ``pq``: Uses ``pq`` namespace, e.g. ``pq\Connection``.
+- ``rdkafka``: Uses ``RdKafka`` namespace, e.g. ``RdKafka\Producer``. Also uses ``RdKafka`` itself, and a handful of ``rd_kafka_*()`` functions.
+- ``xlswriter``: Uses ``Vtiful\Kernel`` namespace, e.g. ``Vtiful\Kernel\Excel``.
+- ``yaf``: Uses ``Yaf`` namespace, e.g. ``Yaf\Application``. Also supports aliases in the global namespace, e.g. ``Yaf_Application``.
+- ``zstd``: Uses ``Zstd`` namespace, e.g. ``Zstd\compress()``. However, it also declares ``zstd_*()`` functions in the global namespace.
 
 It is notable that with the exception of ``xlswriter``, none of these
 extensions make use of a vendor namespace. They all use the package/extension
@@ -209,12 +209,12 @@ Proposal
 This RFC proposes to explicitly allow and encourage the use of namespaces for
 bundled PHP extensions, subject to the guidelines laid out in the following:
 
-  - Extensions should not use a vendor namespace.
-  - The top-level namespace should match the extension name (apart from
-    casing).
-  - Namespace names should follow ``CamelCase``.
-  - All symbols defined in the extension should be part of the extension's
-    top-level namespace or a sub-namespace.
+- Extensions should not use a vendor namespace.
+- The top-level namespace should match the extension name (apart from
+  casing).
+- Namespace names should follow ``CamelCase``.
+- All symbols defined in the extension should be part of the extension's
+  top-level namespace or a sub-namespace.
 
 Examples
 ~~~~~~~~
@@ -222,9 +222,9 @@ Examples
 If we were to introduce ``openssl`` as a new namespaced extension, here is how
 the symbol names could change in line with these guidelines:
 
-  - ``OpenSSLCertificate`` becomes ``OpenSSL\Certificate``
-  - ``openssl_dh_compute_key()`` becomes ``OpenSSL\dh_compute_key()``
-  - ``X509_PURPOSE_SSL_CLIENT`` becomes ``OpenSSL\X509_PURPOSE_SSL_CLIENT``
+- ``OpenSSLCertificate`` becomes ``OpenSSL\Certificate``
+- ``openssl_dh_compute_key()`` becomes ``OpenSSL\dh_compute_key()``
+- ``X509_PURPOSE_SSL_CLIENT`` becomes ``OpenSSL\X509_PURPOSE_SSL_CLIENT``
 
 The above guidelines recommend against the global ``FFI`` class used by the
 ffi extension. Using ``FFI\FFI`` would be preferred.
