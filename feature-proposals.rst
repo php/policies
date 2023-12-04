@@ -1,5 +1,5 @@
-The RFC Process
-===============
+Feature Proposals
+=================
 
 Introduction
 ------------
