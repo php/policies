@@ -9,11 +9,11 @@ Releases Cycle
 
 **From:** https://wiki.php.net/rfc/releaseprocess
 
-  * Yearly release cycle
-  * 3 years release life cycle
+- Yearly release cycle
+- 3 years release life cycle
 
-    * 2 years bug fixes only
-    * 1 year security fixes only
+  - 2 years bug fixes only
+  - 1 year security fixes only
 
 No feature addition after final x.y.0 release (or x.0.0). Self contained
 features or new SAPIs could be carefully considered on a case by case basis.
@@ -22,30 +22,30 @@ Backward compatibility must be respected with the same major releases, for
 example from 5.2 to 5.6. Binary compatibility can be broken between two
 features releases, f.e. between 5.3 and 5.4:
 
-  * x.y.z to x.y.z+1
+- x.y.z to x.y.z+1
 
-    * Bugfixes only (with a room for exceptions on a case by case basis and only for small self contained features additions).
-    * Extensions support can't be removed (like move them to pecl)
-    * Backward compatibility must be kept (internals and userland)
-    * ABI/API compatibility must be kept (internals)
+  - Bugfixes only (with a room for exceptions on a case by case basis and only for small self contained features additions).
+  - Extensions support can't be removed (like move them to pecl)
+  - Backward compatibility must be kept (internals and userland)
+  - ABI/API compatibility must be kept (internals)
 
-  * x.y.z to x.y+1.z
+- x.y.z to x.y+1.z
 
-    * Bugfixes
-    * New features
-    * Extensions support can be ended (moved to pecl)
-    * Backward compatibility must be kept
-    * API compatibility must be kept (userland)
-    * ABI and API can be broken (internals), src compatibility should be kept if possible, while breakages are allowed
+  - Bugfixes
+  - New features
+  - Extensions support can be ended (moved to pecl)
+  - Backward compatibility must be kept
+  - API compatibility must be kept (userland)
+  - ABI and API can be broken (internals), src compatibility should be kept if possible, while breakages are allowed
 
-  * x.y.z to x+1.0.0
+- x.y.z to x+1.0.0
 
-    * Bugfixes
-    * New features
-    * Extensions support can be ended (moved to pecl)
-    * Backward compatibility can be broken
-    * API compatibility can be broken (internals and userland).
-    * ABI can be broken (internals)
+  - Bugfixes
+  - New features
+  - Extensions support can be ended (moved to pecl)
+  - Backward compatibility can be broken
+  - API compatibility can be broken (internals and userland).
+  - ABI can be broken (internals)
 
 It is critical to understand the consequences of breaking BC, APIs or ABIs
 (only internals related). It should not be done for the sake of doing it. RFCs
@@ -54,8 +54,8 @@ test cases and patch(es) should help.
 
 See the following links for explanation about API and ABI:
 
-  * http://en.wikipedia.org/wiki/Application_programming_interface 
-  * http://en.wikipedia.org/wiki/Application_binary_interface
+  - http://en.wikipedia.org/wiki/Application_programming_interface
+  - http://en.wikipedia.org/wiki/Application_binary_interface
 
 Example time line with only one major version at a time
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -93,7 +93,7 @@ for the oldest, between php 3 and 4.
            2011        2012       2013         2014        2015        2016        2017
             |     |     |     |     |     |     |     |     |     |     |     |     |
     5.3     +++++++++++++-----D
-    5.4     |*****+++++++++++++++++++++++++-----------D     |     |     |     |     | 
+    5.4     |*****+++++++++++++++++++++++++-----------D     |     |     |     |     |
     5.5     |     |     |******++++++++++++++++++++++++-----------D     |     |     |
     5.6     |     |     |           |******++++++++++++++++++++++++-----------D
     6.0     |     |     |******++++++++++++++++++++++++-----------D     |     |
@@ -102,22 +102,22 @@ for the oldest, between php 3 and 4.
 Timeline example for a release
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-  * June
+- June
 
-    * Decisions which features or changes will be in the next release
-    * 1st release alpha (may have many alpha)
+  - Decisions which features or changes will be in the next release
+  - 1st release alpha (may have many alpha)
 
-  * At least one release per month, more at wish
-  * September, RC phases, biweekly release
+- At least one release per month, more at wish
+- September, RC phases, biweekly release
 
-    * each RC should go through the QA before being published
+  - each RC should go through the QA before being published
 
-      * usually 2 days
-      * running the various test suites (phpt, custom real life tests, platform specific tests). Some tests need a day to run
+    - usually 2 days
+    - running the various test suites (phpt, custom real life tests, platform specific tests). Some tests need a day to run
 
-  * November, Final
+- November, Final
 
-    * Last RC taken as final, golden release (no change between the last RC and the final version)
+  - Last RC taken as final, golden release (no change between the last RC and the final version)
 
 Feature selection and development
 ---------------------------------
@@ -142,10 +142,10 @@ See also [[rfc::voting|the voting RFC]].
 
 The question for this section is about who will be allowed to vote:
 
-  * php-src (yes, no)
-  * php-doc (yes, no)
-  * qa, phpt (yes, no) 
-  * other sub projects like pear (yes, no)
+- php-src (yes, no)
+- php-doc (yes, no)
+- qa, phpt (yes, no)
+- other sub projects like pear (yes, no)
 
 We have voting plugin for dokuwiki (doodle2) that allows voting on the wiki
 (installed).
@@ -155,15 +155,15 @@ RMs Role
 
 The roles of the release managers are about being a facilitator:
 
-  * Manage the release process
-  * Start the decisions discussions and vote about the features and change for a given release
-  * Create a roadmap and planing according to this RFC
-  * Package the releases (test and final releases)
-  * Decide which bug fixes can be applied to a release, within the cases defined in this RFC
+- Manage the release process
+- Start the decisions discussions and vote about the features and change for a given release
+- Create a roadmap and planing according to this RFC
+- Package the releases (test and final releases)
+- Decide which bug fixes can be applied to a release, within the cases defined in this RFC
 
 But they are not:
 
-  * Decide which features, extension or SAPI get in a release or not
+- Decide which features, extension or SAPI get in a release or not
 
 Discussions or requests for a feature or to apply a given patch must be done
 on the public internals mailing list or in the security mailing (ideally using
@@ -183,20 +183,20 @@ himself for the next release at any time). The vote takes place for a week.
 
 Examples:
 
-  * John/Fred (yes, no)
-  * Ted/Georges (yes, no)
-  * Leon/Nikita (yes, no)
+- John/Fred (yes, no)
+- Ted/Georges (yes, no)
+- Leon/Nikita (yes, no)
 
 The team with the most votes will be then the RMs for the given release. One
 person cannot be a RM for more than one release at the same time.
- 
+
 Again, one of the questions for this section is about who will be allowed to
 vote:
 
-  * php-src (yes, no)
-  * php-doc (yes, no)
-  * qa, phpt (yes, no)
-  * other sub projects like pear (yes, no)
+- php-src (yes, no)
+- php-doc (yes, no)
+- qa, phpt (yes, no)
+- other sub projects like pear (yes, no)
 
 NB: the poll plugin will be installed shortly
 
@@ -225,12 +225,12 @@ obviously be used as well).
 Security Management
 -------------------
 
-   * Each security flaw must have a CVE id before the final release.
-   * Ideally security issues and their fixes are reported and discussed in the issues tracker
+- Each security flaw must have a CVE id before the final release.
+- Ideally security issues and their fixes are reported and discussed in the issues tracker
 
-     * Needs a 'security' flag in bugs.php.net (implemented, a CVE field has been added as well)
-     * Methods to reproduce a flaw may remain non public (on a case by case basis)
-     * Be sure that the security team of each major distributions have access to the security reports, before public release
+  - Needs a 'security' flag in bugs.php.net (implemented, a CVE field has been added as well)
+  - Methods to reproduce a flaw may remain non public (on a case by case basis)
+  - Be sure that the security team of each major distributions have access to the security reports, before public release
 
 
 Historical Support Timelines
@@ -334,12 +334,12 @@ three different options to choose from:
 
 There are two main downsides to pushing the support dates for PHP 5.6:
 
- - Obviously, it will require the developers of PHP (us) to maintain it for a
-   longer period of time, investing more time and effort than we would
-   otherwise have to.
- - Extending the end of support dates may reduce the sense of urgency of
-   people to upgrade, and may cause people who would have otherwise upgraded
-   sooner to upgrade later.
+- Obviously, it will require the developers of PHP (us) to maintain it for a
+  longer period of time, investing more time and effort than we would
+  otherwise have to.
+- Extending the end of support dates may reduce the sense of urgency of
+  people to upgrade, and may cause people who would have otherwise upgraded
+  sooner to upgrade later.
 
 That said, many believe that sticking with the current timeline (option #3) is
 simply too aggressive, and we should at least go for option #2 as it gives
@@ -419,49 +419,49 @@ Strong reasons of why we actually should skip version 6 into 7
 There are several reasons of why we shouldn't reuse version 6 for the next
 major version of PHP.
 
- - First and foremost, PHP 6 already existed and it was something completely
-   different. The decimal system (or more accurately the infinite supply of
-   numbers we have) makes it easy for us to skip a version, with plenty more
-   left for future versions to come.
- - While it's true that the other PHP 6 never reached General Availability, it
-   was still a very widely published and well-known project conducted by
-   php.net that will share absolutely nothing with the version that is under
-   discussion now. Anybody who knew what PHP 6 is (and there are many) will
-   have a strong misconception in his or her mind as to the contents and
-   features of this new upcoming version (essentially, that it's all about
-   Unicode).
- - PHP 6, the original PHP 6, has been discussed in detail in many PHP
-   conferences. It was taught to users as a done-deal, including detailed
-   explanations about features and behavior (by php.net developers, not 'evil'
-   book authors).
- - PHP 6 was widely known not only within the Internals community, but around
-   the PHP community at large. It was a high profile project that many - if
-   not most - PHP community members knew about.
- - There's lots of PHP 6 information, about the original PHP 6, that exists
-   around the web. Books are the smallest part of the problem.
- - Unlike the 'trivia question' of 'why did we skip into 7?', reusing version
-   6 is likely to call real confusion in people's minds, with ample
-   information on two completely different versions with entirely different
-   feature sets that have the exact same name.
- - Skipping versions isn't unprecedented or uncommon in both open source
-   projects and commercial products. MariaDB, jumped all the way up to version
-   10.0 to avoid confusion, Netscape Communicator skipped version 5.0 directly
-   into 6.0, and Symantec skipped version 13. Each and every one of those had
-   different reasons for the skipping, but the common denominator is that
-   skipping versions is hardly a big deal.
- - Version 6 is generally associated with failure in the world of dynamic
-   languages. PHP 6 was a failure; Perl 6 was a failure. It's actually
-   associated with failure also outside the dynamic language world - MySQL 6
-   also existed but never released. The perception of version 6 as a failure -
-   not as a superstition but as a real world fact (similar to the association
-   of the word 'Vista' with failure) - will reflect badly on this PHP version.
- - The case for 6 is mostly a rebuttal of some of the points above, but
-   without providing a strong case for why we *shouldn't* skip version 6. If
-   we go with PHP 7, the worst case scenario is that we needlessly skipped a
-   version. We'd still have an infinite supply of major versions at our
-   disposal for future use. If, however, we pick 6 instead of 7 - the worst
-   case scenario is widespread confusion in our community and potential
-   negative perception about this version.
+- First and foremost, PHP 6 already existed and it was something completely
+  different. The decimal system (or more accurately the infinite supply of
+  numbers we have) makes it easy for us to skip a version, with plenty more
+  left for future versions to come.
+- While it's true that the other PHP 6 never reached General Availability, it
+  was still a very widely published and well-known project conducted by
+  php.net that will share absolutely nothing with the version that is under
+  discussion now. Anybody who knew what PHP 6 is (and there are many) will
+  have a strong misconception in his or her mind as to the contents and
+  features of this new upcoming version (essentially, that it's all about
+  Unicode).
+- PHP 6, the original PHP 6, has been discussed in detail in many PHP
+  conferences. It was taught to users as a done-deal, including detailed
+  explanations about features and behavior (by php.net developers, not 'evil'
+  book authors).
+- PHP 6 was widely known not only within the Internals community, but around
+  the PHP community at large. It was a high profile project that many - if
+  not most - PHP community members knew about.
+- There's lots of PHP 6 information, about the original PHP 6, that exists
+  around the web. Books are the smallest part of the problem.
+- Unlike the 'trivia question' of 'why did we skip into 7?', reusing version
+  6 is likely to call real confusion in people's minds, with ample
+  information on two completely different versions with entirely different
+  feature sets that have the exact same name.
+- Skipping versions isn't unprecedented or uncommon in both open source
+  projects and commercial products. MariaDB, jumped all the way up to version
+  10.0 to avoid confusion, Netscape Communicator skipped version 5.0 directly
+  into 6.0, and Symantec skipped version 13. Each and every one of those had
+  different reasons for the skipping, but the common denominator is that
+  skipping versions is hardly a big deal.
+- Version 6 is generally associated with failure in the world of dynamic
+  languages. PHP 6 was a failure; Perl 6 was a failure. It's actually
+  associated with failure also outside the dynamic language world - MySQL 6
+  also existed but never released. The perception of version 6 as a failure -
+  not as a superstition but as a real world fact (similar to the association
+  of the word 'Vista' with failure) - will reflect badly on this PHP version.
+- The case for 6 is mostly a rebuttal of some of the points above, but
+  without providing a strong case for why we *shouldn't* skip version 6. If
+  we go with PHP 7, the worst case scenario is that we needlessly skipped a
+  version. We'd still have an infinite supply of major versions at our
+  disposal for future use. If, however, we pick 6 instead of 7 - the worst
+  case scenario is widespread confusion in our community and potential
+  negative perception about this version.
 
 As a special non serious bonus, 7 is perceived as a lucky number in both the
 Western world and Chinese culture. A little bit of luck never hurt anybody.
@@ -484,40 +484,40 @@ strategy.
 The Case for PHP 6
 ``````````````````
 
- - According to our current release process and semantic versioning, the next
-   major version after PHP 5 should be PHP 6. Unless there are very strong
-   reasons to the contrary, we should not abandon our current version
-   numbering scheme.
- - While there exists a number of resources about the previous attempt at a
-   PHP 6 release, these will be quickly displaced once PHP 6 is actually
-   released. This applies both to blog posts, which will be (and partially
-   already are) displaced by newer content, and books, which will receive
-   negative reviews because they do not actually cover the version of PHP they
-   claim to cover.
- - By now there are also many resources which refer to the next major version
-   as “PHP 6”, without having any relation to the abandoned previous attempt.
-   This includes anything from blog posts and discussions about features for
-   the upcoming version, to RFCs and design documents in this wiki. Calling
-   the next major version “PHP 7” instead will cause confusion in this
-   direction.
- - In OTR discussions about a new major version, it is nearly always referred
-   to as “PHP 6”. Given that the current version is PHP 5, people
-   understandably jump to the conclusion that the next one will be “PHP 6” and
-   refer to it as such. In the minds of many devs “PHP 6” is already deeply
-   ingrained as the name of the next major.
- - While many participants on the internals mailing list were involved in the
-   original PHP 6 effort and as such are acutely aware of its existence, the
-   larger PHP community is not. While discussing this RFC with various
-   developers, many did not really understand why this was even a question,
-   because they were no more than vaguely aware that there was something like
-   PHP 6 in the past. As such wrong expectations due to confusion about the
-   version number should be minimal.
- - While there has certainly been precedent for missing version numbers, this
-   usually occurs in the context of larger changes to the versioning scheme.
-   For example, when Java went from 1.4 to 5.0, it's clear that the numbering
-   system changed. The existing precedent suggests going to PHP 2016 or
-   something equally distinct, rather than just skipping a version. (No, this
-   is not a serious suggestion.)
+- According to our current release process and semantic versioning, the next
+  major version after PHP 5 should be PHP 6. Unless there are very strong
+  reasons to the contrary, we should not abandon our current version
+  numbering scheme.
+- While there exists a number of resources about the previous attempt at a
+  PHP 6 release, these will be quickly displaced once PHP 6 is actually
+  released. This applies both to blog posts, which will be (and partially
+  already are) displaced by newer content, and books, which will receive
+  negative reviews because they do not actually cover the version of PHP they
+  claim to cover.
+- By now there are also many resources which refer to the next major version
+  as “PHP 6”, without having any relation to the abandoned previous attempt.
+  This includes anything from blog posts and discussions about features for
+  the upcoming version, to RFCs and design documents in this wiki. Calling
+  the next major version “PHP 7” instead will cause confusion in this
+  direction.
+- In OTR discussions about a new major version, it is nearly always referred
+  to as “PHP 6”. Given that the current version is PHP 5, people
+  understandably jump to the conclusion that the next one will be “PHP 6” and
+  refer to it as such. In the minds of many devs “PHP 6” is already deeply
+  ingrained as the name of the next major.
+- While many participants on the internals mailing list were involved in the
+  original PHP 6 effort and as such are acutely aware of its existence, the
+  larger PHP community is not. While discussing this RFC with various
+  developers, many did not really understand why this was even a question,
+  because they were no more than vaguely aware that there was something like
+  PHP 6 in the past. As such wrong expectations due to confusion about the
+  version number should be minimal.
+- While there has certainly been precedent for missing version numbers, this
+  usually occurs in the context of larger changes to the versioning scheme.
+  For example, when Java went from 1.4 to 5.0, it's clear that the numbering
+  system changed. The existing precedent suggests going to PHP 2016 or
+  something equally distinct, rather than just skipping a version. (No, this
+  is not a serious suggestion.)
 
 Vote
 ````
@@ -525,7 +525,7 @@ Vote
 A 50%+1 (simple majority) vote with two options, “PHP 6” and “PHP 7”, is
 proposed. If more votes are for PHP 6, that shall be the name of the next
 major release of PHP. Otherwise, if more of votes are for PHP 7, that shall be
-its name. 
+its name.
 
 Decision
 ````````
@@ -601,26 +601,26 @@ Proposal
 
 For the extensions that have no maintainers, the proposal is to:
 
- - Issue a call for maintainership on internals list (and maybe other venues,
-   such as thematic PHP communities, as seen appropriate).
- - If a maintainer candidate(s) show up:
- - If they are already committers, assign them as maintainers. The extension
-   is considered maintained from now on, no further action needed.
- - Otherwise, ask them to submit a couple of patches for existing bugs in the
-   extension, of their choice. If these are ok, issue them php.net account
-   with appropriate permissions and assign them as maintainers for the claimed
-   extension. If extensions has no bugs to fix, assign them as maintainers
-   immediately (php.net account may not yet be needed).
- - If within 3 weeks nobody steps up as a maintainer for extension, it is
-   considered orphaned.
- - All orphaned extensions are converted to PECL modules and removed from core
-   repository. There should be a public announcement procedure before this
-   happens, with the details not defined of this RFC but to be worked out by
-   RMs and the community (either with separate RFC or just by consensus).
- - In case there are objections to moving unmaintained extension to PECL,
-   separate RFC vote can be held about the move, initiated by the RMs of the
-   current release or any interested party. The decision can be taken for each
-   extension individually.
+- Issue a call for maintainership on internals list (and maybe other venues,
+  such as thematic PHP communities, as seen appropriate).
+- If a maintainer candidate(s) show up:
+- If they are already committers, assign them as maintainers. The extension
+  is considered maintained from now on, no further action needed.
+- Otherwise, ask them to submit a couple of patches for existing bugs in the
+  extension, of their choice. If these are ok, issue them php.net account
+  with appropriate permissions and assign them as maintainers for the claimed
+  extension. If extensions has no bugs to fix, assign them as maintainers
+  immediately (php.net account may not yet be needed).
+- If within 3 weeks nobody steps up as a maintainer for extension, it is
+  considered orphaned.
+- All orphaned extensions are converted to PECL modules and removed from core
+  repository. There should be a public announcement procedure before this
+  happens, with the details not defined of this RFC but to be worked out by
+  RMs and the community (either with separate RFC or just by consensus).
+- In case there are objections to moving unmaintained extension to PECL,
+  separate RFC vote can be held about the move, initiated by the RMs of the
+  current release or any interested party. The decision can be taken for each
+  extension individually.
 
 Option: for some extensions, which are clearly needed but nobody stepped up in
 person to claim maintainership, we can have designated “community maintained”
