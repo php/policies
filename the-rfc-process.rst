@@ -1,5 +1,5 @@
-Voting on PHP features
-======================
+The RFC Process
+===============
 
 Introduction
 ------------
@@ -94,11 +94,11 @@ Resurrecting Rejected Proposals
 In order to save valuable time, it will not be allowed to bring up a rejected
 proposal up for another vote, unless one of the following happens:
 
-  * 6 months pass from the time of the previous vote, OR
-  * The author(s) make substantial changes to the proposal. While it's
-    impossible to put clear definitions on what constitutes 'substantial'
-    changes, they should be material enough so that they'll significantly
-    affect the outcome of another vote.
+- 6 months pass from the time of the previous vote, **OR**
+- The author(s) make substantial changes to the proposal. While it's
+  impossible to put clear definitions on what constitutes 'substantial'
+  changes, they should be material enough so that they'll significantly
+  affect the outcome of another vote.
 
 Who Can Vote
 ------------
@@ -110,14 +110,15 @@ practical approach.
 
 The proposal here is for two audiences to participate in the voting process:
 
-  * People with php.net VCS accounts that have contributed code to PHP
-  * Representatives from the PHP community, that will be chosen by those with
-    php.net VCS accounts
+- People with php.net VCS accounts that have contributed code to PHP
+- Representatives from the PHP community, that will be chosen by those with
+  php.net VCS accounts
 
-    * Lead developers of PHP based projects (frameworks, cms, tools, etc.)
-    * regular participant of internals discussions
+  - Lead developers of PHP based projects (frameworks, cms, tools, etc.)
+  - regular participant of internals discussions
 
 RFC Proposer
 ------------
 
-  * Proposers vote with +1 on their own RFC per default if they are allowed to vote
+- Proposers vote with +1 on their own RFC per default if they are allowed to
+  vote
