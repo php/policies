@@ -46,7 +46,7 @@ are essentially three choices possible now:
   user-level class names are written, and it matches the approach of many
   other programming languages.
 - **Always PascalCase** — which is basically what
-  `PRS-1 <http://www.php-fig.org/psr/psr-1/>`_ defines, however, it would
+  `PSR-1 <http://www.php-fig.org/psr/psr-1/>`_ defines, however, it would
   make most of the currently existing user-level class names invalid.
 - **Do Nothing** — which of course automatically means that any approach is
   allowed, and the community discussions around this topic will continue.
