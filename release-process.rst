@@ -138,7 +138,7 @@ The change to what we have now is the voting process. It will not happen
 anymore on the mailing list but in the RFCs directly, for php.net members, in
 a public way.
 
-See also [the voting RFC](https://wiki.php.net/rfc/voting).
+See also `the voting RFC <https://wiki.php.net/rfc/voting>`_.
 
 The question for this section is about who will be allowed to vote:
 
