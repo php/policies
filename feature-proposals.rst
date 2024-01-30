@@ -45,9 +45,6 @@ measured only since the formal discussion announcement as described above.
 Voting
 ------
 
-This section has been amended by the `Abolish Short Votes RFC
-<https://wiki.php.net/rfc/abolish-short-votes>`_.
-
 The author decides when it's time to move ahead and call a vote on the RFC.  If
 the author feels that there's still healthy discussion going on, they can
 decide not to move ahead to request a vote after the minimal period, but extend
@@ -66,11 +63,12 @@ may be extended, for example during holiday periods.
 A valid voting period must be declared when voting is started and must not be
 changed during the vote.
 
+This section has been amended by:
+
+- `Abolish Short Votes RFC <https://wiki.php.net/rfc/abolish-short-votes>`_.
+
 Required Majority
 -----------------
-
-This section has been amended by the `Abolish Narrow Margins RFC
-<https://wiki.php.net/rfc/abolish-narrow-margins>`_.
 
 The primary vote of an RFC, determining overall acceptance of the proposal, may
 only have two voting options and requires a 2/3 majority. This means that the
@@ -87,6 +85,9 @@ For procedural reasons, multiple RFCs may be combined into one, in which case
 there may be multiple primary votes. Combining multiple RFCs into one does not
 allow turning a primary vote into a secondary vote.
 
+This section has been amended by:
+
+- `Abolish Narrow Margins RFC <https://wiki.php.net/rfc/abolish-narrow-margins>`_.
 
 Resurrecting Rejected Proposals
 -------------------------------

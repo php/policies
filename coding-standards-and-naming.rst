@@ -5,8 +5,7 @@ Coding Standards and Naming Policy
 Classes
 =======
 
-From `Class Naming RFC
-<https://wiki.php.net/rfc/class-naming>`_.
+From: `Class Naming RFC <https://wiki.php.net/rfc/class-naming>`_
 
 The PHP coding standard does not cover how class names should be written. This
 leads to friction within the userland community that is now largely following
