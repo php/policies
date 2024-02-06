@@ -15,3 +15,7 @@ It contains the following items:
   classes, methods, extensions, and functions.
 - `Security Classification <security-classification.rst>`_: What we consider
   as security issues, their severity, and how to report issues.
+- `Security Policies and Process <security-policies.rst>`_: Policies and
+  process on how and when to update the `security.txt
+  <https://www.php.net/.well-known/security.txt>`_ file on
+  https://www.php.net.
