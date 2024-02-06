@@ -172,33 +172,28 @@ the bug tracker)
 Release managers selection
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The release managers team should be selected in a more transparent way. The
-ideal way is again to go through a proposal and a vote. The same system than
-the RFCs can obviously be used for the release managers selection.
+About three months prior to the scheduled release of the first alpha release
+of the next minor or major version (around March 1st or shortly thereafter),
+the release managers for the latest version branch should issue a call
+for volunteers to begin the selection process for the next release managers.
 
-The volunteers (a team of two persons) can add propose themselves via the
-mailing list and they will be added to a RFC page. A week between the last
-call and the vote should be sufficient (given that anyone can volunteer
-himself for the next release at any time). The vote takes place for a week.
+The release manager team consists of two or three people, it is notable that at least
+one of the volunteers should be a "veteran" release manager, meaning they have contributed
+to at least one PHP release in the past. The other can be an additional veteran or,
+ideally, someone new to the RM role (to increase number of veteran RMs).
 
-Examples:
+Issue the call for volunteers on internals@lists.php.net on or around March 1st.
+See, for example: https://news-web.php.net/php.internals/113334
 
-- John/Fred (yes, no)
-- Ted/Georges (yes, no)
-- Leon/Nikita (yes, no)
+There is no rule for how long the call for volunteers must remain open.
+We should aim to select the release managers by early April, so announcing the call
+in early March gives people about a month to decide whether they wish to volunteer.
 
-The team with the most votes will be then the RMs for the given release. One
-person cannot be a RM for more than one release at the same time.
+Voting is conducted using "Single Transferrable Vote" (STV).
 
-Again, one of the questions for this section is about who will be allowed to
-vote:
-
-- php-src (yes, no)
-- php-doc (yes, no)
-- qa, phpt (yes, no)
-- other sub projects like pear (yes, no)
-
-NB: the poll plugin will be installed shortly
+Using some math, we’ll start with the 1st preference and gradually remove candidates with the fewest votes,
+transferring votes that had previously gone to them to their voter’s 2nd preference, and so on.
+Once required number of candidates have a quorum (Droop quota), those will be officially selected as our RMs.
 
 Feature(s) preview release, solving the experimental features
 -------------------------------------------------------------
