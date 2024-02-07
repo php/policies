@@ -174,26 +174,30 @@ Release managers selection
 
 About three months prior to the scheduled release of the first alpha release
 of the next minor or major version (around March 1st or shortly thereafter),
-the release managers for the latest version branch should issue a call
-for volunteers to begin the selection process for the next release managers.
+the release managers for the latest version branch should issue a call for
+volunteers to begin the selection process for the next release managers.
 
-The release manager team consists of two or three people, it is notable that at least
-one of the volunteers should be a "veteran" release manager, meaning they have contributed
-to at least one PHP release in the past. The other can be an additional veteran or,
-ideally, someone new to the RM role (to increase number of veteran RMs).
+The release manager team consists of two or three people, it is notable that
+at least one of the volunteers should be a "veteran" release manager, meaning
+they have contributed to at least one PHP release in the past. The other can
+be an additional veteran or, ideally, someone new to the RM role (to increase
+number of veteran RMs).
 
-Issue the call for volunteers on internals@lists.php.net on or around March 1st.
-See, for example: https://news-web.php.net/php.internals/113334
+Issue the call for volunteers on internals@lists.php.net on or around March
+1st. See, for example: https://news-web.php.net/php.internals/113334
 
-There is no rule for how long the call for volunteers must remain open.
-We should aim to select the release managers by early April, so announcing the call
-in early March gives people about a month to decide whether they wish to volunteer.
+There is no rule for how long the call for volunteers must remain open. We
+should aim to select the release managers by early April, so announcing the
+call in early March gives people about a month to decide whether they wish to
+volunteer.
 
 Voting is conducted using "Single Transferrable Vote" (STV).
 
-Using some math, we’ll start with the 1st preference and gradually remove candidates with the fewest votes,
-transferring votes that had previously gone to them to their voter’s 2nd preference, and so on.
-Once required number of candidates have a quorum (Droop quota), those will be officially selected as our RMs.
+Using some maths, we'll start with the 1st preference and gradually remove
+candidates with the fewest votes, transferring votes that had previously gone
+to them to their voter’s 2nd preference, and so on. Once required number of
+candidates have a quorum (Droop quota), those will be officially selected as
+our RMs.
 
 Feature(s) preview release, solving the experimental features
 -------------------------------------------------------------
