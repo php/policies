@@ -100,7 +100,7 @@ The process starts the first Tuesday of July of each year, and nominally runs
 for 20 weeks. With 3 alpha releases, 3 beta releases, 4 release candidates,
 and a GA (x.0.0) release.
 
-Examples are given for 2024 and PHP 8.4. Releases are tagged on the Monday of
+Examples are given for 2024 and PHP 8.4. Releases are tagged on the Tuesday of
 each week, with a release before Thursday 24:00 (UTC).
 
 `$rd` describes the release day of the first alpha release.
@@ -110,7 +110,7 @@ Alpha Releases
 
 - Alpha 1
 
-	- Tag on *First Monday of July*: ``$rd - 2`` (Jul 2, 2024)
+	- Tag on *First Tuesday of July*: ``$rd - 2`` (Jul 2, 2024)
 	- Release before *First Thursday of July*: ``$rd`` (Jul 4, 2024)
 
 - Alpha 2: ``$rd + 14`` (Jul 18, 2024)
