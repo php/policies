@@ -126,13 +126,16 @@ During the alpha releases:
 Beta Releases
 -------------
 
-- Beta 1
-
-	- Tag / Feature Freeze: ``$rd + 40`` (Aug 13, 2024)
-	- Release: ``$rd + 42`` (Aug 15, 2024)
-
-- Beta 2: ``$rd + 56`` (Aug 29, 2024)
-- Beta 3: ``$rd + 70`` (Sep 12, 2024)
+.. list-table::
+   :header-rows: 0
+   :stub-columns: 1
+   * - Beta 1
+     - * Tag / Feature Freeze: ``$rd + 40`` (Aug 13, 2024)
+       * Release: ``$rd + 42`` (Aug 15, 2024)
+   * - Beta 2
+     - ``$rd + 56`` (Aug 29, 2024)
+   * - Beta 3
+     - ``$rd + 70`` (Sep 12, 2024)
 
 At feature freeze:
 
