@@ -8,9 +8,8 @@ Release Process
 Release Cycle
 =============
 
-**From:** https://wiki.php.net/rfc/releaseprocess
-
-**Updated By:** https://wiki.php.net/rfc/release_cycle_update
+:From: https://wiki.php.net/rfc/releaseprocess
+:Updated by: https://wiki.php.net/rfc/release_cycle_update
 
 This document outlines the release cycles of the PHP language.
 
