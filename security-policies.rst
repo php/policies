@@ -13,7 +13,7 @@ PHP.net security.txt file
 =========================
 
 PHP.net includes a `security.txt
-<https://www.php.net/.well-known/security.txt>_` file that complements the
+<https://www.php.net/.well-known/security.txt>`_ file that complements the
 `Vulnerability Disclosure Policy
 <https://github.com/php/policies/blob/main/security-classification.rst>`_,
 aiding security vulnerability disclosure. This file implements the standard
