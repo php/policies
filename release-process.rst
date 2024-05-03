@@ -129,6 +129,7 @@ Beta Releases
 .. list-table::
    :header-rows: 0
    :stub-columns: 1
+
    * - Beta 1
      - * Tag / Feature Freeze: ``$rd + 40`` (Aug 13, 2024)
        * Release: ``$rd + 42`` (Aug 15, 2024)
