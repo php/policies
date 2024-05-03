@@ -107,13 +107,17 @@ In the examples, `$rd` describes the release day of the first alpha release.
 Alpha Releases
 --------------
 
-- Alpha 1
+.. list-table::
+   :header-rows: 0
+   :stub-columns: 1
 
-	- Tag on *First Tuesday of July*: ``$rd - 2`` (Jul 2, 2024)
-	- Release before *First Thursday of July*: ``$rd`` (Jul 4, 2024)
-
-- Alpha 2: ``$rd + 14`` (Jul 18, 2024)
-- Alpha 3: ``$rd + 28`` (Aug 01, 2024)
+   * - Alpha 1
+     - * Tag on *First Tuesday of July*: ``$rd - 2`` (Jul 2, 2024)
+       * Release before *First Thursday of July*: ``$rd`` (Jul 4, 2024)
+   * - Alpha 2
+     - ``$rd + 14`` (Jul 18, 2024)
+   * - Alpha 3
+     - ``$rd + 28`` (Aug 01, 2024)
 
 During the alpha releases:
 
@@ -144,14 +148,19 @@ After feature freeze, with blessing of the release managers:
 Release Candidates
 ------------------
 
-- Release Candidate 1
+.. list-table::
+   :header-rows: 0
+   :stub-columns: 1
 
-	- Tag: ``$rd + 82`` (Sep 24, 2024)
-	- Release: ``$rd + 84`` (Sep 26, 2024)
-
-- Release Candidate 2: ``$rd + 98`` (Oct 10, 2024)
-- Release Candidate 3: ``$rd + 112`` (Oct 24, 2024)
-- Release Candidate 4: ``$rd + 126`` (Nov 07, 2024)
+   * - Release Candidate 1
+     - * Tag: ``$rd + 82`` (Sep 24, 2024)
+       * Release: ``$rd + 84`` (Sep 26, 2024)
+   * - Release Candidate 2
+     - ``$rd + 98`` (Oct 10, 2024)
+   * - Release Candidate 3
+     - ``$rd + 112`` (Oct 24, 2024)
+   * - Release Candidate 4
+     - ``$rd + 126`` (Nov 07, 2024)
 
 More release candidates MAY be added on a two-week cycle, if necessary.
 
@@ -170,10 +179,13 @@ After the first release candidate:
 General Availability
 --------------------
 
-- x.y.0 (8.4.0)
+.. list-table::
+   :header-rows: 0
+   :stub-columns: 1
 
-	- Tag: ``$rd + 138`` (Nov 19, 2024)
-	- Release: ``$rd + 140`` (Nov 21, 2024)
+   * - x.y.0 (8.4.0)
+     - * Tag: ``$rd + 138`` (Nov 19, 2024)
+       * Release: ``$rd + 140`` (Nov 21, 2024)
 
 The GA release MUST be released from the last Release Candidate tag (RC4 or
 later). There MUST NOT be any changes between the last Release Candidate tag and
