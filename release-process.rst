@@ -24,7 +24,7 @@ Roughly:
 
 No feature addition after final x.y.0 release (or x.0.0).
 
-Backward compatibility MUST be respected within the same major release (say
+Backward compatibility MUST be respected within the same major release (e.g.,
 8.x.x). Binary compatibility (API or ABI) MAY be broken between two
 features releases, f.e. between 8.3 and 8.4.
 
@@ -33,7 +33,7 @@ Major Version Number
 
 - x.y.z to x+1.0.0
 
-  - Bugfixes
+  - Bug fixes
   - New features
   - Extensions support can be ended (moved to PECL)
   - Backward compatibility can be broken
@@ -58,7 +58,7 @@ Patch Version Number
 
 - x.y.z to x.y.z+1
 
-  - Bugfixes only
+  - Bug fixes and security patches only
   - Extensions support can't be removed (like move them to PECL)
   - Backward compatibility must be kept (internals and userland)
   - ABI and API compatibility must be kept (internals)
@@ -103,7 +103,7 @@ and a GA (x.0.0) release.
 Examples are given for 2024 and PHP 8.4. Releases are tagged on the Tuesday of
 each week, with a release before Thursday 24:00 (UTC).
 
-`$rd` describes the release day of the first alpha release.
+In the examples, `$rd` describes the release day of the first alpha release.
 
 Alpha Releases
 --------------
@@ -134,7 +134,7 @@ Beta Releases
 At feature freeze:
 
 - All features requiring an RFC must have passed by the voting mechanism, and
-  *should* have been merged.
+  SHOULD be merged prior to feature freeze.
 
 After feature freeze, with blessing of the release managers:
 
@@ -154,18 +154,18 @@ Release Candidates
 - Release Candidate 3: ``$rd + 112`` (Oct 24, 2024)
 - Release Candidate 4: ``$rd + 126`` (Nov 07, 2024)
 
-More release candidates can be added on a two week cycle if necessary.
+More release candidates MAY be added on a two-week cycle, if necessary.
 
 With the first release candidate:
 
-- Internal API numbers need to be updated (``PHP_API_VERSION``,
+- Internal API numbers MUST be updated (``PHP_API_VERSION``,
   ``ZEND_MODULE_API_NO``, and  ``ZEND_EXTENSION_API_NO``).
-- The release branch (``PHP-8.4``) needs to be created.
+- The release branch (``PHP-8.4``) MUST be created.
 
 After the first release candidate:
 
-- API and ABI changes are no longer allowed.
-- No new features, whether they are small, or require an RFC.
+- There MUST NOT be any API and ABI changes in subsequent RCs.
+- There MUST NOT be any new features, small or otherwise, in subsequent RCs.
 
 
 General Availability
@@ -176,39 +176,41 @@ General Availability
 	- Tag: ``$rd + 138`` (Nov 19, 2024)
 	- Release: ``$rd + 140`` (Nov 21, 2024)
 
-Released from the last Release Candidate tag, without changes between RC4 (or
-later) and GA.
+The GA release MUST be released from the last Release Candidate tag (RC4 or
+later). There MUST NOT be any changes between the last Release Candidate tag and
+the GA tag (with exception to files such as `NEWS` and other files where the
+PHP version number must change for the GA release).
 
 Bug Fix and Security Releases
 -----------------------------
 
-After general availability release:
+After the general availability release:
 
-- Until end of year 2 (for PHP 8.4: until Dec 31, 2026):
+- Until the end of year 2 (e.g., for PHP 8.4: until Dec 31, 2026):
 
 	- A new release every 4 weeks, synchronised with other release branches.
 	- Bug fixes and security fixes.
 
-- Until end of year 3 (for PHP 8.4: until Dec 31, 2027):
+- Until the end of year 3 (e.g., for PHP 8.4: until Dec 31, 2027):
 
 	- Security fixes, and fixes to address regressions introduced during a
 	  normal bug fix release.
 	- Updates to ABI incompatible versions of dependent libraries on Windows.
 	- Release only when there is a security issue or regression issue to
-	  address
-	- Release when a otherwise normal bug fix release for other branches is
+	  address.
+	- Release when an otherwise normal bug fix release for other branches is
 	  also made. Exceptions can be made for high risk security issues or high
 	  profile regressions.
 
-- Until end of year 4 (for PHP 8.4: until Dec 31, 2028):
+- Until the end of year 4 (e.g., for PHP 8.4: until Dec 31, 2028):
 
-	- Security fixes **only**
+	- Security fixes **only**.
 	- Release only when there is a security issue.
-	- Release when a otherwise normal bug fix release for other branches is
+	- Release when an otherwise normal bug fix release for other branches is
 	  also made. Exceptions can be made for high risk security issues.
 	  profile regressions.
 	- Updates to ABI incompatible versions of dependent libraries on Windows
-	  are **not** done.
+	  are **not** performed.
 
 
 *End of year here means:* The end of the year following the original planned release
