@@ -285,7 +285,7 @@ Release managers selection
 ==========================
 
 About three months prior to the scheduled release of the first alpha release
-of the next minor or major version (around March 1st or shortly thereafter),
+of the next minor or major version (around April 1st or shortly thereafter),
 the release managers for the latest version branch should issue a call for
 volunteers to begin the selection process for the next release managers.
 
