@@ -145,7 +145,7 @@ At feature freeze:
 
 After feature freeze, with blessing of the release managers:
 
-- Merging RFC requiring features is still allowed.
+- Merging features that do require an RFC is still allowed.
 - Features that do not require an RFC are still allowed.
 - Optimisations and internal ABI and API changes are also still allowed.
 
@@ -228,8 +228,7 @@ After the general availability release:
 	  are **not** performed.
 
 
-*End of year here means:* The end of the year following the original planned release
-date of a GA release.
+*"End of year" means:* The end of the calendar year, i.e., Dec 31 at 24:00 UTC. The numbered years in the examples (e.g., "end of year 2") indicate the number of calendar years following the *original planned GA release date*. For example, if the planned GA release date for PHP 8.4 is Nov 21, 2024, then "end of year 2" is Dec 31, 2026, 24:00 UTC, even if the actual release date slips to Jan 9, 2025.
 
 Feature selection and development
 =================================
