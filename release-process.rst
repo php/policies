@@ -1,51 +1,66 @@
+===============
 Release Process
 ===============
 
 .. contents::
    :depth: 2
 
-Releases Cycle
---------------
+:From: https://wiki.php.net/rfc/releaseprocess
+:Updated by: https://wiki.php.net/rfc/release_cycle_update
 
-**From:** https://wiki.php.net/rfc/releaseprocess
+This document outlines the release cycles of the PHP language.
+
+Release Cycle
+=============
+
+Roughly:
 
 - Yearly release cycle
-- 3 years release life cycle
+- 4 years release life cycle
 
   - 2 years bug fixes only
-  - 1 year security fixes only
+  - 2 years security fixes only
 
-No feature addition after final x.y.0 release (or x.0.0). Self contained
-features or new SAPIs could be carefully considered on a case by case basis.
+No feature addition after final x.y.0 release (or x.0.0).
 
-Backward compatibility must be respected with the same major releases, for
-example from 5.2 to 5.6. Binary compatibility can be broken between two
-features releases, f.e. between 5.3 and 5.4:
+Backward compatibility MUST be respected within the same major release (e.g.,
+8.x.x). Binary compatibility (API or ABI) MAY be broken between two
+features releases, f.e. between 8.3 and 8.4.
 
-- x.y.z to x.y.z+1
+Major Version Number
+--------------------
 
-  - Bugfixes only (with a room for exceptions on a case by case basis and only for small self contained features additions).
-  - Extensions support can't be removed (like move them to pecl)
-  - Backward compatibility must be kept (internals and userland)
-  - ABI/API compatibility must be kept (internals)
+- x.y.z to x+1.0.0
+
+  - Bug fixes
+  - New features
+  - Extensions support can be ended (moved to PECL)
+  - Backward compatibility can be broken
+  - API compatibility can be broken (internals and userland)
+  - ABI can be broken (internals)
+
+Minor Version Number
+--------------------
 
 - x.y.z to x.y+1.z
 
   - Bugfixes
   - New features
-  - Extensions support can be ended (moved to pecl)
+  - Extensions support can be ended (moved to PECL)
   - Backward compatibility must be kept
   - API compatibility must be kept (userland)
-  - ABI and API can be broken (internals), src compatibility should be kept if possible, while breakages are allowed
+  - ABI and API can be broken (internals)
+  - Source compatibility should be kept if possible, while breakages are allowed
 
-- x.y.z to x+1.0.0
+Patch Version Number
+--------------------
 
-  - Bugfixes
-  - New features
-  - Extensions support can be ended (moved to pecl)
-  - Backward compatibility can be broken
-  - API compatibility can be broken (internals and userland).
-  - ABI can be broken (internals)
+- x.y.z to x.y.z+1
+
+  - Bug fixes and security patches only
+  - Extensions support can't be removed (like move them to PECL)
+  - Backward compatibility must be kept (internals and userland)
+  - ABI and API compatibility must be kept (internals)
 
 It is critical to understand the consequences of breaking BC, APIs or ABIs
 (only internals related). It should not be done for the sake of doing it. RFCs
@@ -64,65 +79,161 @@ Example time line with only one major version at a time
 
     **** pre release phase
     ++++ release lifetime with all bug fixes, no feature addition
-    ---- release lifetime security  fixes only
+    ---- release lifetime security fixes only
+    G    GA Release
     D    EOL
+
     Version Time ->
-           2011        2012       2013         2014        2015        2016        2017
+           2023        2024       2025         2026        2027        2028        2029
             |     |     |     |     |     |     |     |     |     |     |     |     |
-    5.3     +++++++++++++-----D
-    5.4     |*****+++++++++++++++++++++++++-----------D
-    5.5     |     |     |******++++++++++++++++++++++++-----------D
-    5.6     |     |     |     |     |******++++++++++++++++++++++++-----------D
-    6.0     |     |     |     |                 |******++++++++++++++++++++++++-----------D
-    6.1     |     |     |     |                             |******++++++++++++++++++++++++-----------D
+    8.1     |++++++++++-------------------------D
+    8.2     |+++++++++++++++++++++++------------------------D
+    8.3     |     *****G++++++++++++++++++++++++------------------------D
+    8.4     |     |     |     |****G++++++++++++++++++++++++------------------------D
 
-Example time line with two majors versions
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-However it could happen that a new major version is desired while the active
-major version is still heavily used. Like what we had between php 4 and 5 or
-for the oldest, between php 3 and 4.
+Release Timeline
+================
 
-::
+The process starts the first Tuesday of July of each year, and nominally runs
+for 20 weeks. With 3 alpha releases, 3 beta releases, 4 release candidates,
+and a GA (x.0.0) release.
 
-    **** pre release phase
-    ++++ release lifetime bugs
-    ---- release lifetime security only
-    D    EOL
-    Version Time ->
-           2011        2012       2013         2014        2015        2016        2017
-            |     |     |     |     |     |     |     |     |     |     |     |     |
-    5.3     +++++++++++++-----D
-    5.4     |*****+++++++++++++++++++++++++-----------D     |     |     |     |     |
-    5.5     |     |     |******++++++++++++++++++++++++-----------D     |     |     |
-    5.6     |     |     |           |******++++++++++++++++++++++++-----------D
-    6.0     |     |     |******++++++++++++++++++++++++-----------D     |     |
-    6.1     |     |     |           |******++++++++++++++++++++++++-----------D
+Examples are given for 2024 and PHP 8.4. Releases are tagged on the Tuesday of
+each week, with a release before Thursday 24:00 (UTC).
 
-Timeline example for a release
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In the examples, `$rd` describes the release day of the first alpha release.
 
-- June
+Alpha Releases
+--------------
 
-  - Decisions which features or changes will be in the next release
-  - 1st release alpha (may have many alpha)
+.. list-table::
+   :header-rows: 0
+   :stub-columns: 1
 
-- At least one release per month, more at wish
-- September, RC phases, biweekly release
+   * - Alpha 1
+     - * Tag on *First Tuesday of July*: ``$rd - 2`` (Jul 2, 2024)
+       * Release before *First Thursday of July*: ``$rd`` (Jul 4, 2024)
+   * - Alpha 2
+     - ``$rd + 14`` (Jul 18, 2024)
+   * - Alpha 3
+     - ``$rd + 28`` (Aug 01, 2024)
 
-  - each RC should go through the QA before being published
+During the alpha releases:
 
-    - usually 2 days
-    - running the various test suites (phpt, custom real life tests, platform specific tests). Some tests need a day to run
+- New features may be added at will, following the normal RFC procedures.
 
-- November, Final
+Beta Releases
+-------------
 
-  - Last RC taken as final, golden release (no change between the last RC and the final version)
+.. list-table::
+   :header-rows: 0
+   :stub-columns: 1
+
+   * - Beta 1
+     - * Tag / Feature Freeze: ``$rd + 40`` (Aug 13, 2024)
+       * Release: ``$rd + 42`` (Aug 15, 2024)
+   * - Beta 2
+     - ``$rd + 56`` (Aug 29, 2024)
+   * - Beta 3
+     - ``$rd + 70`` (Sep 12, 2024)
+
+At feature freeze:
+
+- All features requiring an RFC must have passed by the voting mechanism, and
+  SHOULD be merged prior to feature freeze.
+
+After feature freeze, with blessing of the release managers:
+
+- Merging features that do require an RFC is still allowed.
+- Features that do not require an RFC are still allowed.
+- Optimisations and internal ABI and API changes are also still allowed.
+
+Release Candidates
+------------------
+
+.. list-table::
+   :header-rows: 0
+   :stub-columns: 1
+
+   * - Release Candidate 1
+     - * Tag: ``$rd + 82`` (Sep 24, 2024)
+       * Release: ``$rd + 84`` (Sep 26, 2024)
+   * - Release Candidate 2
+     - ``$rd + 98`` (Oct 10, 2024)
+   * - Release Candidate 3
+     - ``$rd + 112`` (Oct 24, 2024)
+   * - Release Candidate 4
+     - ``$rd + 126`` (Nov 07, 2024)
+
+More release candidates MAY be added on a two-week cycle, if necessary.
+
+With the first release candidate:
+
+- Internal API numbers MUST be updated (``PHP_API_VERSION``,
+  ``ZEND_MODULE_API_NO``, and  ``ZEND_EXTENSION_API_NO``).
+- The release branch (``PHP-8.4``) MUST be created.
+
+After the first release candidate:
+
+- There MUST NOT be any API and ABI changes in subsequent RCs.
+- There MUST NOT be any new features, small or otherwise, in subsequent RCs.
+
+
+General Availability
+--------------------
+
+.. list-table::
+   :header-rows: 0
+   :stub-columns: 1
+
+   * - x.y.0 (8.4.0)
+     - * Tag: ``$rd + 138`` (Nov 19, 2024)
+       * Release: ``$rd + 140`` (Nov 21, 2024)
+
+The GA release MUST be released from the last Release Candidate tag (RC4 or
+later). There MUST NOT be any changes between the last Release Candidate tag and
+the GA tag (with exception to files such as `NEWS` and other files where the
+PHP version number must change for the GA release).
+
+Bug Fix and Security Releases
+-----------------------------
+
+After the general availability release:
+
+- Until the end of year 2 (e.g., for PHP 8.4: until Dec 31, 2026):
+
+	- A new release every 4 weeks, synchronised with other release branches.
+	- Bug fixes and security fixes.
+
+- Until the end of year 3 (e.g., for PHP 8.4: until Dec 31, 2027):
+
+	- Security fixes, and fixes to address regressions introduced during a
+	  normal bug fix release.
+	- Updates to ABI incompatible versions of dependent libraries on Windows.
+	- Release only when there is a security issue or regression issue to
+	  address.
+	- Security fix and regression releases SHOULD occur on the same date as bug
+	  fix releases for the other branches. Exceptions can be made for high risk
+	  security issues or high profile regressions.
+
+- Until the end of year 4 (e.g., for PHP 8.4: until Dec 31, 2028):
+
+	- Security fixes **only**.
+	- Release only when there is a security issue.
+	- Security fix releases SHOULD occur on the same date as bug fix releases
+	  for the other branches. Exceptions can be made for high risk security
+	  issues.
+	- Updates to ABI incompatible versions of dependent libraries on Windows
+	  are **not** performed.
+
+
+*"End of year" means:* The end of the calendar year, i.e., Dec 31 at 24:00 UTC. The numbered years in the examples (e.g., "end of year 2") indicate the number of calendar years following the *original planned GA release date*. For example, if the planned GA release date for PHP 8.4 is Nov 21, 2024, then "end of year 2" is Dec 31, 2026, 24:00 UTC, even if the actual release date slips to Jan 9, 2025.
 
 Feature selection and development
----------------------------------
+=================================
 
-RFCs have been introduced two years ago and have been proven as being an
+RFCs have been introduced many years ago and have been proven as being an
 amazing way to avoid conflicts while providing a very good way to propose new
 things to php.net. New features or additions to the core should go through the
 RFC process. It has been done successfully (as the process went well, but the
@@ -151,7 +262,7 @@ We have voting plugin for dokuwiki (doodle2) that allows voting on the wiki
 (installed).
 
 RMs Role
---------
+========
 
 The roles of the release managers are about being a facilitator:
 
@@ -170,10 +281,10 @@ on the public internals mailing list or in the security mailing (ideally using
 the bug tracker)
 
 Release managers selection
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+==========================
 
 About three months prior to the scheduled release of the first alpha release
-of the next minor or major version (around March 1st or shortly thereafter),
+of the next minor or major version (around April 1st or shortly thereafter),
 the release managers for the latest version branch should issue a call for
 volunteers to begin the selection process for the next release managers.
 
@@ -200,10 +311,10 @@ candidates have a quorum (Droop quota), those will be officially selected as
 our RMs.
 
 Feature(s) preview release, solving the experimental features
--------------------------------------------------------------
+=============================================================
 
 Some features require a lot of testing or users feedback before they can be
-considered as ready, stable enough or proven as having made good design
+considered as ready, stable enough, or proven as having made good design
 decisions. Having them in normal releases is dangerous. The past releases told
 us more that once than many good ideas ended as being not so good after all.
 But we had to keep them in and, even worst, maintain them forever.
@@ -222,7 +333,7 @@ of the given features (external repositories like github or bitbucket can
 obviously be used as well).
 
 Security Management
--------------------
+===================
 
 - Each security flaw must have a CVE id before the final release.
 - Ideally security issues and their fixes are reported and discussed in the issues tracker
