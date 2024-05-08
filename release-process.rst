@@ -213,17 +213,17 @@ After the general availability release:
 	- Updates to ABI incompatible versions of dependent libraries on Windows.
 	- Release only when there is a security issue or regression issue to
 	  address.
-	- Release when an otherwise normal bug fix release for other branches is
-	  also made. Exceptions can be made for high risk security issues or high
-	  profile regressions.
+	- Security fix and regression releases SHOULD occur on the same date as bug
+	  fix releases for the other branches. Exceptions can be made for high risk
+	  security issues or high profile regressions.
 
 - Until the end of year 4 (e.g., for PHP 8.4: until Dec 31, 2028):
 
 	- Security fixes **only**.
 	- Release only when there is a security issue.
-	- Release when an otherwise normal bug fix release for other branches is
-	  also made. Exceptions can be made for high risk security issues.
-	  profile regressions.
+	- Security fix releases SHOULD occur on the same date as bug fix releases
+	  for the other branches. Exceptions can be made for high risk security
+	  issues.
 	- Updates to ABI incompatible versions of dependent libraries on Windows
 	  are **not** performed.
 
