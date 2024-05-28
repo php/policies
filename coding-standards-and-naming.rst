@@ -7,6 +7,8 @@ Classes
 
 From: `Class Naming RFC <https://wiki.php.net/rfc/class-naming>`_
 
+**Editor’s note: Parts of this RFC have been superseded by the “Casing of acronyms in class and method names” section**
+
 The PHP coding standard does not cover how class names should be written. This
 leads to friction within the userland community that is now largely following
 the `standard recommendation PSR-1 <http://www.php-fig.org/psr/psr-1/>`_.
@@ -59,6 +61,8 @@ such purely cosmetic changes.
 PascalCase except Acronyms/Initialisms
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+**Editor’s note: This section has been superseded by the “Casing of acronyms in class and method names” section**
+
 Class names should be descriptive nouns in PascalCase and as short as
 possible. Each word in the class name should start with a capital letter,
 without underscore delimiters. The class name should be prefixed with the name
@@ -95,6 +99,75 @@ Bad:
 - ``INTL``
 - ``RADAR`` (Radio Detecting and Ranging)
 
+Casing of acronyms in class and method names
+============================================
+
+From: `Casing of acronyms in class and method names RFC <https://wiki.php.net/rfc/class-naming-acronyms>`_
+
+The class naming policy should be updated to the following, with changes highlighted:
+
+Method names follow the studlyCaps (also referred to as bumpy case or camel caps) naming convention, with care taken to minimize the letter count. The initial letter of the name is lowercase, and each letter that starts a new word is capitalized.
+
+Class names should be descriptive nouns in PascalCase and as short as possible. Each word in the class name should start with a capital letter, without underscore delimiters. The class name should be prefixed with the name of the "parent set" (e.g. the name of the extension) if no namespaces are used.
+
+Abbreviations and acronyms as well as initialisms should be avoided wherever possible, unless they are much more widely used than the long form (e.g. HTTP or URL).
+
+.. raw:: html
+
+   <s>Abbreviations start with a capital letter followed by lowercase letters, whereas acronyms and initialisms are written according to their standard notation.</s>
+
+**Abbreviations, acronyms, and initialisms should be treated like regular words, thus they should be written with an uppercase first character, followed by lowercase characters.** 
+
+.. raw:: html
+
+   <s>Usage of acronyms and initialisms is not allowed if they are not widely adopted and recognized as such.</s>
+
+**Diverging from this policy is allowed to keep internal consistency within a single extension, if the name follows an established, language-agnostic standard, or for other reasons, if those reasons are properly justified and voted on as part of the RFC process.**
+
+Examples
+--------
+
+Good method names:
+
+- ``connect()``
+- ``getData()``
+- ``buildSomeWidget()``
+- ``performHttpRequest()``
+
+Bad method names:
+
+- ``get_Data()``
+- ``buildsomewidget()``
+- ``getI()``
+- ``performHTTPRequest()``
+
+Good class names:
+
+- ``Curl``
+- ``CurlResponse``
+- ``HttpStatusCode``
+- ``Url``
+- ``BtreeMap`` (B-tree Map)
+- ``UserId`` (User Identifier)
+- ``Char`` (Character)
+- ``Intl`` (Internationalization)
+- ``Ssl\Certificate``
+- ``Ssl\Crl`` (Certificate Revocation List)
+- ``Ssl\CrlUrl``
+
+Bad class names:
+
+- ``curl``
+- ``curl_response``
+- ``HTTPStatusCode``
+- ``URL``
+- ``BTreeMap``
+- ``UserID`` (User Identifier)
+- ``CHAR``
+- ``INTL``
+- ``SSL\Certificate``
+- ``SSL\CRL``
+- ``SSL\CRLURL``
 
 Namespaces in Extensions
 ========================
