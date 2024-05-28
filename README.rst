@@ -26,3 +26,20 @@ It contains the following items:
    and process on how and when to update the `security.txt
    <https://www.php.net/.well-known/security.txt>`_ file on
    https://www.php.net.
+
+************
+ Formatting
+************
+
+The files in this documentation are formatted using the `rstfmt
+<https://github.com/dzhu/rstfmt>`_ tool, which you can install with:
+
+.. code::
+
+   pip install rstfmt
+
+Please run the tool before submitting a pull request:
+
+.. code::
+
+   rstfmt -w 80 *.rst
