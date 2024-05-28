@@ -4,10 +4,10 @@ on:
     branches:
       - master
     paths:
-      - *.rst
+      - '*.rst'
   pull_request:
     paths:
-      - *.rst
+      - '*.rst'
 jobs:
   pages:
     runs-on: ubuntu-22.04
