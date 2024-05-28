@@ -1,0 +1,24 @@
+name: Docs
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - *.rst
+  pull_request:
+    paths:
+      - *.rst
+jobs:
+  pages:
+    runs-on: ubuntu-22.04
+    permissions:
+      pages: write
+      id-token: write
+    if: github.repository == 'php/php-src'
+    steps:
+      - name: git checkout
+        uses: actions/checkout@v4
+      - name: Install dependencies
+        run: pip install sphinx-design sphinxawesome-theme rstfmt
+      - name: Check formatting
+        run: rstfmt --check -w 80 *.rst
