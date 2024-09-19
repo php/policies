@@ -344,7 +344,7 @@ RMs.
 Some features require a lot of testing or users feedback before they can be
 considered as ready, stable enough, or proven as having made good design
 decisions. Having them in normal releases is dangerous. The past releases told
-us more that once than many good ideas ended as being not so good after all. But
+us more than once that many good ideas ended as being not so good after all. But
 we had to keep them in and, even worst, maintain them forever.
 
 A feature preview release could solve this problem. A feature(s) preview release
