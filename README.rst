@@ -32,7 +32,9 @@ The files in this documentation are formatted using the `rstfmt
 
 .. code::
 
-   pip install rstfmt
+   python3 -m venv ~/install/rstfmt
+   ~/install/rstfmt/bin/pip3 install rstfmt
+   sudo ln -s ~/install/rstfmt/bin/rstfmt /usr/local/bin/rstfmt
 
 Please run the tool before submitting a pull request:
 
