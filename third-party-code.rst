@@ -16,7 +16,7 @@ process for addressing that balance.
  Definitions
 *************
 
-**\*PHP tooling**
+**PHP tooling**
    Refers to the code behind the PHP.net website, the documentation generator
    project PhD, the PHP wiki, and other similar systems. In general, “PHP code
    run by PHP.net.”
