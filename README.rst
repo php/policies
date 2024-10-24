@@ -23,8 +23,8 @@ It contains the following items:
    process on how and when to update the `security.txt
    <https://www.php.net/.well-known/security.txt>`_ file on https://www.php.net.
 
--  `Third-Party code <third-party-code.rst>`_: The circumstances under which the PHP
-   project will use PHP code written by third parties in the ecosystem.
+-  `Third-Party code <third-party-code.rst>`_: The circumstances under which the
+   PHP project will use PHP code written by third parties in the ecosystem.
 
 ************
  Formatting
