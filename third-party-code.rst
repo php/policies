@@ -54,8 +54,8 @@ process for addressing that balance.
 PHP Tooling
 ===========
 
-PHP tooling MAY make use of third party libraries, provided that the library meets
-all of the “Inclusion” criteria, and does not meet any of the “Exclusion”
+PHP tooling MAY make use of third party libraries, provided that the library
+meets all of the “Inclusion” criteria, and does not meet any of the “Exclusion”
 criteria.
 
 Inclusion criteria
