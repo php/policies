@@ -86,10 +86,19 @@ Explicitly approved libraries
 The following libraries have been explicitly approved by RFC vote.
 
 -  Composer
--  PHPUnit
 -  Xdebug
--  PHPStan
--  Psalm
+-  phpunit/phpunit
+-  phpstan/phpstan
+-  vimeo/psalm
+-  michelf/php-markdown
+-  phpmailer/phpmailer
+-  squizlabs/php_codesniffer
+-  friendsofphp/php-cs-fixer
+-  symfony/dotenv
+-  symfony/console
+-  fzaninotto/faker
+-  erusev/parsedown
+-  amenadiel/jpgraph
 -  Any library or PSR published by the PHP-FIG
 
 Explicitly rejected libraries
@@ -144,10 +153,12 @@ Explicitly approved libraries
 The following libraries have been explicitly approved by RFC vote.
 
 -  Composer
--  PHPUnit
 -  Xdebug
--  PHPStan
--  Psalm
+-  phpunit/phpunit
+-  phpstan/phpstan
+-  vimeo/psalm
+-  squizlabs/php_codesniffer
+-  friendsofphp/php-cs-fixer
 -  Any library or PSR published by the PHP-FIG
 
 Explicitly rejected libraries
@@ -203,10 +214,12 @@ Explicitly approved libraries
 The following libraries have been explicitly approved by RFC vote.
 
 -  Composer
--  PHPUnit
 -  Xdebug
--  PHPStan
--  Psalm
+-  phpunit/phpunit
+-  phpstan/phpstan
+-  vimeo/psalm
+-  squizlabs/php_codesniffer
+-  friendsofphp/php-cs-fixer
 -  Any library or PSR published by the PHP-FIG
 
 Explicitly rejected libraries
