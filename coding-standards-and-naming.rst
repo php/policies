@@ -238,7 +238,8 @@ library. The application of common sense is recommended.
    (``int8_t``, ``int16_t``, ``int32_t``, ``int64_t`` and their unsigned
    counterparts) are supposed to be available.
 
-#. Functions that are given pointers to resources MUST NOT free them.
+#. Functions that are given pointers to resources SHOULD NOT free them, unless
+   this is documented.
 
    For instance, ``function int mail(char *to, char *from)`` should NOT free
    ``to`` and/or ``from``.
@@ -264,17 +265,16 @@ library. The application of common sense is recommended.
    constant to specify different behavior or actions SHOULD be done through a
    ``#define``.
 
-#. When writing functions that deal with strings, be sure to remember that PHP
-   holds the length property of each string, and that it shouldn't be calculated
-   with ``strlen()``. Write your functions in such a way so that they'll take
-   advantage of the length property, both for efficiency and in order for them
-   to be binary-safe. Functions that change strings and obtain their new lengths
-   while doing so, should return that new length, so it doesn't have to be
-   recalculated with ``strlen()`` (e.g. ``php_addslashes()``).
+#. When writing functions that deal with strings, you SHOULD use
+   ``zend_string``, which holds the value and the length property of each
+   string.
 
-#. You MUST NOT use ``strncat()``. If you're absolutely sure you know what
-   you're doing, check its man page again, and only then, consider using it, and
-   even then, try avoiding it.
+   Write your functions in such a way so that they'll take advantage of the
+   length property by using ``ZSTR_LEN()``, both for efficiency, and in order
+   for them to be binary-safe.
+
+#. You SHOULD use the ``smart_str_*`` family of functions for string creation,
+   instead of relying on the C-library versions, such as ``strncat()``.
 
 #. You SHOULD use ``PHP_*`` macros in the PHP source, and ``ZEND_*`` macros in
    the Zend part of the source. Although the ``PHP_*`` macros are mostly aliased
@@ -344,7 +344,7 @@ one of its standard modules, please maintain the K&R style.
 Be generous with whitespace and braces. Keep one empty line between the variable
 declaration section and the statements in a block, as well as between logical
 statement groups in a block. Maintain at least one empty line between two
-functions, preferably two. Always prefer:
+functions. Always prefer:
 
 .. code::
 
@@ -381,19 +381,8 @@ Extensions SHOULD be well tested using ``*.phpt`` tests. Read more at
 Experimental Functions
 ======================
 
-To reduce the problems normally associated with the first public implementation
-of a new set of functions, it has been suggested that the first implementation
-SHOULD place a file labeled `EXPERIMENTAL` in the function directory. Functions
-MUST follow the standard prefixing conventions during their initial
-implementation.
-
-The file labelled ``EXPERIMENTAL`` SHOULD include the following information:
-
--  Any authoring information (known bugs, future directions of the module).
--  Ongoing status notes which may not be appropriate for Git comments.
-
-In general, new features MUST be in a separate extension, or experimental
-branches, until an RFC is passed to add them to the core distribution.
+New extensions MUST start out as third-party extensions, or in an experimental
+branch, until an RFC is passed to add them to the core distribution.
 
 Aliases & Legacy Documentation
 ==============================
