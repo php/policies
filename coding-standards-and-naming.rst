@@ -3,9 +3,12 @@
 ####################################
 
 The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD",
-"SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be
-interpreted as described in `RFC 2119
-<https://datatracker.ietf.org/doc/html/rfc2119>`_.
+"SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED", "MAY", and "OPTIONAL" in this
+document are to be interpreted as described in `BCP 14
+<https://www.rfc-editor.org/bcp/bcp14.txt>`_ [`RFC2119
+<https://datatracker.ietf.org/doc/html/rfc2119>`_] [`RFC8174
+<https://datatracker.ietf.org/doc/html/rfc8174>`_] when, and only when, they
+appear in all capitals, as shown here.
 
 This policy lists standards that any programmer adding or changing code in PHP
 should follow.
