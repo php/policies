@@ -36,44 +36,35 @@ Major Version Number
 ====================
 
 -  x.y.z to x+1.0.0
-
-   -  Bug fixes
-   -  New features
-   -  Extensions support can be ended (moved to PECL)
-   -  Backward compatibility can be broken
-   -  API compatibility can be broken (internals and userland)
-   -  ABI can be broken (internals)
+   -  Backward compatibility MAY be broken
+   -  API compatibility MAY be broken (internals and userland)
+   -  It MAY include minor and patch level changes.
 
 Minor Version Number
 ====================
 
--  x.y.z to x.y+1.z
+-  x.y.z to x.y+1.0
 
-   -  Bugfixes
-   -  New features
-   -  Extensions support can be ended (moved to PECL)
-   -  Backward compatibility must be kept
-   -  API compatibility must be kept (userland)
-   -  ABI and API can be broken (internals)
-   -  Source compatibility should be kept if possible, while breakages are
-      allowed
-
+   -  New feature MAY be added
+   -  Extension support MAY be ended (moved to PECL)
+   -  General backward compatibility SHOULD be kept with the exemptions:
+      -  ABI and API MAY be broken (internals)
+      -  Source compatibility SHOULD be kept if possible
+      -  If API (userland) input validation is changed to reject values previously accepted, a deprecation warning MUST be emitted in the same minor version, and a ValueError MUST be thrown in the next major version.
+   -  It MAY include patch level changes.
 Patch Version Number
 ====================
 
 -  x.y.z to x.y.z+1
-
-   -  Bug fixes and security patches only
-   -  Extensions support can't be removed (like move them to PECL)
-   -  Backward compatibility must be kept (internals and userland)
-   -  ABI and API compatibility must be kept (internals)
+   -  Bug fixes and security patches
+   -  Backward compatibility MUST be kept (internals and userland)
 
 It is critical to understand the consequences of breaking BC, APIs or ABIs (only
 internals related). It should not be done for the sake of doing it. RFCs
 explaining the reasoning behind a breakage and the consequences along with test
 cases and patch(es) should help.
 
-See the following links for explanation about API and ABI:
+See the following links for an explanation about API and ABI:
 
 -  http://en.wikipedia.org/wiki/Application_programming_interface
 -  http://en.wikipedia.org/wiki/Application_binary_interface
