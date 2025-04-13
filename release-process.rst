@@ -54,6 +54,7 @@ Minor Version Number
    -  Extensions support can be ended (moved to PECL)
    -  Backward compatibility must be kept
    -  API compatibility must be kept (userland)
+   -  Input validation changes rejecting previously accepted values MUST emit a deprecation warning in one minor version, then throw ValueError in the next.
    -  ABI and API can be broken (internals)
    -  Source compatibility should be kept if possible, while breakages are
       allowed
