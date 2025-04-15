@@ -36,6 +36,7 @@ Major Version Number
 ====================
 
 -  x.y.z to x+1.0.0
+
    -  Backward compatibility MAY be broken
    -  API compatibility MAY be broken (internals and userland)
    -  It MAY include minor and patch level changes.
@@ -46,16 +47,26 @@ Minor Version Number
 -  x.y.z to x.y+1.0
 
    -  New feature MAY be added
+
    -  Extension support MAY be ended (moved to PECL)
+
    -  General backward compatibility SHOULD be kept with the exemptions:
-      -  ABI and API MAY be broken (internals)
-      -  Source compatibility SHOULD be kept if possible
-      -  If API (userland) input validation is changed to reject values previously accepted, a deprecation warning MUST be emitted in the same minor version, and a ValueError MUST be thrown in the next major version.
+
+      -  ABI and API MAY be broken (internals) - Source compatibility SHOULD be
+         kept if possible
+
+      -  If API (userland) input validation is changed to reject values
+         previously accepted, a deprecation warning MUST be emitted in the same
+         minor version, and a ValueError MUST be thrown in the next major
+         version.
+
    -  It MAY include patch level changes.
+
 Patch Version Number
 ====================
 
 -  x.y.z to x.y.z+1
+
    -  Bug fixes and security patches
    -  Backward compatibility MUST be kept (internals and userland)
 
