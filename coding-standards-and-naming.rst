@@ -295,8 +295,8 @@ All exceptions MUST have a descriptive exception message intended for human
 consumption. Non-base exceptions MAY define additional properties to provide
 additional metadata about the nature of the error.
 
-The exception message MUST NOT be the only means of distinguishing error causes
-that the user might want to handle differently. Any two exceptions with
+The exception message MUST NOT be the only means of distinguishing exception
+causes that the user might want to handle differently. Any two exceptions with
 different causes MUST be identifiable either by a unique exception class name, a
 stable ``$code``, or a class-specific additional property suitable for
 programmatic consumption (e.g. an enum).
