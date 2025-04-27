@@ -292,11 +292,22 @@ network operation fails. Any ``Error`` that is thrown should usually result in a
 reasonably obvious fix in the PHP program.
 
 All exceptions MUST have a descriptive exception message intended for human
-consumption. The exception message MUST NOT be the only property that allows to
-differentiate different types of error that the user may be interested in.
+consumption. Non-base exceptions MAY define additional properties to provide
+additional metadata about the nature of the error.
 
-Non-base exceptions MAY define additional properties to provide additional
-metadata about the nature of the error.
+The exception message MUST NOT be the only means of distinguishing error causes
+that the user might want to handle differently. Any two exceptions with
+different causes MUST be identifiable either by a unique exception class name, a
+stable ``$code``, or a class-specific additional property suitable for
+programmatic consumption (e.g. an enum).
+
+As an example, in an HTTP client a connection failure due to a timeout is
+considered to be a different cause than a connection failure due to a
+non-existent hostname, as the user might want to schedule a retry when the
+connection times out, but not for unknown hostnames. If using the same
+``ConnectionFailureException`` class name for both errors, they must provide a
+property suitable for programmatic consumption and may not just differ in their
+exception message.
 
 ************************
  Implementation Details
