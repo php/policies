@@ -52,7 +52,7 @@ Minor Version Number
    -  Bugfixes
    -  New features
    -  Extensions support can be ended (moved to PECL)
-   -  Backward compatibility must be kept
+   -  Backward compatibility SHOULD be kept
    -  API compatibility must be kept (userland)
    -  ABI and API can be broken (internals)
    -  Source compatibility should be kept if possible, while breakages are
