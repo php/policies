@@ -232,9 +232,9 @@ library. The application of common sense is recommended.
 Throwables
 ==========
 
-Newly introduced extensions MUST follow the following rules, existing
-extensions SHOULD follow the rules for newly introduced exceptions, but MAY
-diverge for consistency with existing symbols.
+Newly introduced extensions MUST follow the following rules, existing extensions
+SHOULD follow the rules for newly introduced exceptions, but MAY diverge for
+consistency with existing symbols.
 
 In the interest of readability the following text uses the word "exception" to
 refer to any kind of ``Throwable``. ``Exception`` in code blocks refers to the
@@ -246,21 +246,21 @@ Exceptions MUST NOT be ``final``.
 
 Extensions MUST have their own hierarchy of exceptions. At the lowest level of
 the hierarchy there MUST be a base ``Exception`` and base ``Error`` defined
-within the top-level of the extension's namespace. The unqualified class name
-of the base exceptions must be the name of the extension followed by
-``Exception`` or ``Error``. These base exceptions MUST directly extend from the
-global base ``\Exception`` or ``\Error`` classes. The extension's base ``Error``
-MAY be omitted if it is unused.
+within the top-level of the extension's namespace. The unqualified class name of
+the base exceptions must be the name of the extension followed by ``Exception``
+or ``Error``. These base exceptions MUST directly extend from the global base
+``\Exception`` or ``\Error`` classes. The extension's base ``Error`` MAY be
+omitted if it is unused.
 
 As an example, an extension called ``Example`` would define the following base
 exceptions:
 
 .. code::
 
-    namespace Example;
+   namespace Example;
 
-    class ExampleException extends \Exception { }
-    class ExampleError extends \Error { }
+   class ExampleException extends \Exception { }
+   class ExampleError extends \Error { }
 
 An extension SHOULD define additional exceptions as appropriate to allow users
 to catch specific classes of exception for granular error handling. Any
@@ -268,14 +268,14 @@ additional exception MUST either extend the extension's base exception or
 another exception defined by the extension. The unqualified class name of
 additional exceptions SHOULD be sufficiently specific to make collisions with
 the unqualified class name of other exceptions unlikely. The name of the
-extension SHOULD NOT be used as a prefix or suffix of the unqualified class
-name of additional exceptions.
+extension SHOULD NOT be used as a prefix or suffix of the unqualified class name
+of additional exceptions.
 
-An extension MUST NOT throw exceptions that it did not define itself, except
-for the global ``TypeError`` or ``ValueError`` exceptions thrown during
-parameter parsing and parameter validation. If an extension uses external
-functionality that may throw an exception it MUST wrap any exception thrown by
-that functionality into an appropriate exception of its own. It MUST set the
+An extension MUST NOT throw exceptions that it did not define itself, except for
+the global ``TypeError`` or ``ValueError`` exceptions thrown during parameter
+parsing and parameter validation. If an extension uses external functionality
+that may throw an exception it MUST wrap any exception thrown by that
+functionality into an appropriate exception of its own. It MUST set the
 ``$previous`` property to the original exception when doing so.
 
 As an example, an extension that uses the CSPRNG must wrap the
@@ -288,8 +288,8 @@ thrown (and caught) during normal operation of a PHP program.
 As an example, a parsing function that is expected to be used with untrusted
 input must not throw an ``Error`` if the input is malformed. Similarly a
 function that interacts with the network must not throw an ``Error`` if the
-network operation fails. Any ``Error`` that is thrown should usually result in
-a reasonably obvious fix in the PHP program.
+network operation fails. Any ``Error`` that is thrown should usually result in a
+reasonably obvious fix in the PHP program.
 
 All exceptions MUST have a descriptive exception message intended for human
 consumption. The exception message MUST NOT be the only property that allows to
