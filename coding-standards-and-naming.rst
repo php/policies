@@ -286,10 +286,11 @@ useful context to differentiate it from the ``DirectoryNotFoundException``.
 
 An extension MUST NOT throw exceptions that it did not define itself, except for
 the global ``TypeError`` or ``ValueError`` exceptions thrown during parameter
-parsing and parameter validation. If an extension uses external functionality
-that may throw an exception it MUST wrap any exception thrown by that
-functionality into an appropriate exception of its own. It MUST set the
-``$previous`` property to the original exception when doing so.
+parsing and parameter validation, and (subclasses of) exceptions that are already
+defined to be thrown by a class that is subclassed itself. If an extension uses
+external functionality that may throw an exception it MUST wrap any exception
+thrown by that functionality into an appropriate exception of its own. It MUST
+set the ``$previous`` property to the original exception when doing so.
 
 As an example, an extension that uses the CSPRNG must wrap the
 ``Random\RandomException`` thrown on CSPRNG failure into an appropriate
