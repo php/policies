@@ -52,9 +52,12 @@ Minor Version Number
    -  Bugfixes
    -  New features
    -  Extensions support can be ended (moved to PECL)
-   -  Backward compatibility must be kept
-   -  API compatibility must be kept (userland)
-   -  ABI and API can be broken (internals)
+   -  Backward compatibility must be preserved unless explicitly broken by an
+      approved RFC.
+   -  API compatibility for user-facing code must be preserved unless an RFC
+      explicitly allows a breaking change.
+   -  ABI and internal API compatibility may be broken if necessary, without
+      requiring an RFC.
    -  Source compatibility should be kept if possible, while breakages are
       allowed
 
@@ -66,12 +69,18 @@ Patch Version Number
    -  Bug fixes and security patches only
    -  Extensions support can't be removed (like move them to PECL)
    -  Backward compatibility must be kept (internals and userland)
-   -  ABI and API compatibility must be kept (internals)
+   -  ABI and internal API compatibility must be preserved, except in the case
+      of HIGH severity security issues where no other option is possible.
 
 It is critical to understand the consequences of breaking BC, APIs or ABIs (only
 internals related). It should not be done for the sake of doing it. RFCs
 explaining the reasoning behind a breakage and the consequences along with test
 cases and patch(es) should help.
+
+If a HIGH severity security fix requires breaking the internal ABI or API, a
+proper migration path must be provided, and the impact should be minimized as
+much as possible. This should also be accompanied by additional communication
+during the release.
 
 See the following links for explanation about API and ABI:
 
@@ -228,9 +237,10 @@ After the general availability release:
       -  Release only when there is a security issue or regression issue to
          address.
 
-      -  Security fix and regression releases SHOULD occur on the same date as
-         bug fix releases for the other branches. Exceptions can be made for
-         high risk security issues or high profile regressions.
+      -  Security fix, compatibility build fix and regression fix releases
+         SHOULD occur on the same date as bug fix releases for the other
+         branches. Exceptions can be made for high risk security issues or high
+         profile regressions.
 
 -  Until the end of year 4 (e.g., for PHP 8.4: until Dec 31, 2028):
 
@@ -238,9 +248,14 @@ After the general availability release:
 
       -  Release only when there is a security issue.
 
-      -  Security fix releases SHOULD occur on the same date as bug fix releases
-         for the other branches. Exceptions can be made for high risk security
-         issues.
+      -  Security fix, compatibility build fix and regression fix releases
+         SHOULD occur on the same date as bug fix releases for the other
+         branches. Exceptions can be made for high risk security issues or high
+         profile regressions.
+
+      -  Regression fixes should be applied only exceptionally for small
+         regressions or regressions introduced by security fixes and it
+         should get RM approval.
 
       -  Updates to ABI incompatible versions of dependent libraries on Windows
          are **not** performed.
@@ -256,21 +271,26 @@ is Dec 31, 2026, 24:00 UTC, even if the actual release date slips to Jan 9,
  Feature selection and development
 ***********************************
 
-RFCs have been introduced many years ago and have been proven as being an
-amazing way to avoid conflicts while providing a very good way to propose new
-things to php.net. New features or additions to the core should go through the
-RFC process. It has been done successfully (as the process went well, but the
-features were not necessary accepted) already for a dozen of new features or
-improvements.
+RFCs were introduced many years ago and have proven to be an effective way to
+avoid conflicts while providing a structured process for proposing changes to
+the PHP programming language. Most new features or core additions SHOULD go
+through the RFC process. However, some features MAY be exempt, as described
+below. The process has been used many times for proposing new features and
+improvements, even when some proposals were ultimately not accepted.
 
-Features can use branch(es) if necessary, doing so will minimize the impact of
-other commits and changes on the development of a specific feature (or the other
-way 'round). The shorter release cycle also ensures that a given feature can get
-into the next release, as long as the RFC has been accepted.
+New features MUST be implemented and proposed using a GitHub pull request.
 
-The change to what we have now is the voting process. It will not happen anymore
-on the mailing list but in the RFCs directly, for php.net members, in a public
-way.
+Internal API changes (those that do not affect the user-facing API), as well as
+user-facing features in extensions and SAPIs, do not require an RFC unless a
+core developer (someone with commit access to php-src) raises an objection or
+requests an RFC within one month of the implementation pull request being
+opened. A core developer MAY also request that the feature be discussed on the
+internals mailing list, in which case an additional two-week period MUST pass
+without objection or RFC request before the feature can be merged.
+
+Pull requests MAY be merged before the one-month period ends. However, if a
+core developer raises an objection or requests an RFC after the merge but
+within the one-month window, the feature MUST be reverted.
 
 See also `the voting RFC <https://wiki.php.net/rfc/voting>`_.
 
@@ -291,8 +311,6 @@ We have voting plugin for dokuwiki (doodle2) that allows voting on the wiki
 The roles of the release managers are about being a facilitator:
 
 -  Manage the release process
--  Start the decisions discussions and vote about the features and change for a
-   given release
 -  Create a roadmap and planing according to this RFC
 -  Package the releases (test and final releases)
 -  Decide which bug fixes can be applied to a release, within the cases defined
@@ -301,10 +319,6 @@ The roles of the release managers are about being a facilitator:
 But they are not:
 
 -  Decide which features, extension or SAPI get in a release or not
-
-Discussions or requests for a feature or to apply a given patch must be done on
-the public internals mailing list or in the security mailing (ideally using the
-bug tracker)
 
 ****************************
  Release managers selection
