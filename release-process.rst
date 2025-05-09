@@ -28,9 +28,30 @@ Roughly:
 
 No feature addition after final x.y.0 release (or x.0.0).
 
-Backward compatibility MUST be respected within the same major release (e.g.,
-8.x.x). Binary compatibility (API or ABI) MAY be broken between two features
-releases, f.e. between 8.3 and 8.4.
+
+Backward Compatibility
+======================
+
+A backward compatibility (BC) break is defined as any change that prevents
+existing, valid, userland code from continuing to behave as it did in a
+previous version within the same major release.
+
+The following are not considered BC breaks:
+
+-  Adding deprecations. Code that triggers a deprecation warning continues to
+   work and is still valid. Converting deprecations into exceptions is a user
+   choice and not part of the language's default behavior.
+
+-  Adding new symbols (e.g., functions, classes, constants), even if they may
+   conflict with user-defined names. While these additions can cause name
+   conflicts, they are not classified as BC breaks. RFCs and contributors
+   SHOULD make a best effort to minimize the risk of conflicts when choosing
+   new names, but SHOULD NOT pick significantly worse names purely to reduce
+   conflict risk.
+
+-  Behavior changes in undefined or undocumented edge cases MAY be allowed if
+   well justified. However, care SHOULD be taken to minimize disruption.
+
 
 Major Version Number
 ====================
@@ -52,7 +73,7 @@ Minor Version Number
    -  Bugfixes
    -  New features
    -  Extensions support can be ended (moved to PECL)
-   -  Syntaxt backward compatility MUST be preserved (every PHP program that
+   -  Syntax backward compatibility MUST be preserved (every PHP program that
       compiles must continue to compile)
    -  API backward compatibility breaks SHOULD be limited to extensions / the
       API of functions within an extension
@@ -285,7 +306,9 @@ core developer (someone with commit access to php-src) raises an objection or
 requests an RFC within one month of the implementation pull request being
 opened. A core developer MAY also request that the feature be discussed on the
 internals mailing list, in which case an additional two-week period MUST pass
-without objection or RFC request before the feature can be merged.
+without objection or RFC request before the feature can be merged.  However,
+any change that breaks user-facing backward compatibility MUST go through the
+RFC process.
 
 Pull requests MAY be merged before the one-month period ends. However, if a
 core developer raises an objection or requests an RFC after the merge but
