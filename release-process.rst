@@ -52,12 +52,11 @@ Minor Version Number
    -  Bugfixes
    -  New features
    -  Extensions support can be ended (moved to PECL)
-   -  Backward compatibility must be preserved unless explicitly broken by an
-      approved RFC.
-   -  API compatibility for user-facing code must be preserved unless an RFC
-      explicitly allows a breaking change.
-   -  ABI and internal API compatibility may be broken if necessary, without
-      requiring an RFC.
+   -  Syntaxt backward compatility MUST be preserved (every PHP program that
+      compiles must continue to compile)
+   -  API backward compatibility breaks SHOULD be limited to extensions / the
+      API of functions within an extension
+   -  ABI and internal API compatibility may be broken if necessary
    -  Source compatibility should be kept if possible, while breakages are
       allowed
 
