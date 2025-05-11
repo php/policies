@@ -270,27 +270,29 @@ additional exceptions SHOULD be sufficiently specific to make collisions with
 the unqualified class name of other exceptions unlikely. The name of the
 extension SHOULD NOT be used within the unqualified class name of additional
 exceptions if the only purpose is to make the class name more unique.
-Specifically, the name of the extension SHOULD NOT be a simple prefix or
-suffix of the unqualified class name.
+Specifically, the name of the extension SHOULD NOT be a simple prefix or suffix
+of the unqualified class name.
 
 As an example, an additional exception for failing HTTP requests of the curl
 extension might be called ``Curl\FailedHttpRequestException``. This is
-sufficiently specific to avoid collisions, since using two different HTTP clients
-in a single source file is unlikely. It should not use
-``Curl\CurlFailedHttpRequestException``, ``Curl\FailedCurlHttpRequestException``,
+sufficiently specific to avoid collisions, since using two different HTTP
+clients in a single source file is unlikely. It should not use
+``Curl\CurlFailedHttpRequestException``,
+``Curl\FailedCurlHttpRequestException``,
 ``Curl\FailedHttpRequestCurlException``, or similar. A file extension however
 might want to define a ``File\FileNotFoundException`` and a
-``File\DirectoryNotFoundException``. In this case the name of the extension
-is a generic term and the ``File`` prefix in ``FileNotFoundException`` adds
-useful context to differentiate it from the ``DirectoryNotFoundException``.
+``File\DirectoryNotFoundException``. In this case the name of the extension is a
+generic term and the ``File`` prefix in ``FileNotFoundException`` adds useful
+context to differentiate it from the ``DirectoryNotFoundException``.
 
 An extension MUST NOT throw exceptions that it did not define itself, except for
 the global ``TypeError`` or ``ValueError`` exceptions thrown during parameter
-parsing and parameter validation, and (subclasses of) exceptions that are already
-defined to be thrown by a class that is subclassed itself. If an extension uses
-external functionality that may throw an exception it MUST wrap any exception
-thrown by that functionality into an appropriate exception of its own. It MUST
-set the ``$previous`` property to the original exception when doing so.
+parsing and parameter validation, and (subclasses of) exceptions that are
+already defined to be thrown by a class that is subclassed itself. If an
+extension uses external functionality that may throw an exception it MUST wrap
+any exception thrown by that functionality into an appropriate exception of its
+own. It MUST set the ``$previous`` property to the original exception when doing
+so.
 
 As an example, an extension that uses the CSPRNG must wrap the
 ``Random\RandomException`` thrown on CSPRNG failure into an appropriate
