@@ -8,8 +8,8 @@
 Sources
 
 +--------------+---------------------------------------------------------------+
-| Original RFC | -  `Request for Comments: Release Process                        |
-|              |    <https://wiki.php.net/rfc/releaseprocess>`_                   |
+| Original RFC | -  `Request for Comments: Release Process                     |
+|              |    <https://wiki.php.net/rfc/releaseprocess>`_                |
 +--------------+---------------------------------------------------------------+
 | Updates      | -  `RFC: Release Cycle Update                                 |
 |              |    <https://wiki.php.net/rfc/release_cycle_update>`_          |
