@@ -5,11 +5,17 @@
 .. contents::
    :depth: 2
 
-:From:
-   https://wiki.php.net/rfc/releaseprocess
+Sources
 
-:Updated by:
-   https://wiki.php.net/rfc/release_cycle_update
++--------------+---------------------------------------------------------------+
+| Original RFC | -  `Request for Comments: Release Process                     |
+|              |    <https://wiki.php.net/rfc/releaseprocess>`_                |
++--------------+---------------------------------------------------------------+
+| Updates      | -  `RFC: Release Cycle Update                                 |
+|              |    <https://wiki.php.net/rfc/release_cycle_update>`_          |
+|              | -  `RFC: Policy Release Process Update                        |
+|              |    <https://wiki.php.net/rfc/policy-release-process-update>`_ |
++--------------+---------------------------------------------------------------+
 
 This document outlines the release cycles of the PHP language.
 
@@ -28,34 +34,62 @@ Roughly:
 
 No feature addition after final x.y.0 release (or x.0.0).
 
-Backward compatibility MUST be respected within the same major release (e.g.,
-8.x.x). Binary compatibility (API or ABI) MAY be broken between two features
-releases, f.e. between 8.3 and 8.4.
+Backward Compatibility
+======================
+
+A backward compatibility (BC) break is defined as any change that prevents
+existing, valid, userland code from continuing to behave as it did in a previous
+version within the same major release.
+
+The following are not considered BC breaks:
+
+-  Adding deprecations. Code that triggers a deprecation warning continues to
+   work and is still valid. Converting deprecations into exceptions is a user
+   choice and not part of the language's default behavior.
+
+-  Adding new symbols (e.g., functions, classes, constants) into the global or
+   core extension namespace, even if they may conflict with user-defined names.
+   While these additions can cause name conflicts, they are not classified as BC
+   breaks. RFCs and contributors SHOULD make a best effort to minimize the risk
+   of conflicts when choosing new names, but SHOULD NOT pick significantly worse
+   names purely to reduce conflict risk.
+
+-  Behavior changes in undefined or undocumented edge cases MAY be allowed if
+   well justified. However, care SHOULD be taken to minimize disruption.
 
 Major Version Number
 ====================
 
 -  x.y.z to x+1.0.0
 
-   -  Bug fixes
-   -  New features
-   -  Extensions support can be ended (moved to PECL)
-   -  Backward compatibility can be broken
-   -  API compatibility can be broken (internals and userland)
-   -  ABI can be broken (internals)
+   -  It SHALL included bugfixes and new features.
+   -  Extensions support MAY be ended (moved to PECL)
+   -  Backward compatibility MAY be broken
+   -  API compatibility MAY be broken (internals and userland)
+   -  ABI MAY be broken (internals)
 
 Minor Version Number
 ====================
 
 -  x.y.z to x.y+1.z
 
-   -  Bugfixes
-   -  New features
-   -  Extensions support can be ended (moved to PECL)
-   -  Backward compatibility must be kept
-   -  API compatibility must be kept (userland)
-   -  ABI and API can be broken (internals)
-   -  Source compatibility should be kept if possible, while breakages are
+   -  It SHOULD included bugfixes and new features.
+
+   -  Extensions support MAY be ended (moved to PECL).
+
+   -  Syntax backward compatibility SHOULD be preserved - every PHP program that
+      compiles SHOULD continue to compile.
+
+   -  Backwards compatibility breaks in minor versions MUST NOT result in silent
+      behavioral differences. Instead any breaking change MUST be "obvious" when
+      executing the program.
+
+   -  API backward compatibility breaks SHOULD be limited to extensions, or the
+      API of functions within an extension
+
+   -  ABI and internal API compatibility breaks are NOT RECOMMENDED.
+
+   -  Source compatibility SHOULD be kept if possible, while breakages are
       allowed
 
 Patch Version Number
@@ -63,15 +97,27 @@ Patch Version Number
 
 -  x.y.z to x.y.z+1
 
-   -  Bug fixes and security patches only
-   -  Extensions support can't be removed (like move them to PECL)
-   -  Backward compatibility must be kept (internals and userland)
-   -  ABI and API compatibility must be kept (internals)
+   -  It SHOULD included bug fixes and security patches
+   -  New features MUST NOT be added.
+   -  Extensions support MUST NOT be removed (like move them to PECL)
+   -  Backward compatibility MUST be kept (internals and userland)
+   -  ABI and internal API compatibility SHOULD be preserved for high severity
+      security issues, and MUST be preserved for all other security issues.
 
 It is critical to understand the consequences of breaking BC, APIs or ABIs (only
-internals related). It should not be done for the sake of doing it. RFCs
+internals related). It SHOULD NOT be done for the sake of doing it. RFCs
 explaining the reasoning behind a breakage and the consequences along with test
 cases and patch(es) should help.
+
+If a high severity security fix requires breaking the internal ABI or API, a
+proper migration path MUST be provided, and the impact MUST be minimized as much
+as possible. This MUST also be accompanied by additional communication during
+the release.
+
+All new user-facing features MUST be mentioned in the `UPGRADING
+<https://github.com/php/php-src/blob/master/UPGRADING>`_ document. All API and
+ABI breaks MUST be mentioned in the `UPGRADING.INTERNALS
+<https://github.com/php/php-src/blob/master/UPGRADING.INTERNALS>`_ document.
 
 See the following links for explanation about API and ABI:
 
@@ -228,9 +274,10 @@ After the general availability release:
       -  Release only when there is a security issue or regression issue to
          address.
 
-      -  Security fix and regression releases SHOULD occur on the same date as
-         bug fix releases for the other branches. Exceptions can be made for
-         high risk security issues or high profile regressions.
+      -  Security fix, compatibility build fix, and regression fix releases
+         SHOULD occur on the same date as bug fix releases for the other
+         branches. Exceptions can be made for high risk security issues or high
+         profile regressions.
 
 -  Until the end of year 4 (e.g., for PHP 8.4: until Dec 31, 2028):
 
@@ -238,9 +285,14 @@ After the general availability release:
 
       -  Release only when there is a security issue.
 
-      -  Security fix releases SHOULD occur on the same date as bug fix releases
-         for the other branches. Exceptions can be made for high risk security
-         issues.
+      -  Security fix, compatibility build fix, and regression fix releases
+         SHOULD occur on the same date as bug fix releases for the other
+         branches. Exceptions can be made for high risk security issues or high
+         profile regressions.
+
+      -  Regression fixes SHOULD be applied only exceptionally for small
+         regressions or regressions introduced by security fixes. The regression
+         fixes MUST get RM approval.
 
       -  Updates to ABI incompatible versions of dependent libraries on Windows
          are **not** performed.
@@ -256,21 +308,29 @@ is Dec 31, 2026, 24:00 UTC, even if the actual release date slips to Jan 9,
  Feature selection and development
 ***********************************
 
-RFCs have been introduced many years ago and have been proven as being an
-amazing way to avoid conflicts while providing a very good way to propose new
-things to php.net. New features or additions to the core should go through the
-RFC process. It has been done successfully (as the process went well, but the
-features were not necessary accepted) already for a dozen of new features or
-improvements.
+RFCs were introduced many years ago and have proven to be an effective way to
+avoid conflicts while providing a structured process for proposing changes to
+the PHP programming language. Most new features or core additions SHOULD go
+through the RFC process. However, some features MAY be exempt, as described
+below. The process has been used many times for proposing new features and
+improvements, even when some proposals were ultimately not accepted.
 
-Features can use branch(es) if necessary, doing so will minimize the impact of
-other commits and changes on the development of a specific feature (or the other
-way 'round). The shorter release cycle also ensures that a given feature can get
-into the next release, as long as the RFC has been accepted.
+New features MUST be implemented and proposed using a GitHub pull request.
 
-The change to what we have now is the voting process. It will not happen anymore
-on the mailing list but in the RFCs directly, for php.net members, in a public
-way.
+Internal API changes (those that do not affect the user-facing API), as well as
+user-facing features in extensions and SAPIs, do not require an RFC unless a
+core developer (someone with commit access to php-src) raises an objection or
+requests an RFC within one month of the implementation pull request being
+opened.
+
+A core developer MAY also request that the feature be discussed on the internals
+mailing list, in which case an additional two-week period MUST pass without
+objection or RFC request before the feature can be merged. However, any change
+that breaks user-facing backward compatibility MUST go through the RFC process.
+
+Pull requests MAY be merged before the one-month period ends. However, if a core
+developer raises an objection or requests an RFC after the merge but within the
+one-month window, the feature MUST be reverted.
 
 See also `the voting RFC <https://wiki.php.net/rfc/voting>`_.
 
@@ -291,8 +351,6 @@ We have voting plugin for dokuwiki (doodle2) that allows voting on the wiki
 The roles of the release managers are about being a facilitator:
 
 -  Manage the release process
--  Start the decisions discussions and vote about the features and change for a
-   given release
 -  Create a roadmap and planing according to this RFC
 -  Package the releases (test and final releases)
 -  Decide which bug fixes can be applied to a release, within the cases defined
@@ -301,10 +359,6 @@ The roles of the release managers are about being a facilitator:
 But they are not:
 
 -  Decide which features, extension or SAPI get in a release or not
-
-Discussions or requests for a feature or to apply a given patch must be done on
-the public internals mailing list or in the security mailing (ideally using the
-bug tracker)
 
 ****************************
  Release managers selection
