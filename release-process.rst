@@ -5,14 +5,16 @@
 .. contents::
    :depth: 2
 
-:From:
-   https://wiki.php.net/rfc/releaseprocess
+**From:**
 
-:Updated by:
-   https://wiki.php.net/rfc/release_cycle_update
+-  `Request for Comments: Release Process
+   <https://wiki.php.net/rfc/releaseprocess>`_
 
-:Updated by:
-   https://wiki.php.net/rfc/policy-release-process-update
+**Updated by:**
+
+-  `RFC: Release Cycle Update <https://wiki.php.net/rfc/release_cycle_update>`_
+-  `RFC: Policy Release Process Update
+   <https://wiki.php.net/rfc/policy-release-process-update>`_
 
 This document outlines the release cycles of the PHP language.
 
