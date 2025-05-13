@@ -190,12 +190,12 @@ Examples
 If we were to introduce ``openssl`` as a new namespaced extension, here is how
 the symbol names could change in line with these guidelines:
 
--  ``OpenSSLCertificate`` becomes ``OpenSSL\Certificate``
--  ``openssl_dh_compute_key()`` becomes ``OpenSSL\dh_compute_key()``
--  ``X509_PURPOSE_SSL_CLIENT`` becomes ``OpenSSL\X509_PURPOSE_SSL_CLIENT``
+-  ``OpenSSLCertificate`` becomes ``Openssl\Certificate``
+-  ``openssl_dh_compute_key()`` becomes ``Openssl\dh_compute_key()``
+-  ``X509_PURPOSE_SSL_CLIENT`` becomes ``Openssl\X509_PURPOSE_SSL_CLIENT``
 
 The above guidelines recommend against the global ``FFI`` class used by the
-``ffi`` extension. Using ``FFI\FFI`` would be preferred.
+``ffi`` extension. Using ``Ffi\Ffi`` would be preferred.
 
 Existing Non-Namespaced Symbols and Consistency
 ===============================================
@@ -214,7 +214,7 @@ This is a somewhat loose guideline, and applies more strongly to functions than
 classes. In particular, when new object-oriented elements are introduced into an
 extension that has historically been procedural, these MAY be namespaced. For
 example, if ``OpenSSLCertificate`` had only been introduced in PHP 8.1, it could
-have been named ``OpenSSL\Certificate``.
+have been named ``Openssl\Certificate``.
 
 For the Core, Standard, and Spl extensions, the previous considerations on
 component subdivision apply. The fact that string and array functions are not
