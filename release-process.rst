@@ -71,8 +71,8 @@ Minor Version Number
 
    -  Extensions support MAY be ended (moved to PECL).
 
-   -  Syntax backward compatibility SHOULD be preserved (every PHP program that
-      compiles must continue to compile).
+   -  Syntax backward compatibility SHOULD be preserved - every PHP program that
+      compiles SHOULD continue to compile.
 
    -  Backwards compatibility breaks in minor versions MUST NOT result in silent
       behavioral differences. Instead any breaking change MUST be "obvious" when
@@ -310,11 +310,12 @@ Internal API changes (those that do not affect the user-facing API), as well as
 user-facing features in extensions and SAPIs, do not require an RFC unless a
 core developer (someone with commit access to php-src) raises an objection or
 requests an RFC within one month of the implementation pull request being
-opened. A core developer MAY also request that the feature be discussed on the
-internals mailing list, in which case an additional two-week period MUST pass
-without objection or RFC request before the feature can be merged. However, any
-change that breaks user-facing backward compatibility MUST go through the RFC
-process.
+opened.
+
+A core developer MAY also request that the feature be discussed on the internals
+mailing list, in which case an additional two-week period MUST pass without
+objection or RFC request before the feature can be merged. However, any change
+that breaks user-facing backward compatibility MUST go through the RFC process.
 
 Pull requests MAY be merged before the one-month period ends. However, if a core
 developer raises an objection or requests an RFC after the merge but within the
