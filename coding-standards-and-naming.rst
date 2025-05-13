@@ -229,6 +229,102 @@ happen with the agreement of the parties involved). This document does not try
 to provide a hard guideline on what constitutes a sufficiently important
 library. The application of common sense is recommended.
 
+Throwables
+==========
+
+Newly introduced extensions MUST follow the following rules, existing extensions
+SHOULD follow the rules for newly introduced exceptions, but MAY diverge for
+consistency with existing symbols.
+
+In the interest of readability the following text uses the word "exception" to
+refer to any kind of ``Throwable``. ``Exception`` in code blocks refers to the
+``\Exception`` class.
+
+The class name of an exception MUST end in ``Exception`` (when extending from
+the ``Exception`` hierarchy) or ``Error`` (for the ``Error`` hierarchy).
+Exceptions MUST NOT be ``final``.
+
+Extensions MUST have their own hierarchy of exceptions. At the lowest level of
+the hierarchy there MUST be a base ``Exception`` and base ``Error`` defined
+within the top-level of the extension's namespace. The unqualified class name of
+the base exceptions must be the name of the extension followed by ``Exception``
+or ``Error``. These base exceptions MUST directly extend from the global base
+``\Exception`` or ``\Error`` classes. The extension's base ``Error`` MAY be
+omitted if it is unused.
+
+As an example, an extension called ``Example`` would define the following base
+exceptions:
+
+.. code::
+
+   namespace Example;
+
+   class ExampleException extends \Exception { }
+   class ExampleError extends \Error { }
+
+An extension SHOULD define additional exceptions as appropriate to allow users
+to catch specific classes of exception for granular error handling. Any
+additional exception MUST either extend the extension's base exception or
+another exception defined by the extension. The unqualified class name of
+additional exceptions SHOULD be sufficiently specific to make collisions with
+the unqualified class name of other exceptions unlikely. The name of the
+extension SHOULD NOT be used within the unqualified class name of additional
+exceptions if the only purpose is to make the class name more unique.
+Specifically, the name of the extension SHOULD NOT be a simple prefix or suffix
+of the unqualified class name.
+
+As an example, an additional exception for failing HTTP requests of the curl
+extension might be called ``Curl\FailedHttpRequestException``. This is
+sufficiently specific to avoid collisions, since using two different HTTP
+clients in a single source file is unlikely. It should not use
+``Curl\CurlFailedHttpRequestException``,
+``Curl\FailedCurlHttpRequestException``,
+``Curl\FailedHttpRequestCurlException``, or similar. A file extension however
+might want to define a ``File\FileNotFoundException`` and a
+``File\DirectoryNotFoundException``. In this case the name of the extension is a
+generic term and the ``File`` prefix in ``FileNotFoundException`` adds useful
+context to differentiate it from the ``DirectoryNotFoundException``.
+
+An extension MUST NOT throw exceptions that it did not define itself, except for
+the global ``TypeError`` or ``ValueError`` exceptions thrown during parameter
+parsing and parameter validation, and (subclasses of) exceptions that are
+already defined to be thrown by a class that is subclassed itself. If an
+extension uses external functionality that may throw an exception it MUST wrap
+any exception thrown by that functionality into an appropriate exception of its
+own. It MUST set the ``$previous`` property to the original exception when doing
+so.
+
+As an example, an extension that uses the CSPRNG must wrap the
+``Random\RandomException`` thrown on CSPRNG failure into an appropriate
+extension-specific exception.
+
+The ``Error`` hierarchy MUST NOT be used for errors that are expected to be
+thrown (and caught) during normal operation of a PHP program.
+
+As an example, a parsing function that is expected to be used with untrusted
+input must not throw an ``Error`` if the input is malformed. Similarly a
+function that interacts with the network must not throw an ``Error`` if the
+network operation fails. Any ``Error`` that is thrown should usually result in a
+reasonably obvious fix in the PHP program.
+
+All exceptions MUST have a descriptive exception message intended for human
+consumption. Non-base exceptions MAY define additional properties to provide
+additional metadata about the nature of the error.
+
+The exception message MUST NOT be the only means of distinguishing exception
+causes that the user might want to handle differently. Any two exceptions with
+different causes MUST be identifiable either by a unique exception class name, a
+stable ``$code``, or a class-specific additional property suitable for
+programmatic consumption (e.g. an enum).
+
+As an example, in an HTTP client a connection failure due to a timeout is
+considered to be a different cause than a connection failure due to a
+non-existent hostname, as the user might want to schedule a retry when the
+connection times out, but not for unknown hostnames. If using the same
+``ConnectionFailureException`` class name for both errors, they must provide a
+property suitable for programmatic consumption and may not just differ in their
+exception message.
+
 ************************
  Implementation Details
 ************************
