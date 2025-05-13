@@ -10,6 +10,7 @@
 
 :Updated by:
    https://wiki.php.net/rfc/release_cycle_update
+   https://wiki.php.net/rfc/policy-release-process-update
 
 This document outlines the release cycles of the PHP language.
 
@@ -55,27 +56,34 @@ Major Version Number
 
 -  x.y.z to x+1.0.0
 
-   -  Bug fixes
-   -  New features
-   -  Extensions support can be ended (moved to PECL)
-   -  Backward compatibility can be broken
-   -  API compatibility can be broken (internals and userland)
-   -  ABI can be broken (internals)
+   -  It SHALL included bugfixes and new features.
+   -  Extensions support MAY be ended (moved to PECL)
+   -  Backward compatibility MAY be broken
+   -  API compatibility MAY be broken (internals and userland)
+   -  ABI MAY be broken (internals)
 
 Minor Version Number
 ====================
 
 -  x.y.z to x.y+1.z
 
-   -  Bugfixes
-   -  New features
-   -  Extensions support can be ended (moved to PECL)
-   -  Syntax backward compatibility MUST be preserved (every PHP program that
-      compiles must continue to compile)
-   -  API backward compatibility breaks SHOULD be limited to extensions / the
+   -  It SHOULD included bugfixes and new features.
+
+   -  Extensions support MAY be ended (moved to PECL).
+
+   -  Syntax backward compatibility SHOULD be preserved (every PHP program that
+      compiles must continue to compile).
+
+   -  Backwards compatibility breaks in minor versions MUST NOT result in silent
+      behavioral differences. Instead any breaking change MUST be "obvious" when
+      executing the program.
+
+   -  API backward compatibility breaks SHOULD be limited to extensions, or the
       API of functions within an extension
-   -  ABI and internal API compatibility may be broken if necessary
-   -  Source compatibility should be kept if possible, while breakages are
+
+   -  ABI and internal API compatibility breaks are NOT RECOMMENDED.
+
+   -  Source compatibility SHOULD be kept if possible, while breakages are
       allowed
 
 Patch Version Number
@@ -83,21 +91,22 @@ Patch Version Number
 
 -  x.y.z to x.y.z+1
 
-   -  Bug fixes and security patches only
-   -  Extensions support can't be removed (like move them to PECL)
-   -  Backward compatibility must be kept (internals and userland)
-   -  ABI and internal API compatibility must be preserved, except in the case
-      of HIGH severity security issues where no other option is possible.
+   -  It SHOULD included bug fixes and security patches
+   -  New features MUST NOT be added.
+   -  Extensions support MUST NOT be removed (like move them to PECL)
+   -  Backward compatibility MUST be kept (internals and userland)
+   -  ABI and internal API compatibility SHOULD be preserved for high severity
+      security issues, and MUST be preserved for all other security issues.
 
 It is critical to understand the consequences of breaking BC, APIs or ABIs (only
-internals related). It should not be done for the sake of doing it. RFCs
+internals related). It SHOULD NOT be done for the sake of doing it. RFCs
 explaining the reasoning behind a breakage and the consequences along with test
 cases and patch(es) should help.
 
-If a HIGH severity security fix requires breaking the internal ABI or API, a
-proper migration path must be provided, and the impact should be minimized as
-much as possible. This should also be accompanied by additional communication
-during the release.
+If a high severity security fix requires breaking the internal ABI or API, a
+proper migration path MUST be provided, and the impact MUST be minimized as much
+as possible. This MUST also be accompanied by additional communication during
+the release.
 
 See the following links for explanation about API and ABI:
 
@@ -254,7 +263,7 @@ After the general availability release:
       -  Release only when there is a security issue or regression issue to
          address.
 
-      -  Security fix, compatibility build fix and regression fix releases
+      -  Security fix, compatibility build fix, and regression fix releases
          SHOULD occur on the same date as bug fix releases for the other
          branches. Exceptions can be made for high risk security issues or high
          profile regressions.
@@ -265,14 +274,14 @@ After the general availability release:
 
       -  Release only when there is a security issue.
 
-      -  Security fix, compatibility build fix and regression fix releases
+      -  Security fix, compatibility build fix, and regression fix releases
          SHOULD occur on the same date as bug fix releases for the other
          branches. Exceptions can be made for high risk security issues or high
          profile regressions.
 
-      -  Regression fixes should be applied only exceptionally for small
-         regressions or regressions introduced by security fixes and it should
-         get RM approval.
+      -  Regression fixes SHOULD be applied only exceptionally for small
+         regressions or regressions introduced by security fixes. The regression
+         fixes MUST get RM approval.
 
       -  Updates to ABI incompatible versions of dependent libraries on Windows
          are **not** performed.
