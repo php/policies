@@ -10,6 +10,8 @@
 
 :Updated by:
    https://wiki.php.net/rfc/release_cycle_update
+
+:Updated by:
    https://wiki.php.net/rfc/policy-release-process-update
 
 This document outlines the release cycles of the PHP language.
@@ -42,11 +44,12 @@ The following are not considered BC breaks:
    work and is still valid. Converting deprecations into exceptions is a user
    choice and not part of the language's default behavior.
 
--  Adding new symbols (e.g., functions, classes, constants), even if they may
-   conflict with user-defined names. While these additions can cause name
-   conflicts, they are not classified as BC breaks. RFCs and contributors SHOULD
-   make a best effort to minimize the risk of conflicts when choosing new names,
-   but SHOULD NOT pick significantly worse names purely to reduce conflict risk.
+-  Adding new symbols (e.g., functions, classes, constants) into the global or
+   core extension namespace, even if they may conflict with user-defined names.
+   While these additions can cause name conflicts, they are not classified as BC
+   breaks. RFCs and contributors SHOULD make a best effort to minimize the risk
+   of conflicts when choosing new names, but SHOULD NOT pick significantly worse
+   names purely to reduce conflict risk.
 
 -  Behavior changes in undefined or undocumented edge cases MAY be allowed if
    well justified. However, care SHOULD be taken to minimize disruption.
@@ -107,6 +110,11 @@ If a high severity security fix requires breaking the internal ABI or API, a
 proper migration path MUST be provided, and the impact MUST be minimized as much
 as possible. This MUST also be accompanied by additional communication during
 the release.
+
+All new user-facing features MUST be mentioned in the `UPGRADING
+<https://github.com/php/php-src/blob/master/UPGRADING>`_ document. All API and
+ABI breaks MUST be mentioned in the `UPGRADING.INTERNALS
+<https://github.com/php/php-src/blob/master/UPGRADING.INTERNALS>`_ document.
 
 See the following links for explanation about API and ABI:
 
