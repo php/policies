@@ -41,7 +41,32 @@ A backward compatibility (BC) break is defined as any change that prevents
 existing, valid, userland code from continuing to behave as it did in a previous
 version within the same major release.
 
-The following are not considered BC breaks:
+Compatibility Terminology
+-------------------------
+
+-  **Syntax Compatibility**: Ensures that valid PHP code from an earlier version
+   continues to parse and compile without syntax errors in the newer version.
+
+-  **Userland API Compatibility**: Refers to the consistency of functions,
+   classes, constants, and other interfaces exposed to userland PHP code.
+   Breaking this means public APIs behave differently or are removed.
+
+-  **Internal API Compatibility**: The source-level interface between PHP core,
+   extensions, and SAPIs. It is relevant at **compile time** — extensions that
+   use the internal API may fail to compile if it changes. Maintainers need to
+   update and recompile extensions when internal APIs change.
+
+-  **ABI (Application Binary Interface) Compatibility**: The binary-level
+   interface between the compiled PHP core and compiled extensions. It is
+   relevant at **run time** — changes may cause extensions to crash, misbehave,
+   or fail to load if they were compiled against an older version. ABI stability
+   ensures that precompiled extensions continue to work across patch releases
+   without recompilation.
+
+BC Breaks and Exceptions
+------------------------
+
+The following are **not considered** BC breaks:
 
 -  Adding deprecations. Code that triggers a deprecation warning continues to
    work and is still valid. Converting deprecations into exceptions is a user
@@ -57,57 +82,16 @@ The following are not considered BC breaks:
 -  Behavior changes in undefined or undocumented edge cases MAY be allowed if
    well justified. However, care SHOULD be taken to minimize disruption.
 
-Major Version Number
-====================
+On Breaking Compatibility
+-------------------------
 
--  x.y.z to x+1.0.0
+Breaking BC, APIs, or ABIs (internal) SHOULD NOT be done lightly or for the sake
+of doing it. RFCs explaining the reasoning behind a breakage MUST include:
 
-   -  It SHALL included bugfixes and new features.
-   -  Extensions support MAY be ended (moved to PECL)
-   -  Backward compatibility MAY be broken
-   -  API compatibility MAY be broken (internals and userland)
-   -  ABI MAY be broken (internals)
-
-Minor Version Number
-====================
-
--  x.y.z to x.y+1.z
-
-   -  It SHOULD included bugfixes and new features.
-
-   -  Extensions support MAY be ended (moved to PECL).
-
-   -  Syntax backward compatibility SHOULD be preserved - every PHP program that
-      compiles SHOULD continue to compile.
-
-   -  Backwards compatibility breaks in minor versions MUST NOT result in silent
-      behavioral differences. Instead any breaking change MUST be "obvious" when
-      executing the program.
-
-   -  API backward compatibility breaks SHOULD be limited to extensions, or the
-      API of functions within an extension
-
-   -  ABI and internal API compatibility breaks are NOT RECOMMENDED.
-
-   -  Source compatibility SHOULD be kept if possible, while breakages are
-      allowed
-
-Patch Version Number
-====================
-
--  x.y.z to x.y.z+1
-
-   -  It SHOULD included bug fixes and security patches
-   -  New features MUST NOT be added.
-   -  Extensions support MUST NOT be removed (like move them to PECL)
-   -  Backward compatibility MUST be kept (internals and userland)
-   -  ABI and internal API compatibility SHOULD be preserved for high severity
-      security issues, and MUST be preserved for all other security issues.
-
-It is critical to understand the consequences of breaking BC, APIs or ABIs (only
-internals related). It SHOULD NOT be done for the sake of doing it. RFCs
-explaining the reasoning behind a breakage and the consequences along with test
-cases and patch(es) should help.
+-  Clear justification for the change
+-  A summary of its consequences
+-  Migration guidance
+-  Test cases and patches
 
 If a high severity security fix requires breaking the internal ABI or API, a
 proper migration path MUST be provided, and the impact MUST be minimized as much
@@ -115,14 +99,58 @@ as possible. This MUST also be accompanied by additional communication during
 the release.
 
 All new user-facing features MUST be mentioned in the `UPGRADING
-<https://github.com/php/php-src/blob/master/UPGRADING>`_ document. All API and
-ABI breaks MUST be mentioned in the `UPGRADING.INTERNALS
+<https://github.com/php/php-src/blob/master/UPGRADING>`_ document.
+
+All API and ABI breaks MUST be mentioned in the `UPGRADING.INTERNALS
 <https://github.com/php/php-src/blob/master/UPGRADING.INTERNALS>`_ document.
 
-See the following links for explanation about API and ABI:
+Further reading:
 
 -  http://en.wikipedia.org/wiki/Application_programming_interface
 -  http://en.wikipedia.org/wiki/Application_binary_interface
+
+Major Version Number
+====================
+
+-  x.y.z to x+1.0.0
+
+   -  It SHALL include bugfixes and new features.
+   -  Extensions support MAY be ended (moved to PECL)
+   -  Backward compatibility MAY be broken
+
+Minor Version Number
+====================
+
+-  x.y.z to x.y+1.0
+
+   -  It SHOULD include bugfixes and new features.
+
+   -  Extensions support MAY be ended (moved to PECL).
+
+   -  Syntax backward compatibility SHOULD be preserved - every PHP program that
+      compiles SHOULD continue to compile.
+
+   -  Backward compatibility breaks in minor versions MUST NOT result in silent
+      behavioral differences. Instead any breaking change MUST be "obvious" when
+      executing the program. It means it SHOULD either throw exception or
+      trigger error.
+
+   -  Userland API backward compatibility breaks SHOULD be limited to
+      extensions, or the API of functions within an extension.
+
+   -  ABI and internal API compatibility breaks are NOT RECOMMENDED.
+
+Patch Version Number
+====================
+
+-  x.y.z to x.y.z+1
+
+   -  It SHOULD include bug fixes and security patches
+   -  New features MUST NOT be added.
+   -  Extensions support MUST NOT be removed (like move them to PECL)
+   -  Backward compatibility MUST be kept (internals and userland)
+   -  ABI and internal API compatibility SHOULD be preserved for high severity
+      security issues, and MUST be preserved for all other security issues.
 
 Example time line with only one major version at a time
 -------------------------------------------------------
