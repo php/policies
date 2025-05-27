@@ -115,8 +115,10 @@ Major Version Number
 -  x.y.z to x+1.0.0
 
    -  It SHALL include bugfixes and new features.
-   -  Extensions support MAY be ended (moved to PECL)
-   -  Backward compatibility MAY be broken
+   -  Extensions support MAY be ended (moved to PECL).
+   -  Userland API backward compatibility MAY be broken.
+   -  Internal API backward compatibility MAY be broken.
+   -  ABI backward compatibility MAY be broken.
 
 Minor Version Number
 ====================
@@ -138,7 +140,9 @@ Minor Version Number
    -  Userland API backward compatibility breaks SHOULD be limited to
       extensions, or the API of functions within an extension.
 
-   -  ABI and internal API compatibility breaks are NOT RECOMMENDED.
+   -  Internal API compatibility breaks are NOT RECOMMENDED.
+
+   -  ABI backward compatibility MAY be broken.
 
 Patch Version Number
 ====================
