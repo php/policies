@@ -98,6 +98,11 @@ proper migration path MUST be provided, and the impact MUST be minimized as much
 as possible. This MUST also be accompanied by additional communication during
 the release.
 
+SAPI removal SHOULD generally occur only in a major version. However, in
+exceptional cases where a SAPI presents significant maintenance or security
+concerns, an exception MAY be made. In all cases, the removal MUST go through
+the RFC process.
+
 All new user-facing features MUST be mentioned in the `UPGRADING
 <https://github.com/php/php-src/blob/master/UPGRADING>`_ document.
 
@@ -116,6 +121,7 @@ Major Version Number
 
    -  It SHALL include bugfixes and new features.
    -  Extensions support MAY be ended (moved to PECL).
+   -  SAPI support MAY be ended (removed from the php-src repository).
    -  Userland API backward compatibility MAY be broken.
    -  Internal API backward compatibility MAY be broken.
    -  ABI backward compatibility MAY be broken.
@@ -128,6 +134,8 @@ Minor Version Number
    -  It SHOULD include bugfixes and new features.
 
    -  Extensions support MAY be ended (moved to PECL).
+
+   -  SAPI support is RECOMMENDED to be kept.
 
    -  Syntax backward compatibility SHOULD be preserved - every PHP program that
       compiles SHOULD continue to compile.
