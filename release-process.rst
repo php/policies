@@ -140,10 +140,15 @@ Minor Version Number
    -  Syntax backward compatibility SHOULD be preserved - every PHP program that
       compiles SHOULD continue to compile.
 
-   -  Backward compatibility breaks in minor versions MUST NOT result in silent
-      behavioral differences. Instead any breaking change MUST be "obvious" when
-      executing the program. It means it SHOULD either throw exception or
-      trigger error.
+   -  Backward compatibility breaks in minor versions SHOULD NOT result in
+      silent behavioral differences. Instead any breaking change SHOULD be
+      "obvious" when executing the program. It means it SHOULD either throw
+      exception or trigger error.
+
+   -  Backward compatibility breaks introduced in minor versions SHOULD allow
+      for straightforward code adjustments to maintain compatibility with both
+      the current and upcoming PHP versions. Such adjustments SHOULD be feasible
+      with basic tooling and not require complex static analysis.
 
    -  Userland API backward compatibility breaks SHOULD be limited to
       extensions, or the API of functions within an extension.
