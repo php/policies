@@ -119,12 +119,14 @@ Major Version Number
 
 -  x.y.z to x+1.0.0
 
-   -  It SHALL include bugfixes and new features.
+   -  It SHOULD include bugfixes and new features.
    -  Extensions support MAY be ended (moved to PECL).
    -  SAPI support MAY be ended (removed from the php-src repository).
-   -  Userland API backward compatibility MAY be broken.
-   -  Internal API backward compatibility MAY be broken.
    -  ABI backward compatibility MAY be broken.
+   -  Internal API backward compatibility MAY be broken.
+   -  Userland API backward compatibility MAY be broken.
+   -  The significant userland API backward compatibility breaks SHOULD be
+      preceded by the deprecation phase in the previous major version.
 
 Minor Version Number
 ====================
@@ -136,6 +138,10 @@ Minor Version Number
    -  Extensions support MAY be ended (moved to PECL).
 
    -  SAPI support is RECOMMENDED to be kept.
+
+   -  Internal API compatibility breaks are NOT RECOMMENDED.
+
+   -  ABI backward compatibility MAY be broken.
 
    -  Syntax backward compatibility SHOULD be preserved - every PHP program that
       compiles SHOULD continue to compile.
@@ -150,12 +156,6 @@ Minor Version Number
       the current and upcoming PHP versions. Such adjustments SHOULD be feasible
       with basic tooling and not require complex static analysis.
 
-   -  Userland API backward compatibility breaks SHOULD be limited to
-      extensions, or the API of functions within an extension.
-
-   -  Internal API compatibility breaks are NOT RECOMMENDED.
-
-   -  ABI backward compatibility MAY be broken.
 
 Patch Version Number
 ====================
