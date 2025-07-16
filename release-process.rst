@@ -125,8 +125,8 @@ Major Version Number
    -  ABI backward compatibility MAY be broken.
    -  Internal API backward compatibility MAY be broken.
    -  Userland API backward compatibility MAY be broken.
-   -  The significant userland API backward compatibility breaks SHOULD be
-      preceded by the deprecation phase in the previous major version.
+   -  Significant userland API backward compatibility breaks SHOULD be preceded
+      by the deprecation phase in the previous major version.
 
 Minor Version Number
 ====================
