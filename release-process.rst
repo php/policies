@@ -156,7 +156,6 @@ Minor Version Number
       the current and upcoming PHP versions. Such adjustments SHOULD be feasible
       with basic tooling and not require complex static analysis.
 
-
 Patch Version Number
 ====================
 
