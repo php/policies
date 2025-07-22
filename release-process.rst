@@ -310,8 +310,12 @@ After the general availability release:
 
 -  Until the end of year 3 (e.g., for PHP 8.4: until Dec 31, 2027):
 
-      -  Security fixes, and fixes to address regressions introduced during a
-         normal bug fix release.
+      -  Security fixes, compatibility fixes, fixes to address regressions
+         introduced during a normal bug fix release, and fixes for crashes like
+         use after free or segmentation faults.
+
+      -  Fixes for crashes SHOULD be applied only exceptionally for small fixes.
+         The fix MUST get RM approval.
 
       -  Updates to ABI incompatible versions of dependent libraries on Windows.
 
@@ -325,21 +329,23 @@ After the general availability release:
 
 -  Until the end of year 4 (e.g., for PHP 8.4: until Dec 31, 2028):
 
-      -  Security fixes **only**.
+      -  Security fixes, compatibility build fixes, fixes to address regressions
+         caused by a security fix, and fixes for crashes like use after free or
+         segmentation faults.
 
-      -  Release only when there is a security issue.
+      -  Regression fixes and fixes for crashes SHOULD be applied only
+         exceptionally for small fixes. The fix MUST get RM approval.
+
+      -  Updates to ABI incompatible versions of dependent libraries on Windows
+         are **not** performed.
+
+      -  Release only when there is a security issue or regression issue to
+         address.
 
       -  Security fix, compatibility build fix, and regression fix releases
          SHOULD occur on the same date as bug fix releases for the other
          branches. Exceptions can be made for high risk security issues or high
          profile regressions.
-
-      -  Regression fixes SHOULD be applied only exceptionally for small
-         regressions or regressions introduced by security fixes. The regression
-         fixes MUST get RM approval.
-
-      -  Updates to ABI incompatible versions of dependent libraries on Windows
-         are **not** performed.
 
 *"End of year" means:* The end of the calendar year, i.e., Dec 31 at 24:00 UTC.
 The numbered years in the examples (e.g., "end of year 2") indicate the number
