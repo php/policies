@@ -40,16 +40,12 @@ Backward Compatibility
 A backward compatibility (BC) break is any change that causes existing userland
 code, which was previously considered valid, to behave differently than before.
 This includes changes that result in different output, trigger new errors, or
-otherwise alter the observable behavior of the code.
+otherwise alter the observable behavior of the code. Exceptions to this
+definition are described below.
 
 In this context, valid userland code refers to code that compiled and executed
-without fatal errors in a previous version. Changes that alter behavior,
-including bug fixes, MAY still be considered backward compatibility breaks if it
-is reasonable to assume that existing code could have come to depend on the
-previous behavior. Whether such a change constitutes a significant BC break is a
-matter of interpretation and should take into account factors such as
-documentation, the expected behavior, the severity of the original issue, and
-the likelihood of real-world usage relying on the old behavior.
+without fatal errors in a previous version. It does not include code that relied
+on clearly undocumented, undefined, or erroneous behavior.
 
 Compatibility Terminology
 -------------------------
@@ -91,6 +87,14 @@ The following are **not considered** BC breaks:
 
 -  Behavior changes in undefined or undocumented edge cases MAY be allowed if
    well justified. However, care SHOULD be taken to minimize disruption.
+
+-  Fixing clearly incorrect or unintended behavior, even if it changes the
+   output or side effects of a function, is not automatically considered a BC
+   break. This applies to behavior that was buggy, undocumented, or inconsistent
+   with expectations or similar functionality. The potential impact of such a
+   fix SHOULD be evaluated, and based on that, the change MAY be treated as a BC
+   break if it is likely to affect real-world code in significant or disruptive
+   ways.
 
 On Breaking Compatibility
 -------------------------
