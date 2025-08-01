@@ -37,9 +37,15 @@ No feature addition after final x.y.0 release (or x.0.0).
 Backward Compatibility
 ======================
 
-A backward compatibility (BC) break is defined as any change that prevents
-existing, valid, userland code from continuing to behave as it did in a previous
-version within the same major release.
+A backward compatibility (BC) break is any change that causes existing userland
+code, which was previously considered valid, to behave differently than before.
+This includes changes that result in different output, trigger new errors, or
+otherwise alter the observable behavior of the code.
+
+In this context, valid userland code refers to code that compiled and executed
+in a previous version without fatal errors. It may or may not have relied on
+buggy or unintended behavior. The key consideration is whether the change alters
+the behavior in a way that existing code might have come to depend on.
 
 Compatibility Terminology
 -------------------------
