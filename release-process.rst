@@ -43,9 +43,13 @@ This includes changes that result in different output, trigger new errors, or
 otherwise alter the observable behavior of the code.
 
 In this context, valid userland code refers to code that compiled and executed
-in a previous version without fatal errors. It may or may not have relied on
-buggy or unintended behavior. The key consideration is whether the change alters
-the behavior in a way that existing code might have come to depend on.
+without fatal errors in a previous version. Changes that alter behavior,
+including bug fixes, MAY still be considered backward compatibility breaks if it
+is reasonable to assume that existing code could have come to depend on the
+previous behavior. Whether such a change constitutes a significant BC break is a
+matter of interpretation and should take into account factors such as
+documentation, the expected behavior, the severity of the original issue, and
+the likelihood of real-world usage relying on the old behavior.
 
 Compatibility Terminology
 -------------------------
