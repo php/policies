@@ -174,6 +174,22 @@ Patch Version Number
    -  ABI and internal API compatibility SHOULD be preserved for high severity
       security issues, and MUST be preserved for all other security issues.
 
+Major Version Bump
+==================
+
+A bump to the major version number (e.g., from 8.x to 9.0) MUST be approved
+through the RFC process.
+
+The decision to bump the major version number MUST be made before the release
+managers for that version are selected.
+
+It SHOULD be made at least 6 months prior to the planned alpha release, to allow
+sufficient time for changes to tooling, extensions, and documentation.
+
+It is RECOMMENDED to decide the major version bump before the previous version
+is branched, so that `master` clearly becomes the development branch for the new
+major version.
+
 Example time line with only one major version at a time
 -------------------------------------------------------
 
