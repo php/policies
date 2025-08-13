@@ -16,7 +16,7 @@ jobs:
       id-token: write
     steps:
       - name: git checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
       - name: Install dependencies
         run: pip install sphinx-design sphinxawesome-theme rstfmt
       - name: Check formatting
