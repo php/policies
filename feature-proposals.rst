@@ -86,15 +86,21 @@ measured only since the formal discussion announcement as described above.
 **************
 
 RFC authors MAY start a vote after the cooldown period has elapsed. The
-intention of starting the vote MUST be announced at least 2 days (48 hours)
-before the start of the vote in the official discussion thread. RFC authors
-SHOULD NOT announce the start of the vote when the RFC discussion is still
-ongoing and new discussion points are brought forward. Similarly RFC authors
-SHOULD NOT proceed with an announced vote if new discussion points are brought
-forward after the voting announcement. If major or minor changes to the RFC text
-are made after announcing the vote, the cooldown period MUST be reset and a new
-vote MUST be announced when the RFC is ready for voting after the new cooldown
-period has elapsed.
+intention of starting the vote (“voting intent”) MUST be announced at least 2
+days (48 hours) before the start of the vote in the official discussion thread.
+
+RFC authors SHOULD NOT announce the voting intent when the RFC discussion is
+still ongoing and SHOULD consider all new discussion points that are brought
+forward. RFC authors SHOULD also consider all new discussion points brought
+forward after announcing the voting intent before actually proceeding with
+starting the vote. If objective improvements brought forward after announcing
+the voting intent they SHOULD NOT be disregarded in the interest of time and at
+the expense of quality.
+
+If major or minor changes to the RFC text are made after announcing the voting
+intent, the vote MUST NOT be started. Instead the cooldown period MUST be reset
+and a new voting intent MUST be announced when the RFC is ready for voting after
+the new cooldown period has elapsed.
 
 The actual start of the vote MUST be announced on the mailing list in a separate
 thread with a ``[VOTE]`` prefix followed by the RFC title as the Subject. The
