@@ -93,9 +93,9 @@ RFC authors SHOULD NOT announce the voting intent when the RFC discussion is
 still ongoing and SHOULD consider all new discussion points that are brought
 forward. RFC authors SHOULD also consider all new discussion points brought
 forward after announcing the voting intent before actually proceeding with
-starting the vote. If objective improvements brought forward after announcing
-the voting intent they SHOULD NOT be disregarded in the interest of time and at
-the expense of quality.
+starting the vote. If objective improvements are brought forward after
+announcing the voting intent they SHOULD NOT be disregarded in the interest of
+time and at the expense of quality.
 
 If major or minor changes to the RFC text are made after announcing the voting
 intent, the vote MUST NOT be started. Instead the cooldown period MUST be reset
