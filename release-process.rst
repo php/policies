@@ -158,8 +158,8 @@ Minor Version Number
 
    -  ABI backward compatibility MAY be broken.
 
-   -  Syntax backward compatibility SHOULD be preserved - every PHP program that
-      compiles SHOULD continue to compile.
+   -  Syntax backward compatibility SHOULD be maintained - every PHP program
+      that compiles SHOULD continue to compile.
 
    -  Backward compatibility breaks in minor versions SHOULD NOT result in
       silent behavioral differences. Instead any breaking change SHOULD be
@@ -185,10 +185,10 @@ Patch Version Number
 
    -  Extensions support MUST NOT be removed (e.g. moved to PECL).
 
-   -  Userland API backward compatibility MUST be preserved.
+   -  Userland API backward compatibility MUST be maintained.
 
-   -  ABI and internal API backward compatibility SHOULD be preserved for fixes
-      of high severity security issues, and MUST be preserved for all other
+   -  ABI and internal API backward compatibility SHOULD be maintained for fixes
+      of high severity security issues, and MUST be maintained for all other
       fixes.
 
 Major Version Bump
