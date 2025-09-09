@@ -79,11 +79,12 @@ The following are **not considered** BC breaks:
    choice and not part of the language's default behavior.
 
 -  Adding new symbols (e.g., functions, classes, constants) into the global or
-   core extension namespace, even if they may conflict with user-defined names.
-   While these additions can cause name conflicts, they are not classified as BC
-   breaks. RFCs and contributors SHOULD make a best effort to minimize the risk
-   of conflicts when choosing new names, but SHOULD NOT pick significantly worse
-   names purely to reduce conflict risk.
+   core extension namespace, or introducing new language keywords, even if they
+   may conflict with user-defined names or identifiers. While these additions
+   can cause name conflicts, they are not classified as BC breaks. RFCs and
+   contributors SHOULD make a best effort to minimize the risk of conflicts when
+   choosing new names, but SHOULD NOT pick significantly worse names purely to
+   reduce conflict risk.
 
 -  Behavior changes in undefined or undocumented edge cases MAY be allowed if
    well justified. However, care SHOULD be taken to minimize disruption.
@@ -163,7 +164,10 @@ Minor Version Number
    -  Backward compatibility breaks in minor versions SHOULD NOT result in
       silent behavioral differences. Instead any breaking change SHOULD be
       "obvious" when executing the program. It means it SHOULD either throw
-      exception or trigger error.
+      exception or trigger error. Exceptions MAY be considered on a case by case
+      basis if the breakage is minimal, the change provides clear user facing
+      value, and a non-breaking migration path would result in a significantly
+      worse or more complex API.
 
    -  Backward compatibility breaks introduced in minor versions SHOULD allow
       for straightforward code adjustments to maintain compatibility with both
@@ -345,7 +349,7 @@ After the general availability release:
 
 -  Until the end of year 3 (e.g., for PHP 8.4: until Dec 31, 2027):
 
-      -  Security fixes, compatibility fixes, fixes to address regressions
+      -  Security fixes, compatibility build fixes, fixes to address regressions
          introduced during a normal bug fix release, and fixes for crashes like
          use after free or segmentation faults.
 
