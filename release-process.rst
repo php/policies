@@ -176,11 +176,16 @@ Patch Version Number
 -  x.y.z to x.y.z+1
 
    -  It SHOULD include bug fixes and security patches
+
    -  New features MUST NOT be added.
-   -  Extensions support MUST NOT be removed (like move them to PECL)
-   -  Backward compatibility MUST be kept (internals and userland)
-   -  ABI and internal API compatibility SHOULD be preserved for high severity
-      security issues, and MUST be preserved for all other security issues.
+
+   -  Extensions support MUST NOT be removed (e.g. moved to PECL).
+
+   -  Userland API backward compatibility MUST be preserved.
+
+   -  ABI and internal API backward compatibility SHOULD be preserved for fixes
+      of high severity security issues, and MUST be preserved for all other
+      fixes.
 
 Major Version Bump
 ==================
