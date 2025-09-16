@@ -171,8 +171,21 @@ of severe issues with the RFC. Canceling a vote is treated as a Major change thu
 triggers a new cooldown period. The title of all voting widgets MUST be
 changed to invalidate any votes that have been cast (e.g. by adding the suffix “(Restart)”).
 
+=======
+Errata
+=======
+
 If issues with an accepted RFC are noticed during implementation, an errata
 section explaining the necessary changes SHOULD be added.
+
+Should the necessary changes significantly impact the design, it MAY be
+appropriate to start a follow-up discussion thread, or possibly a follow-up RFC.
+At minimum, author(s) SHOULD send a notification message to the original
+discussion thread describing the change.
+
+If there is dispute as to whether a post-vote change requires a follow-up
+discussion of its own, an RFC and vote of its own, or neither, the final
+decision rests with the Release Managers.
 
 This section has been amended by:
 
