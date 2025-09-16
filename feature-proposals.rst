@@ -133,6 +133,11 @@ An RFC author MAY start a vote at any time, provided that:
   The author(s) may determine what qualifies as relevant and substantive, but SHOULD be
   liberal in interpreting that.
 
+If there are any secondary votes included, the RFC text describing the vote MUST include
+whether the secondary vote is plurality or Single-Transferrable Vote, how ties will be handled,
+whether it is a 2/3 majority Yes/No or a 50% threshold, and any other pertinent information
+to ensure the implications of the secondary vote are clearly understood.
+
 =================
 Voting procedure
 =================
@@ -144,7 +149,7 @@ The voting announcement email MUST include:
 
 - A link to the Wiki page of the RFC.
 - A link to the discussion thread.
-- The number of votes to cast, in case of a multi-vote RFC.
+- A notice if there are multiple votes to cast, as each requires a separate form submission.
 - The exact date and time the vote will end, with minute precision and timezone.
 
 The end of the vote MUST additionally be specified in the voting widget on the
@@ -163,8 +168,8 @@ December, 17th 00:00 UTC and January, 10th 00:00 UTC.
 After the voting period has started, including after the vote closed and the RFC is
 either accepted or declined, there MUST NOT be any further major or minor
 changes to the RFC text and making editorial changes SHOULD be avoided for the
-avoidance of doubt. The voting formalities (including the voting period) MUST
-NOT be changed after the vote opened.
+avoidance of doubt. The voting details (such as the voting period or interpretation
+of secondary votes) MUST NOT be changed after the vote opened.
 
 The voting period MAY be canceled within the first 2 days (48 hours) in case
 of severe issues with the RFC. Canceling a vote is treated as a Major change thus
