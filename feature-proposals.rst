@@ -32,6 +32,11 @@ a new Wiki page containing an RFC with a unique title MUST be created. In this
 case the original RFC's title is commonly suffixed with ``v2`` to indicate the
 relationship with the original RFC.
 
+A proposal or proposal concept MAY be discussed informally on the list prior
+to an official initiation post.  In many cases that is encouraged to get a
+sense of how well received a proposal would be.  However, that does not count
+toward the Discussion Phase.
+
 ******************
  Discussion Phase
 ******************
@@ -90,10 +95,6 @@ likely that other RFC discussions are at the top of mind of the mailing list
 participants. After a period of 3 months without any email in the official
 discussion thread, the discussion MUST be restarted with a cooldown period of 2
 weeks (336 hours).
-
-This does not preclude discussion on the merits on any idea or proposal on the
-list without formally submitting it as a proposal, but the cooldown period is
-measured only since the formal discussion announcement as described above.
 
 **************
  Voting Phase
