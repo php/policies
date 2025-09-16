@@ -85,16 +85,16 @@ change is announced, the vote may be called 11 days (14 - 3) later.
 
 The discussion is not required to go to a vote at any particular point.  The author(s)
 MAY continue the discussion as long as they wish.  The author(s) SHOULD
-be mindful of extended in holiday periods or in cases of significant
-activity on the mailing list to allow everyone to catch up with the discussion.
+be mindful of holiday periods or in cases of significant activity on the mailing list
+to allow everyone to catch up with the discussion.
 
-After a period of 6 weeks without any email in the official discussion thread,
-the discussion is considered inactive and MUST be restarted with a cooldown
-period of 1 week (168 hours) before the RFC may proceed to a vote, since it is
-likely that other RFC discussions are at the top of mind of the mailing list
-participants. After a period of 3 months without any email in the official
-discussion thread, the discussion MUST be restarted with a cooldown period of 2
-weeks (336 hours).
+In order to keep RFCs "fresh," their discussion threads must have a minimum level of
+activity.  Any message to the discussion thread from anyone other than a voting announcement
+is sufficient to keep the RFC active.  Once an RFC discussion goes inactive, any
+new post will "reactivate" the discussion and trigger a new cooldown period.
+
+- If it has been 6 weeks since the last message, the cooldown is 1 week (168 hours).
+- If it has been 3 months since the last message, the cooldown is 2 week (336 hours).
 
 **************
  Voting Phase
