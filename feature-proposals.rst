@@ -32,37 +32,38 @@ a new Wiki page containing an RFC with a unique title MUST be created. In this
 case the original RFC's title is commonly suffixed with ``v2`` to indicate the
 relationship with the original RFC.
 
-A proposal or proposal concept MAY be discussed informally on the list prior
-to an official initiation post.  In many cases that is encouraged to get a
-sense of how well received a proposal would be.  However, that does not count
-toward the Discussion Phase.
+A proposal or proposal concept MAY be discussed informally on the list prior to
+an official initiation post. In many cases that is encouraged to get a sense of
+how well received a proposal would be. However, that does not count toward the
+Discussion Phase.
 
 ******************
  Discussion Phase
 ******************
 
-In the Discussion Phase, the community may review, discuss, and offer suggestions
-for improving the RFC, as extensive or minimalist as they see fit.  However,
-unrelated discussions that spin off to discuss other, related topics SHOULD
-be moved to their own email threads to minimize noise.
+In the Discussion Phase, the community may review, discuss, and offer
+suggestions for improving the RFC, as extensive or minimalist as they see fit.
+However, unrelated discussions that spin off to discuss other, related topics
+SHOULD be moved to their own email threads to minimize noise.
 
-=================
 Types of changes
-=================
+================
 
 The author(s) of the RFC MAY make changes to the proposal at any time during the
-discussion.  Changes broadly fall into one of three categories:
+discussion. Changes broadly fall into one of three categories:
 
-- **Major changes** to the RFC text include any changes that would lead to a change in
-  the implementation, particularly any changes to the proposed semantics or
-  syntax, updating the API stub. It also includes adding, changing or removing
-  any voting widget.
-- **Minor** changes to the RFC text include adding new examples, updating existing
-  examples, adding additional explanation or clarification, or any other changes
-  that are not purely editorial.
-- **Editorial changes** to the RFC text include non-substantive changes, such as
-  spelling, typos, changing section labels, bug fixes to existing code examples,
-  small rewordings of descriptions, and so forth.
+-  **Major changes** to the RFC text include any changes that would lead to a
+   change in the implementation, particularly any changes to the proposed
+   semantics or syntax, updating the API stub. It also includes adding, changing
+   or removing any voting widget.
+
+-  **Minor** changes to the RFC text include adding new examples, updating
+   existing examples, adding additional explanation or clarification, or any
+   other changes that are not purely editorial.
+
+-  **Editorial changes** to the RFC text include non-substantive changes, such
+   as spelling, typos, changing section labels, bug fixes to existing code
+   examples, small rewordings of descriptions, and so forth.
 
 If it is unclear what level a change belongs in, the author(s) SHOULD assume the
 higher one.
@@ -70,20 +71,19 @@ higher one.
 Major and minor changes MUST be announced in the official discussion thread,
 either in a dedicated email summarizing a list of changes or in a reply to
 another email that clearly indicates that changes to the RFC text have been made
-in response to that email.  If a series of changes are included together, the whole
-announcement belongs to the highest level of any of the involved changes.  The
-initial proposal of the RFC is considered a Major change announcement.
+in response to that email. If a series of changes are included together, the
+whole announcement belongs to the highest level of any of the involved changes.
+The initial proposal of the RFC is considered a Major change announcement.
 
-================
 Cooldown period
-================
+===============
 
-Both Major and Minor change announcements trigger a "cooldown period" to allow for
-sufficient discussion of the related changes.  During the cooldown period, no vote
-may be called.  Editorial changes do not trigger a cooldown period.
+Both Major and Minor change announcements trigger a "cooldown period" to allow
+for sufficient discussion of the related changes. During the cooldown period, no
+vote may be called. Editorial changes do not trigger a cooldown period.
 
-- The cooldown after a Major change announcement is 2 weeks (336 hours).
-- The cooldown after a Minor announcement is 1 week (168 hours).
+-  The cooldown after a Major change announcement is 2 weeks (336 hours).
+-  The cooldown after a Minor announcement is 1 week (168 hours).
 
 By implication, it means the minimum discussion period for any RFC is 2 weeks,
 assuming no changes are made after the initial proposal.
@@ -91,94 +91,101 @@ assuming no changes are made after the initial proposal.
 Cooldowns overlap, so if a Major change is announced, and 3 days later a Minor
 change is announced, the vote may be called 11 days (14 - 3) later.
 
-====================
 Discussion lifetime
-====================
+===================
 
-The discussion is not required to go to a vote at any particular point.  The author(s)
-MAY continue the discussion as long as they wish.  The author(s) SHOULD
-be mindful of holiday periods or in cases of significant activity on the mailing list
-to allow everyone to catch up with the discussion.
+The discussion is not required to go to a vote at any particular point. The
+author(s) MAY continue the discussion as long as they wish. The author(s) SHOULD
+be mindful of holiday periods or in cases of significant activity on the mailing
+list to allow everyone to catch up with the discussion.
 
-In order to keep RFCs "fresh," their discussion threads must have a minimum level of
-activity.  Any message to the discussion thread from anyone other than an Intent to Vote
-is sufficient to keep the RFC active.  Once an RFC discussion goes inactive, any
-new post will "reactivate" the discussion and trigger a new cooldown period.
+In order to keep RFCs "fresh," their discussion threads must have a minimum
+level of activity. Any message to the discussion thread from anyone other than
+an Intent to Vote is sufficient to keep the RFC active. Once an RFC discussion
+goes inactive, any new post will "reactivate" the discussion and trigger a new
+cooldown period.
 
-- If it has been 6 weeks since the last message, the cooldown is 1 week (168 hours).
-- If it has been 3 months since the last message, the cooldown is 2 week (336 hours).
+-  If it has been 6 weeks since the last message, the cooldown is 1 week (168
+   hours).
+-  If it has been 3 months since the last message, the cooldown is 2 week (336
+   hours).
 
 **************
  Voting Phase
 **************
 
-=====================
 Voting prerequisites
-=====================
+====================
 
 Prior to starting a vote, an RFC author MUST post an Intent to Vote message to
-the discussion thread.  The post MUST be made at least two days and no more than 1 week
-(168 hours) before the vote is officially opened.  Any feedback posted after the Intent
-to Vote message is sent SHOULD be treated the same as if it had been sent earlier,
-and any Major or Minor changes that result MUST trigger a new cooldown period,
-canceling the Intent to Vote.
+the discussion thread. The post MUST be made at least two days and no more than
+1 week (168 hours) before the vote is officially opened. Any feedback posted
+after the Intent to Vote message is sent SHOULD be treated the same as if it had
+been sent earlier, and any Major or Minor changes that result MUST trigger a new
+cooldown period, canceling the Intent to Vote.
 
 An RFC author MAY start a vote at any time, provided that:
 
-- There is no cooldown period still active.
-- The discussion thread is not inactive.
-- The author has posted an intent to open the vote at least 48 hours prior, and no more
-  than one week prior.
-- There is no ongoing relevant and substantive discussion still happening in the thread.
-  The author(s) may determine what qualifies as relevant and substantive, but SHOULD be
-  liberal in interpreting that.
+-  There is no cooldown period still active.
 
-If there are any secondary votes included, the RFC text describing the vote MUST include
-whether the secondary vote is plurality or Single-Transferrable Vote, how ties will be handled,
-whether it is a 2/3 majority Yes/No or a 50% threshold, and any other pertinent information
-to ensure the implications of the secondary vote are clearly understood.
+-  The discussion thread is not inactive.
 
-=================
+-  The author has posted an intent to open the vote at least 48 hours prior, and
+   no more than one week prior.
+
+-  There is no ongoing relevant and substantive discussion still happening in
+   the thread. The author(s) may determine what qualifies as relevant and
+   substantive, but SHOULD be liberal in interpreting that.
+
+If there are any secondary votes included, the RFC text describing the vote MUST
+include whether the secondary vote is plurality or Single-Transferrable Vote,
+how ties will be handled, whether it is a 2/3 majority Yes/No or a 50%
+threshold, and any other pertinent information to ensure the implications of the
+secondary vote are clearly understood.
+
 Voting procedure
-=================
+================
 
 The actual start of the vote MUST be announced on the mailing list in a separate
 thread with a ``[VOTE]`` prefix followed by the RFC title as the Subject.
 
 The voting announcement email MUST include:
 
-- A link to the Wiki page of the RFC.
-- A link to the discussion thread.
-- A notice if there are multiple votes to cast, as each requires a separate form submission.
-- The exact date and time the vote will end, with minute precision and timezone.
+-  A link to the Wiki page of the RFC.
+-  A link to the discussion thread.
+-  A notice if there are multiple votes to cast, as each requires a separate
+   form submission.
+-  The exact date and time the vote will end, with minute precision and
+   timezone.
 
 The end of the vote MUST additionally be specified in the voting widget on the
 RFC so that it will auto-close at the specified timestamp.
 
-The link to the mailing list archives of the voting thread MUST be added to
-the RFC as soon as possible and no later than the announcement of the results of the vote.
+The link to the mailing list archives of the voting thread MUST be added to the
+RFC as soon as possible and no later than the announcement of the results of the
+vote.
 
-The voting period MUST be at least two weeks (336 hours), but MAY be up to
-four weeks if necessary to avoid conflict with well-known holiday periods.
+The voting period MUST be at least two weeks (336 hours), but MAY be up to four
+weeks if necessary to avoid conflict with well-known holiday periods.
 
 Due to the significance of the end-of-year holidays for a majority of the world,
 the voting period MUST NOT start and MUST NOT end in the period between
 December, 17th 00:00 UTC and January, 10th 00:00 UTC.
 
-After the voting period has started, including after the vote closed and the RFC is
-either accepted or declined, there MUST NOT be any further major or minor
+After the voting period has started, including after the vote closed and the RFC
+is either accepted or declined, there MUST NOT be any further major or minor
 changes to the RFC text and making editorial changes SHOULD be avoided for the
-avoidance of doubt. The voting details (such as the voting period or interpretation
-of secondary votes) MUST NOT be changed after the vote opened.
+avoidance of doubt. The voting details (such as the voting period or
+interpretation of secondary votes) MUST NOT be changed after the vote opened.
 
-The voting period MAY be canceled within the first 2 days (48 hours) in case
-of severe issues with the RFC. Canceling a vote is treated as a Major change thus
-triggers a new cooldown period. The title of all voting widgets MUST be
-changed to invalidate any votes that have been cast (e.g. by adding the suffix “(Restart)”).
+The voting period MAY be canceled within the first 2 days (48 hours) in case of
+severe issues with the RFC. Canceling a vote is treated as a Major change thus
+triggers a new cooldown period. The title of all voting widgets MUST be changed
+to invalidate any votes that have been cast (e.g. by adding the suffix
+“(Restart)”).
 
-=======
 Errata
-=======
+======
 
 If issues with an accepted RFC are noticed during implementation, an errata
 section explaining the necessary changes SHOULD be added.
