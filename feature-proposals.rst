@@ -36,6 +36,11 @@ relationship with the original RFC.
  Discussion Phase
 ******************
 
+In the Discussion Phase, the community may review, discuss, and offer suggestions
+for improving the RFC, as extensive or minimalist as they see fit.  However,
+unrelated discussions that spin off to discuss other, related topics SHOULD
+be moved to their own email threads to minimize noise.
+
 Before an RFC may move to the voting phase a cooldown period of 2 weeks (336
 hours) MUST have elapsed. The cooldown period starts at the time of the initial
 email of the official RFC discussion thread.
