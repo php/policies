@@ -137,11 +137,8 @@ An RFC author MAY start a vote at any time, provided that:
    the thread. The author(s) may determine what qualifies as relevant and
    substantive, but SHOULD be liberal in interpreting that.
 
-If there are any secondary votes included, the RFC text describing the vote MUST
-include whether the secondary vote is plurality or Single-Transferrable Vote,
-how ties will be handled, whether it is a 2/3 majority Yes/No or a 50%
-threshold, and any other pertinent information to ensure the implications of the
-secondary vote are clearly understood.
+All voting widgets on the RFC MUST include all pertinent details for that vote, as
+described in the "Required Majority" section below.
 
 Voting procedure
 ================
