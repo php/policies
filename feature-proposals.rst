@@ -133,20 +133,28 @@ An RFC author MAY start a vote at any time, provided that:
   The author(s) may determine what qualifies as relevant and substantive, but SHOULD be
   liberal in interpreting that.
 
-The actual start of the vote MUST be announced on the mailing list in a separate
-thread with a ``[VOTE]`` prefix followed by the RFC title as the Subject. The
-email MUST include a link to the Wiki page of the RFC and to the mailing list
-archives of the discussion thread. The link to the mailing list archives of the
-voting thread MUST be added to the RFC as soon as possible and no later than the
-announcement of the results of the vote.
+=================
+Voting procedure
+=================
 
-The email MUST furthermore clearly specify the voting formalities, such as the
-number of votes that can be cast, the interpretation of the voting results and
-the end date of the voting. The end date MUST be specified with minute-precision
-and is not part of the voting period, all votes must be cast before the
-specified end date. The voting period MUST be open for at least two weeks (336
-hours). The voting period MAY be extended as necessary (e.g. to accommodate
-holiday periods).
+The actual start of the vote MUST be announced on the mailing list in a separate
+thread with a ``[VOTE]`` prefix followed by the RFC title as the Subject.
+
+The voting announcement email MUST include:
+
+- A link to the Wiki page of the RFC.
+- A link to the discussion thread.
+- The number of votes to cast, in case of a multi-vote RFC.
+- The exact date and time the vote will end, with minute precision and timezone.
+
+The end of the vote MUST additionally be specified in the voting widget on the
+RFC so that it will auto-close at the specified timestamp.
+
+The link to the mailing list archives of the voting thread MUST be added to
+the RFC as soon as possible and no later than the announcement of the results of the vote.
+
+The voting period MUST be at least two weeks (336 hours), but MAY be up to
+four weeks if necessary to avoid conflict with well-known holiday periods.
 
 Due to the significance of the end-of-year holidays for a majority of the world,
 the voting period MUST NOT start and MUST NOT end in the period between
