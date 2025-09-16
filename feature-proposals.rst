@@ -65,32 +65,22 @@ in response to that email.  If a series of changes are included together, the wh
 announcement belongs to the highest level of any of the involved changes.  The
 initial proposal of the RFC is considered a Major change announcement.
 
-Before an RFC may move to the voting phase a cooldown period of 2 weeks (336
-hours) MUST have elapsed. The cooldown period starts at the time of the initial
-email of the official RFC discussion thread.
+Both Major and Minor change announcements trigger a "cooldown period" to allow for
+sufficient discussion of the related changes.  During the cooldown period, no vote
+may be called.  Editorial changes do not trigger a cooldown period.
 
-When making non-editorial / non-typographical changes to the normative section
-of the RFC text (i.e. to the actual proposal, excluding future scope, rejected
-features and references) the cooldown period MUST be reset. The cooldown period
-MUST be reset to 2 weeks (336 hours) in case of major changes. It MUST be reset
-to 1 week (168 hours) in case of minor changes if the current remaining cooldown
-period is shorter. When in doubt, the change MUST be treated as a major change.
+- The cooldown after a Major change announcement is 2 weeks (336 hours).
+- The cooldown after a Minor announcement is 1 week (168 hours).
 
+By implication, it means the minimum discussion period for any RFC is 2 weeks,
+assuming no changes are made after the initial proposal.
 
-As an example: An RFC is announced at 2025-02-01 15:00. The initial cooldown
-period ends at 2025-02-15 15:00. On 2025-02-03 16:00 a minor change to the RFC
-text is made. The cooldown period is not reset, since the remaining cooldown
-period of ~12 days is longer than 1 week. On 2025-02-05 17:00 a major change to
-the RFC text is made. The cooldown period is reset to 2025-02-19 17:00. On
-2025-02-15 16:00 another minor change is made. The cooldown period is reset to
-2025-02-22 16:00. On 2025-02-21 13:00 an obvious typo is fixed. The cooldown
-period is not reset.
+Cooldowns overlap, so if a Major change is announced, and 3 days later a Minor
+change is announced, the vote may be called 11 days (14 - 3) later.
 
-
-
-
-The discussion phase MAY be extended beyond the required cooldown period. It
-SHOULD appropriately be extended in holiday periods or in cases of significant
+The discussion is not required to go to a vote at any particular point.  The author(s)
+MAY continue the discussion as long as they wish.  The author(s) SHOULD
+be mindful of extended in holiday periods or in cases of significant
 activity on the mailing list to allow everyone to catch up with the discussion.
 
 After a period of 6 weeks without any email in the official discussion thread,
