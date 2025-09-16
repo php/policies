@@ -160,16 +160,16 @@ Due to the significance of the end-of-year holidays for a majority of the world,
 the voting period MUST NOT start and MUST NOT end in the period between
 December, 17th 00:00 UTC and January, 10th 00:00 UTC.
 
-After the voting period started, including after the vote closed and the RFC is
+After the voting period has started, including after the vote closed and the RFC is
 either accepted or declined, there MUST NOT be any further major or minor
 changes to the RFC text and making editorial changes SHOULD be avoided for the
 avoidance of doubt. The voting formalities (including the voting period) MUST
-NOT be changed after the vote opened. The voting period MAY be canceled within
-the first 2 days (48 hours) in case of severe issues with the RFC. Canceling a
-vote is treated as a major change and a cooldown period of 2 weeks (336 hours)
-is required before a new vote may be started. The title of all voting widgets
-MUST be changed to invalidate any votes that have been cast (e.g. by adding the
-suffix “(Restart)”).
+NOT be changed after the vote opened.
+
+The voting period MAY be canceled within the first 2 days (48 hours) in case
+of severe issues with the RFC. Canceling a vote is treated as a Major change thus
+triggers a new cooldown period. The title of all voting widgets MUST be
+changed to invalidate any votes that have been cast (e.g. by adding the suffix “(Restart)”).
 
 If issues with an accepted RFC are noticed during implementation, an errata
 section explaining the necessary changes SHOULD be added.
