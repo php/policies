@@ -46,6 +46,10 @@ for improving the RFC, as extensive or minimalist as they see fit.  However,
 unrelated discussions that spin off to discuss other, related topics SHOULD
 be moved to their own email threads to minimize noise.
 
+=================
+Types of changes
+=================
+
 The author(s) of the RFC MAY make changes to the proposal at any time during the
 discussion.  Changes broadly fall into one of three categories:
 
@@ -70,6 +74,10 @@ in response to that email.  If a series of changes are included together, the wh
 announcement belongs to the highest level of any of the involved changes.  The
 initial proposal of the RFC is considered a Major change announcement.
 
+================
+Cooldown period
+================
+
 Both Major and Minor change announcements trigger a "cooldown period" to allow for
 sufficient discussion of the related changes.  During the cooldown period, no vote
 may be called.  Editorial changes do not trigger a cooldown period.
@@ -82,6 +90,10 @@ assuming no changes are made after the initial proposal.
 
 Cooldowns overlap, so if a Major change is announced, and 3 days later a Minor
 change is announced, the vote may be called 11 days (14 - 3) later.
+
+====================
+Discussion lifetime
+====================
 
 The discussion is not required to go to a vote at any particular point.  The author(s)
 MAY continue the discussion as long as they wish.  The author(s) SHOULD
