@@ -41,6 +41,30 @@ for improving the RFC, as extensive or minimalist as they see fit.  However,
 unrelated discussions that spin off to discuss other, related topics SHOULD
 be moved to their own email threads to minimize noise.
 
+The author(s) of the RFC MAY make changes to the proposal at any time during the
+discussion.  Changes broadly fall into one of three categories:
+
+- **Major changes** to the RFC text include any changes that would lead to a change in
+  the implementation, particularly any changes to the proposed semantics or
+  syntax, updating the API stub. It also includes adding, changing or removing
+  any voting widget.
+- **Minor** changes to the RFC text include adding new examples, updating existing
+  examples, adding additional explanation or clarification, or any other changes
+  that are not purely editorial.
+- **Editorial changes** to the RFC text include non-substantive changes, such as
+  spelling, typos, changing section labels, bug fixes to existing code examples,
+  small rewordings of descriptions, and so forth.
+
+If it is unclear what level a change belongs in, the author(s) SHOULD assume the
+higher one.
+
+Major and minor changes MUST be announced in the official discussion thread,
+either in a dedicated email summarizing a list of changes or in a reply to
+another email that clearly indicates that changes to the RFC text have been made
+in response to that email.  If a series of changes are included together, the whole
+announcement belongs to the highest level of any of the involved changes.  The
+initial proposal of the RFC is considered a Major change announcement.
+
 Before an RFC may move to the voting phase a cooldown period of 2 weeks (336
 hours) MUST have elapsed. The cooldown period starts at the time of the initial
 email of the official RFC discussion thread.
@@ -51,10 +75,7 @@ features and references) the cooldown period MUST be reset. The cooldown period
 MUST be reset to 2 weeks (336 hours) in case of major changes. It MUST be reset
 to 1 week (168 hours) in case of minor changes if the current remaining cooldown
 period is shorter. When in doubt, the change MUST be treated as a major change.
-Major and minor changes MUST be announced in the official discussion thread,
-either in a dedicated email summarizing a list of changes or in a reply to
-another email that clearly indicates that changes to the RFC text have been made
-in response to that email.
+
 
 As an example: An RFC is announced at 2025-02-01 15:00. The initial cooldown
 period ends at 2025-02-15 15:00. On 2025-02-03 16:00 a minor change to the RFC
@@ -65,12 +86,8 @@ the RFC text is made. The cooldown period is reset to 2025-02-19 17:00. On
 2025-02-22 16:00. On 2025-02-21 13:00 an obvious typo is fixed. The cooldown
 period is not reset.
 
-Major changes to the RFC text include any changes that would lead to a change in
-the implementation, particularly any changes to the proposed semantics or
-syntax, updating the API stub, adding, changing or removing any voting widget.
-Minor changes to the RFC text include adding new examples, updating existing
-examples, adding additional explanation or clarification, or any other changes
-that are not purely editorial.
+
+
 
 The discussion phase MAY be extended beyond the required cooldown period. It
 SHOULD appropriately be extended in holiday periods or in cases of significant
