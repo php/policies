@@ -9,6 +9,8 @@
 This document describes the procedure to propose an idea for adoption by the PHP
 community and decide if the community accepts or rejects the idea.
 
+The change process involves three phases: Initiation, Discussion, and Voting.
+
 *********************
  Proposal Initiation
 *********************
