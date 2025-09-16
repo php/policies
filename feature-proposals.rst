@@ -101,7 +101,7 @@ be mindful of holiday periods or in cases of significant activity on the mailing
 to allow everyone to catch up with the discussion.
 
 In order to keep RFCs "fresh," their discussion threads must have a minimum level of
-activity.  Any message to the discussion thread from anyone other than a voting announcement
+activity.  Any message to the discussion thread from anyone other than an Intent to Vote
 is sufficient to keep the RFC active.  Once an RFC discussion goes inactive, any
 new post will "reactivate" the discussion and trigger a new cooldown period.
 
@@ -112,22 +112,26 @@ new post will "reactivate" the discussion and trigger a new cooldown period.
  Voting Phase
 **************
 
-RFC authors MAY start a vote after the cooldown period has elapsed. The
-intention of starting the vote (“voting intent”) MUST be announced at least 2
-days (48 hours) before the start of the vote in the official discussion thread.
+=====================
+Voting prerequisites
+=====================
 
-RFC authors SHOULD NOT announce the voting intent when the RFC discussion is
-still ongoing and SHOULD consider all new discussion points that are brought
-forward. RFC authors SHOULD also consider all new discussion points brought
-forward after announcing the voting intent before actually proceeding with
-starting the vote. If objective improvements are brought forward after
-announcing the voting intent they SHOULD NOT be disregarded in the interest of
-time and at the expense of quality.
+Prior to starting a vote, an RFC author MUST post an Intent to Vote message to
+the discussion thread.  The post MUST be made at least two days and no more than 1 week
+(168 hours) before the vote is officially opened.  Any feedback posted after the Intent
+to Vote message is sent SHOULD be treated the same as if it had been sent earlier,
+and any Major or Minor changes that result MUST trigger a new cooldown period,
+canceling the Intent to Vote.
 
-If major or minor changes to the RFC text are made after announcing the voting
-intent, the vote MUST NOT be started. Instead the cooldown period MUST be reset
-and a new voting intent MUST be announced when the RFC is ready for voting after
-the new cooldown period has elapsed.
+An RFC author MAY start a vote at any time, provided that:
+
+- There is no cooldown period still active.
+- The discussion thread is not inactive.
+- The author has posted an intent to open the vote at least 48 hours prior, and no more
+  than one week prior.
+- There is no ongoing relevant and substantive discussion still happening in the thread.
+  The author(s) may determine what qualifies as relevant and substantive, but SHOULD be
+  liberal in interpreting that.
 
 The actual start of the vote MUST be announced on the mailing list in a separate
 thread with a ``[VOTE]`` prefix followed by the RFC title as the Subject. The
