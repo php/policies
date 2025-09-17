@@ -50,7 +50,7 @@ Types of changes
 ================
 
 The authors of the RFC MAY make changes to the proposal at any time during the
-discussion. Changes broadly fall into one of three categories:
+discussion. Changes are categorized into three categories based on their impact:
 
 -  **Major changes** to the RFC text include any changes that would lead to a
    change in the implementation, particularly any changes to the proposed
@@ -62,8 +62,8 @@ discussion. Changes broadly fall into one of three categories:
    other changes that are not purely editorial.
 
 -  **Editorial changes** to the RFC text include non-substantive changes, such
-   as spelling, typos, changing section labels, bug fixes to existing code
-   examples, small rewordings of descriptions, and so forth.
+   as spelling, typos, changing section labels, small rewordings of descriptions,
+   and so forth.
 
 If it is unclear what level a change belongs in, the authors SHOULD assume the
 higher one.
@@ -121,8 +121,8 @@ Prior to starting a vote, RFC authors MUST post an Intent to Vote message to
 the discussion thread. The post MUST be made at least two days (48 hours) and no more than
 1 week (168 hours) before the vote is officially opened. Any feedback posted
 after the Intent to Vote message is sent SHOULD be treated the same as if it had
-been sent earlier, and any Major or Minor changes that result MUST trigger a new
-cooldown period, canceling the Intent to Vote.
+been sent earlier, and any Major or Minor changes that result from that feedback
+MUST trigger a new cooldown period, canceling the Intent to Vote.
 
 RFC authors MAY start a vote at any time, provided that all the following conditions hold:
 
@@ -137,7 +137,7 @@ RFC authors MAY start a vote at any time, provided that all the following condit
    the thread. The authors may determine what qualifies as relevant and
    substantive, but SHOULD be liberal in interpreting that.
 
-All voting widgets on the RFC MUST include all pertinent details for that vote, as
+All voting widgets on the RFC MUST include all relevant details for that vote, as
 described in the "Required Majority" section below.
 
 Voting procedure
