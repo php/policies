@@ -11,6 +11,10 @@ community and decide if the community accepts or rejects the idea.
 
 The change process involves three phases: Initiation, Discussion, and Voting.
 
+For the purposes of this document 1 day is equal to 24 contiguous hours.  Should
+Daylight Saving Time, Leap Days, or other oddities of time handling occur,
+they will not affect the definition of a day as 24 hours of "stopwatch time."
+
 *********************
  Proposal Initiation
 *********************
@@ -82,8 +86,8 @@ Both Major and Minor change announcements trigger a "cooldown period" to allow
 for sufficient discussion of the related changes. During the cooldown period, no
 vote may be called. Editorial changes do not trigger a cooldown period.
 
--  The cooldown after a Major change announcement is 2 weeks (336 hours).
--  The cooldown after a Minor announcement is 1 week (168 hours).
+-  The cooldown after a Major change announcement is 14 days.
+-  The cooldown after a Minor announcement is 7 days.
 
 By implication, it means the minimum discussion period for any RFC is 2 weeks,
 assuming no changes are made after the initial proposal.
@@ -105,10 +109,8 @@ level of activity. Any message to the discussion thread from any participant
 goes inactive, any new post will "reactivate" the discussion and trigger a new
 cooldown period.
 
--  If it has been 6 weeks since the last message, the cooldown is 1 week (168
-   hours).
--  If it has been 3 months since the last message, the cooldown is 2 week (336
-   hours).
+-  If it has been 42 days (~6 weeks) since the last message, the cooldown is 7 days.
+-  If it has been 90 days (~3 months) since the last message, the cooldown is 14 days.
 
 **************
  Voting Phase
@@ -118,8 +120,8 @@ Voting prerequisites
 ====================
 
 Prior to starting a vote, RFC authors MUST post an Intent to Vote message to
-the discussion thread. The post MUST be made at least two days (48 hours) and no more than
-1 week (168 hours) before the vote is officially opened. Any feedback posted
+the discussion thread. The post MUST be made at least two days and no more than
+7 days before the vote is officially opened. Any feedback posted
 after the Intent to Vote message is sent SHOULD be treated the same as if it had
 been sent earlier, and any Major or Minor changes that result from that feedback
 MUST trigger a new cooldown period, canceling the Intent to Vote.
@@ -131,7 +133,7 @@ RFC authors MAY start a vote at any time, provided that all the following condit
 -  The discussion thread is not inactive.
 
 -  The authors has posted an intent to open the vote at least 2 days prior, and
-   no more than one week prior.
+   no more than 7 days prior.
 
 -  There is no ongoing relevant and substantive discussion still happening in
    the thread. The authors may determine what qualifies as relevant and
@@ -139,6 +141,12 @@ RFC authors MAY start a vote at any time, provided that all the following condit
 
 All voting widgets on the RFC MUST include all relevant details for that vote, as
 described in the "Required Majority" section below.
+
+To allow for timezone differences, outside commitments by RFC authors, and other deadlines,
+the cutoff timestamp to start a vote has a grace period of 8 hours in either direction.
+That is, starting a vote 45 hours after the Intent to Vote has been posted is discouraged, but
+allowed.  Similarly, starting the vote 7 days and 3 hours after the Intent to Vote was posted
+is discouraged, but allowed.
 
 Voting procedure
 ================
@@ -152,8 +160,7 @@ The voting announcement email MUST include:
 -  A link to the discussion thread.
 -  A notice if there are multiple votes to cast, as each requires a separate
    form submission.
--  The exact date and time the vote will end, with minute precision and
-   timezone.
+-  The date and time the vote will end.
 
 The end of the vote MUST additionally be specified in the voting widget on the
 RFC so that it will auto-close at the specified timestamp.
@@ -162,8 +169,8 @@ The link to the mailing list archives of the voting thread MUST be added to the
 RFC as soon as possible and no later than the announcement of the results of the
 vote.
 
-The voting period MUST be at least two weeks (336 hours), but MAY be up to four
-weeks (e.g. to avoid conflicts with well-known holiday periods).
+The voting period MUST be at least 14 days, but MAY be up to 28 days (e.g.
+to avoid conflicts with well-known holiday periods).
 
 Due to the significance of the end-of-year holidays for a majority of the world,
 the voting period MUST NOT start and MUST NOT end in the period between
