@@ -57,7 +57,7 @@ discussion. Changes broadly fall into one of three categories:
    semantics or syntax, updating the API stub. It also includes adding, changing
    or removing any voting widget.
 
--  **Minor** changes to the RFC text include adding new examples, updating
+-  **Minor changes** to the RFC text include adding new examples, updating
    existing examples, adding additional explanation or clarification, or any
    other changes that are not purely editorial.
 
@@ -96,12 +96,12 @@ Discussion lifetime
 
 The discussion is not required to go to a vote at any particular point. The
 author(s) MAY continue the discussion as long as they wish. The author(s) SHOULD
-be mindful of holiday periods or in cases of significant activity on the mailing
+be mindful of holiday periods or periods of significant activity on the mailing
 list to allow everyone to catch up with the discussion.
 
 In order to keep RFCs "fresh," their discussion threads must have a minimum
-level of activity. Any message to the discussion thread from anyone other than
-an Intent to Vote is sufficient to keep the RFC active. Once an RFC discussion
+level of activity. Any message to the discussion thread from any participant 
+(excluding “Intent to Vote” messages) is sufficient to keep the RFC active. Once an RFC discussion
 goes inactive, any new post will "reactivate" the discussion and trigger a new
 cooldown period.
 
@@ -118,19 +118,19 @@ Voting prerequisites
 ====================
 
 Prior to starting a vote, an RFC author MUST post an Intent to Vote message to
-the discussion thread. The post MUST be made at least two days and no more than
+the discussion thread. The post MUST be made at least two days (48 hours) and no more than
 1 week (168 hours) before the vote is officially opened. Any feedback posted
 after the Intent to Vote message is sent SHOULD be treated the same as if it had
 been sent earlier, and any Major or Minor changes that result MUST trigger a new
 cooldown period, canceling the Intent to Vote.
 
-An RFC author MAY start a vote at any time, provided that:
+An RFC author MAY start a vote at any time, provided that all the following conditions hold:
 
 -  There is no cooldown period still active.
 
 -  The discussion thread is not inactive.
 
--  The author has posted an intent to open the vote at least 48 hours prior, and
+-  The author has posted an intent to open the vote at least 2 days prior, and
    no more than one week prior.
 
 -  There is no ongoing relevant and substantive discussion still happening in
@@ -163,14 +163,14 @@ RFC as soon as possible and no later than the announcement of the results of the
 vote.
 
 The voting period MUST be at least two weeks (336 hours), but MAY be up to four
-weeks if necessary to avoid conflict with well-known holiday periods.
+weeks (e.g. to avoid conflicts with well-known holiday periods).
 
 Due to the significance of the end-of-year holidays for a majority of the world,
 the voting period MUST NOT start and MUST NOT end in the period between
 December, 17th 00:00 UTC and January, 10th 00:00 UTC.
 
 After the voting period has started, including after the vote closed and the RFC
-is either accepted or declined, there MUST NOT be any further major or minor
+is either accepted or declined, there MUST NOT be any further Major or Minor
 changes to the RFC text and making editorial changes SHOULD be avoided for the
 avoidance of doubt. The voting details (such as the voting period or
 interpretation of secondary votes) MUST NOT be changed after the vote opened.
