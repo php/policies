@@ -49,7 +49,7 @@ SHOULD be moved to their own email threads to minimize noise.
 Types of changes
 ================
 
-The author(s) of the RFC MAY make changes to the proposal at any time during the
+The authors of the RFC MAY make changes to the proposal at any time during the
 discussion. Changes broadly fall into one of three categories:
 
 -  **Major changes** to the RFC text include any changes that would lead to a
@@ -65,7 +65,7 @@ discussion. Changes broadly fall into one of three categories:
    as spelling, typos, changing section labels, bug fixes to existing code
    examples, small rewordings of descriptions, and so forth.
 
-If it is unclear what level a change belongs in, the author(s) SHOULD assume the
+If it is unclear what level a change belongs in, the authors SHOULD assume the
 higher one.
 
 Major and minor changes MUST be announced in the official discussion thread,
@@ -95,7 +95,7 @@ Discussion lifetime
 ===================
 
 The discussion is not required to go to a vote at any particular point. The
-author(s) MAY continue the discussion as long as they wish. The author(s) SHOULD
+authors MAY continue the discussion as long as they wish. The authors SHOULD
 be mindful of holiday periods or periods of significant activity on the mailing
 list to allow everyone to catch up with the discussion.
 
@@ -117,24 +117,24 @@ cooldown period.
 Voting prerequisites
 ====================
 
-Prior to starting a vote, an RFC author MUST post an Intent to Vote message to
+Prior to starting a vote, RFC authors MUST post an Intent to Vote message to
 the discussion thread. The post MUST be made at least two days (48 hours) and no more than
 1 week (168 hours) before the vote is officially opened. Any feedback posted
 after the Intent to Vote message is sent SHOULD be treated the same as if it had
 been sent earlier, and any Major or Minor changes that result MUST trigger a new
 cooldown period, canceling the Intent to Vote.
 
-An RFC author MAY start a vote at any time, provided that all the following conditions hold:
+RFC authors MAY start a vote at any time, provided that all the following conditions hold:
 
 -  There is no cooldown period still active.
 
 -  The discussion thread is not inactive.
 
--  The author has posted an intent to open the vote at least 2 days prior, and
+-  The authors has posted an intent to open the vote at least 2 days prior, and
    no more than one week prior.
 
 -  There is no ongoing relevant and substantive discussion still happening in
-   the thread. The author(s) may determine what qualifies as relevant and
+   the thread. The authors may determine what qualifies as relevant and
    substantive, but SHOULD be liberal in interpreting that.
 
 All voting widgets on the RFC MUST include all pertinent details for that vote, as
@@ -189,7 +189,7 @@ section explaining the necessary changes SHOULD be added.
 
 Should the necessary changes significantly impact the design, it MAY be
 appropriate to start a follow-up discussion thread, or possibly a follow-up RFC.
-At minimum, author(s) SHOULD send a notification message to the original
+At minimum, authors SHOULD send a notification message to the original
 discussion thread describing the change.
 
 If there is dispute as to whether a post-vote change requires a follow-up
@@ -255,7 +255,7 @@ proposal up for another vote, unless one of the following happens:
 
 -  6 months pass from the time of the previous vote, **OR**
 
--  The author(s) make substantial changes to the proposal. While it's impossible
+-  The authors make substantial changes to the proposal. While it's impossible
    to put clear definitions on what constitutes 'substantial' changes, they
    should be material enough so that they'll significantly affect the outcome of
    another vote.
