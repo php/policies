@@ -143,10 +143,12 @@ All voting widgets on the RFC MUST include all relevant details for that vote, a
 described in the "Required Majority" section below.
 
 To allow for timezone differences, outside commitments by RFC authors, and other deadlines,
-the cutoff timestamp to start a vote has a grace period of 8 hours in either direction.
-That is, starting a vote 45 hours after the Intent to Vote has been posted is discouraged, but
-allowed.  Similarly, starting the vote 7 days and 3 hours after the Intent to Vote was posted
-is discouraged, but allowed.
+the cutoff timestamp for the cooldown period or to start a vote has a grace period of
+8 hours in either direction. For example, the following scenarios are allowed, but discouraged.
+
+- Starting a vote 45 hours after the Intent to Vote has been posted.
+- Starting the vote 7 days and 3 hours after the Intent to Vote was posted.
+- Starting the vote 6 days and 20 hours after a Minor change cooldown period started.
 
 Voting procedure
 ================
