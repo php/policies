@@ -79,20 +79,20 @@ in response to that email. If a series of changes are included together, the
 whole announcement belongs to the highest level of any of the involved changes.
 The initial proposal of the RFC is considered a Major change announcement.
 
-Cooldown period
+Cooldown Period
 ===============
 
-Both Major and Minor change announcements trigger a "cooldown period" to allow
-for sufficient discussion of the related changes. During the cooldown period, no
-vote may be called. Editorial changes do not trigger a cooldown period.
+Both Major and Minor change announcements trigger a "Cooldown Period" to allow
+for sufficient discussion of the related changes. During the Cooldown Period, no
+vote may be called. Editorial changes do not trigger a Cooldown Period.
 
--  The cooldown after a Major change announcement is 14 days.
--  The cooldown after a Minor announcement is 7 days.
+-  The Cooldown Period after a Major change announcement is 14 days.
+-  The Cooldown Period after a Minor announcement is 7 days.
 
 By implication, it means the minimum discussion period for any RFC is 14 days,
 assuming no changes are made after the initial proposal.
 
-Cooldowns overlap, so if a Major change is announced, and 3 days later a Minor
+Cooldown Periods overlap, so if a Major change is announced, and 3 days later a Minor
 change is announced, the vote may be called 11 days (14 - 3) later.
 
 Discussion lifetime
@@ -107,10 +107,10 @@ In order to keep RFCs "fresh," their discussion threads must have a minimum
 level of activity. Any message to the discussion thread from any participant 
 (excluding “Intent to Vote” messages) is sufficient to keep the RFC active. Once an RFC discussion
 goes inactive, any new post will "reactivate" the discussion and trigger a new
-cooldown period.
+Cooldown Period.
 
--  If it has been 42 days (~6 weeks) since the last message, the cooldown is 7 days.
--  If it has been 90 days (~3 months) since the last message, the cooldown is 14 days.
+-  If it has been 42 days (~6 weeks) since the last message, the Cooldown Period is 7 days.
+-  If it has been 90 days (~3 months) since the last message, the Cooldown Period is 14 days.
 
 **************
  Voting Phase
@@ -124,11 +124,11 @@ the discussion thread. The post MUST be made at least 2 days and no more than
 7 days before the vote is officially opened (“Intent to Vote lifetime”). Any feedback posted
 after the Intent to Vote message is sent SHOULD be treated the same as if it had
 been sent earlier, and any Major or Minor changes that result from that feedback
-MUST trigger a new cooldown period, canceling the Intent to Vote.
+MUST trigger a new Cooldown Period, canceling the Intent to Vote.
 
 RFC authors MAY start a vote at any time, provided that all the following conditions hold:
 
--  There is no cooldown period still active.
+-  There is no Cooldown Period still active.
 
 -  The discussion thread is not inactive.
 
@@ -145,7 +145,7 @@ described in the "Required Majority" section below.
 To account for minor calculation errors due to timezone changes,
 outside commitments by RFC authors, and others deadlines, RFC
 authors MAY use a grace period of up to 8 hours in either direction
-without being in violation of the cooldown period and the Intent
+without being in violation of the Cooldown Period and the Intent
 to Vote lifetime. RFC authors SHOULD nevertheless strive to
 observe the cut-off timestamps as closely as possible.
 
@@ -154,7 +154,7 @@ but discouraged:
 
 - Starting a vote 45 hours after the Intent to Vote has been posted.
 - Starting the vote 7 days and 3 hours after the Intent to Vote was posted.
-- Starting the vote 6 days and 20 hours after a Minor change cooldown period started.
+- Starting the vote 6 days and 20 hours after a Minor change Cooldown Period started.
 
 Voting procedure
 ================
@@ -192,7 +192,7 @@ interpretation of secondary votes) MUST NOT be changed after the vote opened.
 
 The voting period MAY be canceled within the first 2 days in case of
 severe issues with the RFC. Canceling a vote is treated as a Major change thus
-triggers a new cooldown period. The title of all voting widgets MUST be changed
+triggers a new Cooldown Period. The title of all voting widgets MUST be changed
 to invalidate any votes that have been cast (e.g. by adding the suffix
 “(Restart)”).
 
