@@ -121,7 +121,7 @@ Voting prerequisites
 
 Prior to starting a vote, RFC authors MUST post an Intent to Vote message to
 the discussion thread. The post MUST be made at least 2 days and no more than
-7 days before the vote is officially opened. Any feedback posted
+7 days before the vote is officially opened (“Intent to Vote lifetime”). Any feedback posted
 after the Intent to Vote message is sent SHOULD be treated the same as if it had
 been sent earlier, and any Major or Minor changes that result from that feedback
 MUST trigger a new cooldown period, canceling the Intent to Vote.
@@ -142,9 +142,15 @@ RFC authors MAY start a vote at any time, provided that all the following condit
 All voting widgets on the RFC MUST include all relevant details for that vote, as
 described in the "Required Majority" section below.
 
-To allow for timezone differences, outside commitments by RFC authors, and other deadlines,
-the cutoff timestamp for the cooldown period or to start a vote has a grace period of
-8 hours in either direction. For example, the following scenarios are allowed, but discouraged.
+To account for minor calculation errors due to timezone changes,
+outside commitments by RFC authors, and others deadlines, RFC
+authors MAY use a grace period of up to 8 hours in either direction
+without being in violation of the cooldown period and the Intent
+to Vote lifetime. RFC authors SHOULD nevertheless strive to
+observe the cut-off timestamps as closely as possible.
+
+As an example, all of the following scenarios would be allowed,
+but discouraged:
 
 - Starting a vote 45 hours after the Intent to Vote has been posted.
 - Starting the vote 7 days and 3 hours after the Intent to Vote was posted.
