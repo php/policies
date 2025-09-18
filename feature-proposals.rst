@@ -132,8 +132,7 @@ RFC authors MAY start a vote at any time, provided that all the following condit
 
 -  The discussion thread is not inactive.
 
--  The authors has posted an intent to open the vote at least 2 days prior, and
-   no more than 7 days prior.
+-  The current time lies within the Intent to Vote lifetime.
 
 -  There is no ongoing relevant and substantive discussion still happening in
    the thread. The authors may determine what qualifies as relevant and
