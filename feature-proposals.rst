@@ -89,7 +89,7 @@ vote may be called. Editorial changes do not trigger a cooldown period.
 -  The cooldown after a Major change announcement is 14 days.
 -  The cooldown after a Minor announcement is 7 days.
 
-By implication, it means the minimum discussion period for any RFC is 2 weeks,
+By implication, it means the minimum discussion period for any RFC is 14 days,
 assuming no changes are made after the initial proposal.
 
 Cooldowns overlap, so if a Major change is announced, and 3 days later a Minor
@@ -120,7 +120,7 @@ Voting prerequisites
 ====================
 
 Prior to starting a vote, RFC authors MUST post an Intent to Vote message to
-the discussion thread. The post MUST be made at least two days and no more than
+the discussion thread. The post MUST be made at least 2 days and no more than
 7 days before the vote is officially opened. Any feedback posted
 after the Intent to Vote message is sent SHOULD be treated the same as if it had
 been sent earlier, and any Major or Minor changes that result from that feedback
@@ -182,7 +182,7 @@ changes to the RFC text and making editorial changes SHOULD be avoided for the
 avoidance of doubt. The voting details (such as the voting period or
 interpretation of secondary votes) MUST NOT be changed after the vote opened.
 
-The voting period MAY be canceled within the first 2 days (48 hours) in case of
+The voting period MAY be canceled within the first 2 days in case of
 severe issues with the RFC. Canceling a vote is treated as a Major change thus
 triggers a new cooldown period. The title of all voting widgets MUST be changed
 to invalidate any votes that have been cast (e.g. by adding the suffix
