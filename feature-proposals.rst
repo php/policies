@@ -11,9 +11,9 @@ community and decide if the community accepts or rejects the idea.
 
 The change process involves three phases: Initiation, Discussion, and Voting.
 
-For the purposes of this document 1 day is equal to 24 contiguous hours.  Should
-Daylight Saving Time, Leap Days, or other oddities of time handling occur,
-they will not affect the definition of a day as 24 hours of "stopwatch time."
+For the purposes of this document 1 day is equal to 24 contiguous hours. Should
+Daylight Saving Time, Leap Days, or other oddities of time handling occur, they
+will not affect the definition of a day as 24 hours of "stopwatch time."
 
 *********************
  Proposal Initiation
@@ -66,8 +66,8 @@ discussion. Changes are categorized into three categories based on their impact:
    other changes that are not purely editorial.
 
 -  **Editorial changes** to the RFC text include non-substantive changes, such
-   as spelling, typos, changing section labels, small rewordings of descriptions,
-   and so forth.
+   as spelling, typos, changing section labels, small rewordings of
+   descriptions, and so forth.
 
 If it is unclear what level a change belongs in, the authors SHOULD assume the
 higher one.
@@ -92,25 +92,27 @@ vote may be called. Editorial changes do not trigger a Cooldown Period.
 By implication, it means the minimum discussion period for any RFC is 14 days,
 assuming no changes are made after the initial proposal.
 
-Cooldown Periods overlap, so if a Major change is announced, and 3 days later a Minor
-change is announced, the vote may be called 11 days (14 - 3) later.
+Cooldown Periods overlap, so if a Major change is announced, and 3 days later a
+Minor change is announced, the vote may be called 11 days (14 - 3) later.
 
 Discussion lifetime
 ===================
 
 The discussion is not required to go to a vote at any particular point. The
-authors MAY continue the discussion as long as they wish. The authors SHOULD
-be mindful of holiday periods or periods of significant activity on the mailing
+authors MAY continue the discussion as long as they wish. The authors SHOULD be
+mindful of holiday periods or periods of significant activity on the mailing
 list to allow everyone to catch up with the discussion.
 
 In order to keep RFCs "fresh," their discussion threads must have a minimum
-level of activity. Any message to the discussion thread from any participant 
-(excluding “Intent to Vote” messages) is sufficient to keep the RFC active. Once an RFC discussion
-goes inactive, any new post will "reactivate" the discussion and trigger a new
-Cooldown Period.
+level of activity. Any message to the discussion thread from any participant
+(excluding “Intent to Vote” messages) is sufficient to keep the RFC active. Once
+an RFC discussion goes inactive, any new post will "reactivate" the discussion
+and trigger a new Cooldown Period.
 
--  If it has been 42 days (~6 weeks) since the last message, the Cooldown Period is 7 days.
--  If it has been 90 days (~3 months) since the last message, the Cooldown Period is 14 days.
+-  If it has been 42 days (~6 weeks) since the last message, the Cooldown Period
+   is 7 days.
+-  If it has been 90 days (~3 months) since the last message, the Cooldown
+   Period is 14 days.
 
 **************
  Voting Phase
@@ -119,14 +121,15 @@ Cooldown Period.
 Voting prerequisites
 ====================
 
-Prior to starting a vote, RFC authors MUST post an Intent to Vote message to
-the discussion thread. The post MUST be made at least 2 days and no more than
-7 days before the vote is officially opened (“Intent to Vote lifetime”). Any feedback posted
-after the Intent to Vote message is sent SHOULD be treated the same as if it had
-been sent earlier, and any Major or Minor changes that result from that feedback
-MUST trigger a new Cooldown Period, canceling the Intent to Vote.
+Prior to starting a vote, RFC authors MUST post an Intent to Vote message to the
+discussion thread. The post MUST be made at least 2 days and no more than 7 days
+before the vote is officially opened (“Intent to Vote lifetime”). Any feedback
+posted after the Intent to Vote message is sent SHOULD be treated the same as if
+it had been sent earlier, and any Major or Minor changes that result from that
+feedback MUST trigger a new Cooldown Period, canceling the Intent to Vote.
 
-RFC authors MAY start a vote at any time, provided that all the following conditions hold:
+RFC authors MAY start a vote at any time, provided that all the following
+conditions hold:
 
 -  There is no Cooldown Period still active.
 
@@ -138,22 +141,21 @@ RFC authors MAY start a vote at any time, provided that all the following condit
    the thread. The authors may determine what qualifies as relevant and
    substantive, but SHOULD be liberal in interpreting that.
 
-All voting widgets on the RFC MUST include all relevant details for that vote, as
-described in the "Required Majority" section below.
+All voting widgets on the RFC MUST include all relevant details for that vote,
+as described in the "Required Majority" section below.
 
-To account for minor calculation errors due to timezone changes,
-outside commitments by RFC authors, and others deadlines, RFC
-authors MAY use a grace period of up to 8 hours in either direction
-without being in violation of the Cooldown Period and the Intent
-to Vote lifetime. RFC authors SHOULD nevertheless strive to
-observe the cut-off timestamps as closely as possible.
+To account for minor calculation errors due to timezone changes, outside
+commitments by RFC authors, and others deadlines, RFC authors MAY use a grace
+period of up to 8 hours in either direction without being in violation of the
+Cooldown Period and the Intent to Vote lifetime. RFC authors SHOULD nevertheless
+strive to observe the cut-off timestamps as closely as possible.
 
-As an example, all of the following scenarios would be allowed,
-but discouraged:
+As an example, all of the following scenarios would be allowed, but discouraged:
 
-- Starting a vote 45 hours after the Intent to Vote has been posted.
-- Starting the vote 7 days and 3 hours after the Intent to Vote was posted.
-- Starting the vote 6 days and 20 hours after a Minor change Cooldown Period started.
+-  Starting a vote 45 hours after the Intent to Vote has been posted.
+-  Starting the vote 7 days and 3 hours after the Intent to Vote was posted.
+-  Starting the vote 6 days and 20 hours after a Minor change Cooldown Period
+   started.
 
 Voting procedure
 ================
@@ -176,8 +178,8 @@ The link to the mailing list archives of the voting thread MUST be added to the
 RFC as soon as possible and no later than the announcement of the results of the
 vote.
 
-The voting period MUST be at least 14 days, but MAY be up to 28 days (e.g.
-to avoid conflicts with well-known holiday periods).
+The voting period MUST be at least 14 days, but MAY be up to 28 days (e.g. to
+avoid conflicts with well-known holiday periods).
 
 Due to the significance of the end-of-year holidays for a majority of the world,
 the voting period MUST NOT start and MUST NOT end in the period between
@@ -189,10 +191,10 @@ changes to the RFC text and making editorial changes SHOULD be avoided for the
 avoidance of doubt. The voting details (such as the voting period or
 interpretation of secondary votes) MUST NOT be changed after the vote opened.
 
-The voting period MAY be canceled within the first 2 days in case of
-severe issues with the RFC. Canceling a vote is treated as a Major change thus
-triggers a new Cooldown Period. The title of all voting widgets MUST be changed
-to invalidate any votes that have been cast (e.g. by adding the suffix
+The voting period MAY be canceled within the first 2 days in case of severe
+issues with the RFC. Canceling a vote is treated as a Major change thus triggers
+a new Cooldown Period. The title of all voting widgets MUST be changed to
+invalidate any votes that have been cast (e.g. by adding the suffix
 “(Restart)”).
 
 Errata
