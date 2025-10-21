@@ -201,7 +201,9 @@ Errata
 ======
 
 If issues with an accepted RFC are noticed during implementation, an errata
-section explaining the necessary changes SHOULD be added.
+section explaining the necessary changes SHOULD be added. A note indicating the
+error and referring to the errata section SHOULD be added to all erroneous parts
+of the RFC text.
 
 Should the necessary changes significantly impact the design, it MAY be
 appropriate to start a follow-up discussion thread, or possibly a follow-up RFC.
