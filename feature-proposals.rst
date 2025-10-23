@@ -191,7 +191,7 @@ changes to the RFC text and making editorial changes SHOULD be avoided for the
 avoidance of doubt. The voting details (such as the voting period or
 interpretation of secondary votes) MUST NOT be changed after the vote opened.
 
-The voting period MAY be canceled within the first 2 days in case of severe
+The voting period MAY be canceled within the first 7 days in case of severe
 issues with the RFC. Canceling a vote is treated as a Major change thus triggers
 a new Cooldown Period. The title of all voting widgets MUST be changed to
 invalidate any votes that have been cast (e.g. by adding the suffix
