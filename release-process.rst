@@ -154,7 +154,9 @@ Minor Version Number
 
    -  SAPI support is RECOMMENDED to be kept.
 
-   -  Internal API compatibility breaks are NOT RECOMMENDED.
+   -  Internal API compatibility MAY be broken when necessary (for example,
+      during refactoring), but SHOULD be preserved whenever possible, such as by
+      adding an _ex variant of a function instead of changing the existing one.
 
    -  ABI backward compatibility MAY be broken.
 
