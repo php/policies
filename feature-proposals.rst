@@ -145,7 +145,7 @@ All voting widgets on the RFC MUST include all relevant details for that vote,
 as described in the "Required Majority" section below.
 
 To account for minor calculation errors due to timezone changes, outside
-commitments by RFC authors, and others deadlines, RFC authors MAY use a grace
+commitments by RFC authors, and other deadlines, RFC authors MAY use a grace
 period of up to 8 hours in either direction without being in violation of the
 Cooldown Period and the Intent to Vote lifetime. RFC authors SHOULD nevertheless
 strive to observe the cut-off timestamps as closely as possible.
@@ -183,7 +183,7 @@ avoid conflicts with well-known holiday periods).
 
 Due to the significance of the end-of-year holidays for a majority of the world,
 the voting period MUST NOT start and MUST NOT end in the period between
-December, 17th 00:00 UTC and January, 10th 00:00 UTC.
+December 17th, 00:00 UTC and January 10th, 00:00 UTC.
 
 After the voting period has started, including after the vote closed and the RFC
 is either accepted or declined, there MUST NOT be any further Major or Minor
