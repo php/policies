@@ -9,64 +9,210 @@
 This document describes the procedure to propose an idea for adoption by the PHP
 community and decide if the community accepts or rejects the idea.
 
+The change process involves three phases: Initiation, Discussion, and Voting.
+
+For the purposes of this document 1 day is equal to 24 contiguous hours. Should
+Daylight Saving Time, Leap Days, or other oddities of time handling occur, they
+will not affect the definition of a day as 24 hours of "stopwatch time."
+
 *********************
  Proposal Initiation
 *********************
 
-Proposal is formally initiated by creating an RFC on PHP wiki and announcing it
-on the list. If the proposal is a repeated discussion of an existing RFC, with
-or without modification, it still should be announced on the list for
-discussion.
+A proposal is formally initiated by creating an RFC on the PHP Wiki and
+announcing it on the ``internals@lists.php.net`` mailing list.
 
-The announcement will be done in a way that's easy to flag & follow, e.g. - by
-``[RFC]`` in the subject line followed by the title of the RFC.
+The official RFC discussion thread MUST use the prefix ``[RFC]`` followed by the
+title of the RFC as the Subject. The email MUST include a link to the Wiki page
+containing the RFC. The link to the mailing list archives of the discussion
+thread MUST be added to the RFC as soon as possible and no later than the
+announcement of the start of the vote.
 
-The proposal should be initiated by one of its authors. If the proposal is a
-repeated one, re-proposed by somebody else, the proposer should discuss it with
-the original author, if possible, and add himself to the RFC author list before
-proposing it.
+The discussion thread MUST be initiated by one of the RFC's authors. If the
+proposal is a repeated one, re-proposed by somebody else, the proposer MUST
+discuss it with the original author and add themselves to the RFC author list
+before proposing it. If the original RFC authors do not agree or do not respond,
+a new Wiki page containing an RFC with a unique title MUST be created. In this
+case the original RFC's title is commonly suffixed with ``v2`` to indicate the
+relationship with the original RFC.
 
-If the proposer is not a member of php.net and thus can not create RFCs on the
-wiki, they should recruit one of the members for help or request membership.
+A proposal or proposal concept MAY be discussed informally on the list prior to
+an official initiation post. In many cases that is encouraged to get a sense of
+how well received a proposal would be. However, that does not count toward the
+Discussion Phase.
 
-*******************
- Discussion Period
-*******************
+******************
+ Discussion Phase
+******************
 
-There'd be a minimum of 2 weeks between when an RFC that touches the language is
-brought up on this list and when it's voted on is required. Other RFCs might use
-a smaller timeframe, but it should be at least a week. The effective date will
-not be when the RFC was published on the PHP wiki - but when it was announced on
-``internals@lists.php.net``, by the author, with the intention of voting on it.
-This period can be extended when circumstances warrant it - such as major
-conferences, key people being busy, force major events, or when discussion
-merits it - but should never be less than minimal time.
+In the Discussion Phase, the community may review, discuss, and offer
+suggestions for improving the RFC, as extensive or minimalist as they see fit.
+However, unrelated discussions that spin off to discuss other, related topics
+SHOULD be moved to their own email threads to minimize noise.
 
-This does not preclude discussion on the merits on any idea or proposal on the
-list without formally submitting it as a proposal, but the discussion time is
-measured only since the formal discussion announcement as described above.
+Types of changes
+================
 
-********
- Voting
-********
+The authors of the RFC MAY make changes to the proposal at any time during the
+discussion. Changes are categorized into three categories based on their impact:
 
-The author decides when it's time to move ahead and call a vote on the RFC. If
-the author feels that there's still healthy discussion going on, they can decide
-not to move ahead to request a vote after the minimal period, but extend it as
-needed. On the other hand, if they feel that the discussion is being derailed -
-they can always move ahead to a vote as long as the minimum discussion time
-elapsed.
+-  **Major changes** to the RFC text include any changes that would lead to a
+   change in the implementation, particularly any changes to the proposed
+   semantics or syntax, updating the API stub. It also includes adding, changing
+   or removing any voting widget.
 
-The vote is announced on the mailing list in a separate thread by sending an
-email with the subject ``[VOTE]``. It should reference the RFCs being voted on
-and if there are different options discussed, explain these options. It should
-also contain the URL of the page where the vote is taking place.
+-  **Minor changes** to the RFC text include adding new examples, updating
+   existing examples, adding additional explanation or clarification, or any
+   other changes that are not purely editorial.
 
-Votes should be open for two weeks at minimum, at the authors discretion this
-may be extended, for example during holiday periods.
+-  **Editorial changes** to the RFC text include non-substantive changes, such
+   as spelling, typos, changing section labels, small rewordings of
+   descriptions, and so forth.
 
-A valid voting period must be declared when voting is started and must not be
-changed during the vote.
+If it is unclear what level a change belongs in, the authors SHOULD assume the
+higher one.
+
+Major and minor changes MUST be announced in the official discussion thread,
+either in a dedicated email summarizing a list of changes or in a reply to
+another email that clearly indicates that changes to the RFC text have been made
+in response to that email. If a series of changes are included together, the
+whole announcement belongs to the highest level of any of the involved changes.
+The initial proposal of the RFC is considered a Major change announcement.
+
+Cooldown Period
+===============
+
+Both Major and Minor change announcements trigger a "Cooldown Period" to allow
+for sufficient discussion of the related changes. During the Cooldown Period, no
+vote may be called. Editorial changes do not trigger a Cooldown Period.
+
+-  The Cooldown Period after a Major change announcement is 14 days.
+-  The Cooldown Period after a Minor announcement is 7 days.
+
+By implication, it means the minimum discussion period for any RFC is 14 days,
+assuming no changes are made after the initial proposal.
+
+Cooldown Periods overlap, so if a Major change is announced, and 3 days later a
+Minor change is announced, the vote may be called 11 days (14 - 3) later.
+
+Discussion lifetime
+===================
+
+The discussion is not required to go to a vote at any particular point. The
+authors MAY continue the discussion as long as they wish. The authors SHOULD be
+mindful of holiday periods or periods of significant activity on the mailing
+list to allow everyone to catch up with the discussion.
+
+In order to keep RFCs "fresh," their discussion threads must have a minimum
+level of activity. Any message to the discussion thread from any participant
+(excluding “Intent to Vote” messages) is sufficient to keep the RFC active. Once
+an RFC discussion goes inactive, any new post will "reactivate" the discussion
+and trigger a new Cooldown Period.
+
+-  If it has been 42 days (~6 weeks) since the last message, the Cooldown Period
+   is 7 days.
+-  If it has been 90 days (~3 months) since the last message, the Cooldown
+   Period is 14 days.
+
+**************
+ Voting Phase
+**************
+
+Voting prerequisites
+====================
+
+Prior to starting a vote, RFC authors MUST post an Intent to Vote message to the
+discussion thread. The post MUST be made at least 2 days and no more than 7 days
+before the vote is officially opened (“Intent to Vote lifetime”). Any feedback
+posted after the Intent to Vote message is sent SHOULD be treated the same as if
+it had been sent earlier, and any Major or Minor changes that result from that
+feedback MUST trigger a new Cooldown Period, canceling the Intent to Vote.
+
+RFC authors MAY start a vote at any time, provided that all the following
+conditions hold:
+
+-  There is no Cooldown Period still active.
+
+-  The discussion thread is not inactive.
+
+-  The current time lies within the Intent to Vote lifetime.
+
+-  There is no ongoing relevant and substantive discussion still happening in
+   the thread. The authors may determine what qualifies as relevant and
+   substantive, but SHOULD be liberal in interpreting that.
+
+All voting widgets on the RFC MUST include all relevant details for that vote,
+as described in the "Required Majority" section below.
+
+To account for minor calculation errors due to timezone changes, outside
+commitments by RFC authors, and others deadlines, RFC authors MAY use a grace
+period of up to 8 hours in either direction without being in violation of the
+Cooldown Period and the Intent to Vote lifetime. RFC authors SHOULD nevertheless
+strive to observe the cut-off timestamps as closely as possible.
+
+As an example, all of the following scenarios would be allowed, but discouraged:
+
+-  Starting a vote 45 hours after the Intent to Vote has been posted.
+-  Starting the vote 7 days and 3 hours after the Intent to Vote was posted.
+-  Starting the vote 6 days and 20 hours after a Minor change Cooldown Period
+   started.
+
+Voting procedure
+================
+
+The actual start of the vote MUST be announced on the mailing list in a separate
+thread with a ``[VOTE]`` prefix followed by the RFC title as the Subject.
+
+The voting announcement email MUST include:
+
+-  A link to the Wiki page of the RFC.
+-  A link to the discussion thread.
+-  A notice if there are multiple votes to cast, as each requires a separate
+   form submission.
+-  The date and time the vote will end.
+
+The end of the vote MUST additionally be specified in the voting widget on the
+RFC so that it will auto-close at the specified timestamp.
+
+The link to the mailing list archives of the voting thread MUST be added to the
+RFC as soon as possible and no later than the announcement of the results of the
+vote.
+
+The voting period MUST be at least 14 days, but MAY be up to 28 days (e.g. to
+avoid conflicts with well-known holiday periods).
+
+Due to the significance of the end-of-year holidays for a majority of the world,
+the voting period MUST NOT start and MUST NOT end in the period between
+December, 17th 00:00 UTC and January, 10th 00:00 UTC.
+
+After the voting period has started, including after the vote closed and the RFC
+is either accepted or declined, there MUST NOT be any further Major or Minor
+changes to the RFC text and making editorial changes SHOULD be avoided for the
+avoidance of doubt. The voting details (such as the voting period or
+interpretation of secondary votes) MUST NOT be changed after the vote opened.
+
+The voting period MAY be canceled within the first 7 days in case of severe
+issues with the RFC. Canceling a vote is treated as a Major change thus triggers
+a new Cooldown Period. The title of all voting widgets MUST be changed to
+invalidate any votes that have been cast (e.g. by adding the suffix
+“(Restart)”).
+
+Errata
+======
+
+If issues with an accepted RFC are noticed during implementation, an errata
+section explaining the necessary changes SHOULD be added. A note indicating the
+error and referring to the errata section SHOULD be added to all erroneous parts
+of the RFC text.
+
+Should the necessary changes significantly impact the design, it MAY be
+appropriate to start a follow-up discussion thread, or possibly a follow-up RFC.
+At minimum, authors SHOULD send a notification message to the original
+discussion thread describing the change.
+
+If there is dispute as to whether a post-vote change requires a follow-up
+discussion of its own, an RFC and vote of its own, or neither, the final
+decision rests with the Release Managers.
 
 This section has been amended by:
 
@@ -127,7 +273,7 @@ proposal up for another vote, unless one of the following happens:
 
 -  6 months pass from the time of the previous vote, **OR**
 
--  The author(s) make substantial changes to the proposal. While it's impossible
+-  The authors make substantial changes to the proposal. While it's impossible
    to put clear definitions on what constitutes 'substantial' changes, they
    should be material enough so that they'll significantly affect the outcome of
    another vote.
