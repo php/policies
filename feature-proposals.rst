@@ -182,8 +182,8 @@ The voting period MUST be at least 14 days, but MAY be up to 28 days (e.g. to
 avoid conflicts with well-known holiday periods).
 
 Due to the significance of the end-of-year holidays for a majority of the world,
-the voting period MUST NOT start and MUST NOT end in the period between
-December 17th, 00:00 UTC and January 10th, 00:00 UTC.
+the voting period MUST NOT start and MUST NOT end in the period between December
+17th, 00:00 UTC and January 10th, 00:00 UTC.
 
 After the voting period has started, including after the vote closed and the RFC
 is either accepted or declined, there MUST NOT be any further Major or Minor
