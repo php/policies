@@ -5,11 +5,17 @@
 .. contents::
    :depth: 2
 
-:From:
-   https://wiki.php.net/rfc/releaseprocess
+Sources
 
-:Updated by:
-   https://wiki.php.net/rfc/release_cycle_update
++--------------+---------------------------------------------------------------+
+| Original RFC | -  `Request for Comments: Release Process                     |
+|              |    <https://wiki.php.net/rfc/releaseprocess>`_                |
++--------------+---------------------------------------------------------------+
+| Updates      | -  `RFC: Release Cycle Update                                 |
+|              |    <https://wiki.php.net/rfc/release_cycle_update>`_          |
+|              | -  `RFC: Policy Release Process Update                        |
+|              |    <https://wiki.php.net/rfc/policy-release-process-update>`_ |
++--------------+---------------------------------------------------------------+
 
 This document outlines the release cycles of the PHP language.
 
@@ -28,55 +34,180 @@ Roughly:
 
 No feature addition after final x.y.0 release (or x.0.0).
 
-Backward compatibility MUST be respected within the same major release (e.g.,
-8.x.x). Binary compatibility (API or ABI) MAY be broken between two features
-releases, f.e. between 8.3 and 8.4.
+Backward Compatibility
+======================
+
+A backward compatibility (BC) break is any change that causes existing userland
+code, which was previously considered valid, to behave differently than before.
+This includes changes that result in different output, trigger new errors, or
+otherwise alter the observable behavior of the code. Exceptions to this
+definition are described below.
+
+In this context, valid userland code refers to code that compiled and executed
+without fatal errors in a previous version. It does not include code that relied
+on clearly undocumented, undefined, or erroneous behavior.
+
+Compatibility Terminology
+-------------------------
+
+-  **Syntax Compatibility**: Ensures that valid PHP code from an earlier version
+   continues to parse and compile without syntax errors in the newer version.
+
+-  **Userland API Compatibility**: Refers to the consistency of functions,
+   classes, constants, and other interfaces exposed to userland PHP code.
+   Breaking this means public APIs behave differently or are removed.
+
+-  **Internal API Compatibility**: The source-level interface between PHP core,
+   extensions, and SAPIs. It is relevant at **compile time** — extensions that
+   use the internal API may fail to compile if it changes. Maintainers need to
+   update and recompile extensions when internal APIs change.
+
+-  **ABI (Application Binary Interface) Compatibility**: The binary-level
+   interface between the compiled PHP core and compiled extensions. It is
+   relevant at **run time** — changes may cause extensions to crash, misbehave,
+   or fail to load if they were compiled against an older version. ABI stability
+   ensures that precompiled extensions continue to work across patch releases
+   without recompilation.
+
+BC Breaks and Exceptions
+------------------------
+
+The following are **not considered** BC breaks:
+
+-  Adding deprecations. Code that triggers a deprecation warning continues to
+   work and is still valid. Converting deprecations into exceptions is a user
+   choice and not part of the language's default behavior.
+
+-  Adding new symbols (e.g., functions, classes, constants) into the global or
+   core extension namespace, or introducing new language keywords, even if they
+   may conflict with user-defined names or identifiers. While these additions
+   can cause name conflicts, they are not classified as BC breaks. RFCs and
+   contributors SHOULD make a best effort to minimize the risk of conflicts when
+   choosing new names, but SHOULD NOT pick significantly worse names purely to
+   reduce conflict risk.
+
+-  Behavior changes in undefined or undocumented edge cases MAY be allowed if
+   well justified. However, care SHOULD be taken to minimize disruption.
+
+-  Fixing clearly incorrect or unintended behavior, even if it changes the
+   output or side effects of a function, is not automatically considered a BC
+   break. This applies to behavior that was buggy, undocumented, or inconsistent
+   with expectations or similar functionality. The potential impact of such a
+   fix SHOULD be evaluated, and based on that, the change MAY be treated as a BC
+   break if it is likely to affect real-world code in significant or disruptive
+   ways.
+
+On Breaking Compatibility
+-------------------------
+
+Breaking BC, APIs, or ABIs (internal) SHOULD NOT be done lightly or for the sake
+of doing it. RFCs explaining the reasoning behind a breakage MUST include:
+
+-  Clear justification for the change
+-  A summary of its consequences
+-  Migration guidance
+-  Test cases and patches
+
+If a high severity security fix requires breaking the internal ABI or API, a
+proper migration path MUST be provided, and the impact MUST be minimized as much
+as possible. This MUST also be accompanied by additional communication during
+the release.
+
+SAPI removal SHOULD generally occur only in a major version. However, in
+exceptional cases where a SAPI presents significant maintenance or security
+concerns, an exception MAY be made. In all cases, the removal MUST go through
+the RFC process.
+
+All new user-facing features MUST be mentioned in the `UPGRADING
+<https://github.com/php/php-src/blob/master/UPGRADING>`_ document.
+
+All API and ABI breaks MUST be mentioned in the `UPGRADING.INTERNALS
+<https://github.com/php/php-src/blob/master/UPGRADING.INTERNALS>`_ document.
+
+Further reading:
+
+-  http://en.wikipedia.org/wiki/Application_programming_interface
+-  http://en.wikipedia.org/wiki/Application_binary_interface
 
 Major Version Number
 ====================
 
 -  x.y.z to x+1.0.0
 
-   -  Bug fixes
-   -  New features
-   -  Extensions support can be ended (moved to PECL)
-   -  Backward compatibility can be broken
-   -  API compatibility can be broken (internals and userland)
-   -  ABI can be broken (internals)
+   -  It SHOULD include bugfixes and new features.
+   -  Extensions support MAY be ended (moved to PECL).
+   -  SAPI support MAY be ended (removed from the php-src repository).
+   -  ABI backward compatibility MAY be broken.
+   -  Internal API backward compatibility MAY be broken.
+   -  Userland API backward compatibility MAY be broken.
+   -  Significant userland API backward compatibility breaks SHOULD be preceded
+      by the deprecation phase in the previous major version.
 
 Minor Version Number
 ====================
 
--  x.y.z to x.y+1.z
+-  x.y.z to x.y+1.0
 
-   -  Bugfixes
-   -  New features
-   -  Extensions support can be ended (moved to PECL)
-   -  Backward compatibility must be kept
-   -  API compatibility must be kept (userland)
-   -  ABI and API can be broken (internals)
-   -  Source compatibility should be kept if possible, while breakages are
-      allowed
+   -  It SHOULD include bugfixes and new features.
+
+   -  Extensions support MAY be ended (moved to PECL).
+
+   -  SAPI support is RECOMMENDED to be kept.
+
+   -  Internal API compatibility MAY be broken when necessary (for example,
+      during refactoring), but SHOULD be preserved whenever possible, such as by
+      adding an _ex variant of a function instead of changing the existing one.
+
+   -  ABI backward compatibility MAY be broken.
+
+   -  Syntax backward compatibility SHOULD be maintained - every PHP program
+      that compiles SHOULD continue to compile.
+
+   -  Backward compatibility breaks in minor versions SHOULD NOT result in
+      silent behavioral differences. Instead any breaking change SHOULD be
+      "obvious" when executing the program. It means it SHOULD either throw
+      exception or trigger error. Exceptions MAY be considered on a case by case
+      basis if the breakage is minimal, the change provides clear user facing
+      value, and a non-breaking migration path would result in a significantly
+      worse or more complex API.
+
+   -  Backward compatibility breaks introduced in minor versions SHOULD allow
+      for straightforward code adjustments to maintain compatibility with both
+      the current and upcoming PHP versions. Such adjustments SHOULD be feasible
+      with basic tooling and not require complex static analysis.
 
 Patch Version Number
 ====================
 
 -  x.y.z to x.y.z+1
 
-   -  Bug fixes and security patches only
-   -  Extensions support can't be removed (like move them to PECL)
-   -  Backward compatibility must be kept (internals and userland)
-   -  ABI and API compatibility must be kept (internals)
+   -  It SHOULD include bug fixes and security patches
 
-It is critical to understand the consequences of breaking BC, APIs or ABIs (only
-internals related). It should not be done for the sake of doing it. RFCs
-explaining the reasoning behind a breakage and the consequences along with test
-cases and patch(es) should help.
+   -  New features MUST NOT be added.
 
-See the following links for explanation about API and ABI:
+   -  Extensions support MUST NOT be removed (e.g. moved to PECL).
 
--  http://en.wikipedia.org/wiki/Application_programming_interface
--  http://en.wikipedia.org/wiki/Application_binary_interface
+   -  Userland API backward compatibility MUST be maintained.
+
+   -  ABI and internal API backward compatibility SHOULD be maintained for fixes
+      of high severity security issues, and MUST be maintained for all other
+      fixes.
+
+Major Version Bump
+==================
+
+A bump to the major version number (e.g., from 8.x to 9.0) MUST be approved
+through the RFC process.
+
+The decision to bump the major version number MUST be made before the release
+managers for that version are selected.
+
+It SHOULD be made at least 6 months prior to the planned alpha release, to allow
+sufficient time for changes to tooling, extensions, and documentation.
+
+It is RECOMMENDED to decide the major version bump before the previous version
+is branched, so that `master` clearly becomes the development branch for the new
+major version.
 
 Example time line with only one major version at a time
 -------------------------------------------------------
@@ -220,30 +351,42 @@ After the general availability release:
 
 -  Until the end of year 3 (e.g., for PHP 8.4: until Dec 31, 2027):
 
-      -  Security fixes, and fixes to address regressions introduced during a
-         normal bug fix release.
+      -  Security fixes, compatibility build fixes, fixes to address regressions
+         introduced during a normal bug fix release, and fixes for crashes like
+         use after free or segmentation faults.
+
+      -  Fixes for crashes SHOULD be applied only exceptionally for small fixes.
+         The fix MUST get RM approval.
 
       -  Updates to ABI incompatible versions of dependent libraries on Windows.
 
       -  Release only when there is a security issue or regression issue to
          address.
 
-      -  Security fix and regression releases SHOULD occur on the same date as
-         bug fix releases for the other branches. Exceptions can be made for
-         high risk security issues or high profile regressions.
+      -  Security fix, compatibility build fix, and regression fix releases
+         SHOULD occur on the same date as bug fix releases for the other
+         branches. Exceptions can be made for high risk security issues or high
+         profile regressions.
 
 -  Until the end of year 4 (e.g., for PHP 8.4: until Dec 31, 2028):
 
-      -  Security fixes **only**.
+      -  Security fixes, compatibility build fixes, fixes to address regressions
+         caused by a security fix, and fixes for crashes like use after free or
+         segmentation faults.
 
-      -  Release only when there is a security issue.
-
-      -  Security fix releases SHOULD occur on the same date as bug fix releases
-         for the other branches. Exceptions can be made for high risk security
-         issues.
+      -  Regression fixes and fixes for crashes SHOULD be applied only
+         exceptionally for small fixes. The fix MUST get RM approval.
 
       -  Updates to ABI incompatible versions of dependent libraries on Windows
          are **not** performed.
+
+      -  Release only when there is a security issue or regression issue to
+         address.
+
+      -  Security fix, compatibility build fix, and regression fix releases
+         SHOULD occur on the same date as bug fix releases for the other
+         branches. Exceptions can be made for high risk security issues or high
+         profile regressions.
 
 *"End of year" means:* The end of the calendar year, i.e., Dec 31 at 24:00 UTC.
 The numbered years in the examples (e.g., "end of year 2") indicate the number
@@ -256,21 +399,29 @@ is Dec 31, 2026, 24:00 UTC, even if the actual release date slips to Jan 9,
  Feature selection and development
 ***********************************
 
-RFCs have been introduced many years ago and have been proven as being an
-amazing way to avoid conflicts while providing a very good way to propose new
-things to php.net. New features or additions to the core should go through the
-RFC process. It has been done successfully (as the process went well, but the
-features were not necessary accepted) already for a dozen of new features or
-improvements.
+RFCs were introduced many years ago and have proven to be an effective way to
+avoid conflicts while providing a structured process for proposing changes to
+the PHP programming language. Most new features or core additions SHOULD go
+through the RFC process. However, some features MAY be exempt, as described
+below. The process has been used many times for proposing new features and
+improvements, even when some proposals were ultimately not accepted.
 
-Features can use branch(es) if necessary, doing so will minimize the impact of
-other commits and changes on the development of a specific feature (or the other
-way 'round). The shorter release cycle also ensures that a given feature can get
-into the next release, as long as the RFC has been accepted.
+New features MUST be implemented and proposed using a GitHub pull request.
 
-The change to what we have now is the voting process. It will not happen anymore
-on the mailing list but in the RFCs directly, for php.net members, in a public
-way.
+Internal API changes (those that do not affect the user-facing API), as well as
+user-facing features in extensions and SAPIs, do not require an RFC unless a
+core developer (someone with commit access to php-src) raises an objection or
+requests an RFC within one month of the implementation pull request being
+opened.
+
+A core developer MAY also request that the feature be discussed on the internals
+mailing list, in which case an additional two-week period MUST pass without
+objection or RFC request before the feature can be merged. However, any change
+that breaks user-facing backward compatibility MUST go through the RFC process.
+
+Pull requests MAY be merged before the one-month period ends. However, if a core
+developer raises an objection or requests an RFC after the merge but within the
+one-month window, the feature MUST be reverted.
 
 See also `the voting RFC <https://wiki.php.net/rfc/voting>`_.
 
@@ -291,8 +442,6 @@ We have voting plugin for dokuwiki (doodle2) that allows voting on the wiki
 The roles of the release managers are about being a facilitator:
 
 -  Manage the release process
--  Start the decisions discussions and vote about the features and change for a
-   given release
 -  Create a roadmap and planing according to this RFC
 -  Package the releases (test and final releases)
 -  Decide which bug fixes can be applied to a release, within the cases defined
@@ -301,10 +450,6 @@ The roles of the release managers are about being a facilitator:
 But they are not:
 
 -  Decide which features, extension or SAPI get in a release or not
-
-Discussions or requests for a feature or to apply a given patch must be done on
-the public internals mailing list or in the security mailing (ideally using the
-bug tracker)
 
 ****************************
  Release managers selection
