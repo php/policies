@@ -78,10 +78,6 @@ The following are **not considered** BC breaks:
    work and is still valid. Converting deprecations into exceptions is a user
    choice and not part of the language's default behavior.
 
--  Adding Type and Value Errors to validate inputs to functions and methods.
-   These are not classified as BC breaks because not adding them allows incorrect
-   code to run and thus leads to hard to debug code. 
-
 -  Adding new symbols (e.g., functions, classes, constants) into the global or
    core extension namespace, or introducing new language keywords, even if they
    may conflict with user-defined names or identifiers. While these additions
@@ -89,6 +85,12 @@ The following are **not considered** BC breaks:
    contributors SHOULD make a best effort to minimize the risk of conflicts when
    choosing new names, but SHOULD NOT pick significantly worse names purely to
    reduce conflict risk.
+
+-  Adding TypeError and ValueError exceptions to validate inputs to functions and methods.
+   These are not classified as BC breaks because not adding them allows incorrect
+   code to run and thus leads to hard to debug code.
+
+-  Changing the wording of diagnostics, error, or exceptions messages.
 
 -  Behavior changes in undefined or undocumented edge cases MAY be allowed if
    well justified. However, care SHOULD be taken to minimize disruption.
