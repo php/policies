@@ -90,7 +90,7 @@ The following are **not considered** BC breaks:
    These are not classified as BC breaks because not adding them allows incorrect
    code to run and thus leads to hard to debug code.
 
--  Changing the wording of diagnostics, error, or exceptions messages.
+-  Changing the wording of diagnostic, error, or exception messages.
 
 -  Behavior changes in undefined or undocumented edge cases MAY be allowed if
    well justified. However, care SHOULD be taken to minimize disruption.
