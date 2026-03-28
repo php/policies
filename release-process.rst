@@ -483,7 +483,7 @@ security-only phase).
 Release managers SHOULD NOT be a hands-off release manager for more than one
 actively supported PHP version at the same time.
 
-About four months prior to the to the scheduled release of the first alpha
+About four months prior to the scheduled release of the first alpha
 release of the next minor or major version (early March), the process to find
 release managers for the upcoming PHP version MUST start with a “call for
 volunteers” on the ``internals@lists.php.net`` mailing list. The process SHOULD
