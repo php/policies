@@ -1,4 +1,5 @@
 name: Docs
+
 on:
   push:
     branches:
@@ -8,12 +9,13 @@ on:
   pull_request:
     paths:
       - '*.rst'
+
+permissions:
+  contents: read
+
 jobs:
   pages:
     runs-on: ubuntu-22.04
-    permissions:
-      pages: write
-      id-token: write
     steps:
       - name: git checkout
         uses: actions/checkout@v6
