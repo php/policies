@@ -26,6 +26,10 @@ It contains the following items:
 -  `Third-Party code <third-party-code.rst>`_: The circumstances under which the
    PHP project will use PHP code written by third parties in the ecosystem.
 
+-  `PHP License <php-license.rst>`_: Documents the PHP project's adoption of the
+   PHP License, version 4, and the Zend Engine License, version 3, and their
+   deprecation in favor of the Modified BSD License.
+
 ***********************
  Requirements Notation
 ***********************
