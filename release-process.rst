@@ -86,6 +86,12 @@ The following are **not considered** BC breaks:
    choosing new names, but SHOULD NOT pick significantly worse names purely to
    reduce conflict risk.
 
+-  Adding TypeError and ValueError exceptions to validate inputs to functions
+   and methods. These are not classified as BC breaks because not adding them
+   allows incorrect code to run and thus leads to hard to debug code.
+
+-  Changing the wording of diagnostic, error, or exception messages.
+
 -  Behavior changes in undefined or undocumented edge cases MAY be allowed if
    well justified. However, care SHOULD be taken to minimize disruption.
 
