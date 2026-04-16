@@ -459,7 +459,7 @@ The release manager team for each PHP version MUST consist of two hands-on
 release managers and one hands-off release manager. Hands-on release managers
 perform the actual release manager work as outlined above, in particular they
 make the actual releases, usually alternating for every version, and are the
-main contact in case of questions regarding to and issues with an release. The
+main contact in case of questions regarding to and issues with a release. The
 hands-off release manager advises the hands-on release managers, helps resolve
 disagreements between the hands-on release managers as a “tie-breaker” and steps
 in if one of the hands-on release managers becomes unavailable.
