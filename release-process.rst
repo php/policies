@@ -467,8 +467,8 @@ in if one of the hands-on release managers becomes unavailable.
 The hands-off release manager MUST be a veteran release manager, meaning they
 MUST have previously served as a release manager. The hands-off release manager
 SHOULD be a hands-on release manager of a currently supported PHP version. It is
-customary that a hands-on release manager of the immediately preceding PHP
-version volunteers as the hands-off release manager for the following PHP
+customary that a hands-on release manager of the most recent PHP
+version volunteers as the hands-off release manager for the upcoming PHP
 version.
 
 Release managers MUST NOT be a hands-on release manager for more than one
