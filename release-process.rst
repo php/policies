@@ -467,9 +467,8 @@ in if one of the hands-on release managers becomes unavailable.
 The hands-off release manager MUST be a veteran release manager, meaning they
 MUST have previously served as a release manager. The hands-off release manager
 SHOULD be a hands-on release manager of a currently supported PHP version. It is
-customary that a hands-on release manager of the most recent PHP
-version volunteers as the hands-off release manager for the upcoming PHP
-version.
+customary that a hands-on release manager of the most recent PHP version
+volunteers as the hands-off release manager for the upcoming PHP version.
 
 Release managers MUST NOT be a hands-on release manager for more than one
 actively supported PHP version (i.e. the first two years after the GA release;
@@ -483,11 +482,11 @@ security-only phase).
 Release managers SHOULD NOT be a hands-off release manager for more than one
 actively supported PHP version at the same time.
 
-About four months prior to the scheduled release of the first alpha
-release of the next minor or major version (early March), the process to find
-release managers for the upcoming PHP version MUST start with a “call for
-volunteers” on the ``internals@lists.php.net`` mailing list. The process SHOULD
-be started by the hands-on release managers of the last PHP version.
+About four months prior to the scheduled release of the first alpha release of
+the next minor or major version (early March), the process to find release
+managers for the upcoming PHP version MUST start with a “call for volunteers” on
+the ``internals@lists.php.net`` mailing list. The process SHOULD be started by
+the hands-on release managers of the last PHP version.
 
 The application period SHOULD last roughly one month, such that the vote for the
 next release managers starts in early April, about three months prior to the
