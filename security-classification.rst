@@ -99,8 +99,8 @@ We do not classify as a security issue any issue that:
 -  requires invocation of specific code, which may be valid but is obviously
    malicious
 
--  requires invocation of functions with specific arguments, which may be valid
-   but are obviously malicious
+-  requires passing malicious arguments to functions clearly not intended to
+   receive unsanitized values, e.g. $query in mysqli_query()
 
 -  requires specific actions to be performed on the server, which are not
    commonly performed, or are not commonly permissible for the user (uid)
