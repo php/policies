@@ -458,11 +458,12 @@ But they are not:
 The release manager team for each PHP version MUST consist of two hands-on
 release managers and one hands-off release manager. Hands-on release managers
 perform the actual release manager work as outlined above, in particular they
-make the actual releases, usually alternating for every version, and are the
-main contact in case of questions regarding to and issues with a release. The
-hands-off release manager advises the hands-on release managers, helps resolve
-disagreements between the hands-on release managers as a “tie-breaker” and steps
-in if one of the hands-on release managers becomes unavailable.
+make the actual releases, usually alternating for every patch release, and are
+the main contact in case of questions regarding to and issues with the PHP
+version they are responsible for. The hands-off release manager advises the
+hands-on release managers, helps resolve disagreements between the hands-on
+release managers as a “tie-breaker” and steps in if one of the hands-on release
+managers becomes unavailable.
 
 The hands-off release manager MUST be a veteran release manager, meaning they
 MUST have previously served as a release manager. The hands-off release manager
@@ -470,29 +471,28 @@ SHOULD be a hands-on release manager of a currently supported PHP version. It is
 customary that a hands-on release manager of the most recent PHP version
 volunteers as the hands-off release manager for the upcoming PHP version.
 
-Release managers MUST NOT be a hands-on release manager for more than one
-actively supported PHP version (i.e. the first two years after the GA release;
-including the pre-release period) at the same time. As an example, a hands-on
-release manager for PHP 8.3 (actively supported until 2025-12-31) is only
-eligible to be a hands-on release manager starting with PHP 8.6 (pre-release
-period starting in 2026). Release managers SHOULD NOT be a hands-on release
-manager for more than one PHP version at the same time (i.e. including the
-security-only phase).
+Hands-on release managers of an actively supported PHP version (i.e. the first
+two years after the GA release) MUST NOT apply to be a hands-on release manager
+for the upcoming PHP version. Hands-off release managers of an actively
+supported PHP version SHOULD NOT apply to be a hands-off release manager for the
+upcoming PHP version.
 
-Release managers SHOULD NOT be a hands-off release manager for more than one
-actively supported PHP version at the same time.
+As an example, a hands-on release manager for PHP 8.3 (actively supported until
+2025-12-31) is only eligible to be a hands-on release manager starting with PHP
+8.6 (application period starting in 2026).
 
 About four months prior to the scheduled release of the first alpha release of
-the next minor or major version (early March), the process to find release
-managers for the upcoming PHP version MUST start with a “call for volunteers” on
-the ``internals@lists.php.net`` mailing list. The process SHOULD be started by
-the hands-on release managers of the last PHP version.
+the upcoming PHP version (early March), the process to find release managers for
+the upcoming PHP version MUST start with a “call for volunteers” on the
+``internals@lists.php.net`` mailing list. The process SHOULD be started by one
+of the hands-on release managers of the most recent PHP version.
 
 The application period SHOULD last roughly one month, such that the vote for the
 next release managers starts in early April, about three months prior to the
-scheduled release of the first alpha version. The end of the application period
-MUST be defined in the “call for volunteers” email. It MAY be extended if an
-insufficient number of volunteers stepped forward.
+scheduled release of the first alpha version of the upcoming PHP version. The
+end of the application period MUST be defined in the “call for volunteers”
+email. It MAY be extended if an insufficient number of volunteers stepped
+forward.
 
 See the call for PHP 8.6 release managers as an example:
 https://news-web.php.net/php.internals/130240
