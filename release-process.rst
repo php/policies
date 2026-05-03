@@ -465,12 +465,6 @@ hands-on release managers, helps resolve disagreements between the hands-on
 release managers as a “tie-breaker” and steps in if one of the hands-on release
 managers becomes unavailable.
 
-The hands-off release manager MUST be a veteran release manager, meaning they
-MUST have previously served as a release manager. The hands-off release manager
-SHOULD be a hands-on release manager of a currently supported PHP version. It is
-customary that a hands-on release manager of the most recent PHP version
-volunteers as the hands-off release manager for the upcoming PHP version.
-
 Hands-on release managers of an actively supported PHP version (i.e. the first
 two years after the GA release) MUST NOT apply to be a hands-on release manager
 for the upcoming PHP version. Hands-off release managers of an actively
@@ -480,6 +474,13 @@ upcoming PHP version.
 As an example, a hands-on release manager for PHP 8.3 (actively supported until
 2025-12-31) is only eligible to be a hands-on release manager starting with PHP
 8.6 (application period starting in 2026).
+
+The hands-off release manager MUST be a veteran release manager, meaning they
+MUST have previously served as a hands-on release manager. The hands-off release
+manager SHOULD be a hands-on release manager of a currently supported PHP
+version to ensure they are familiar with the current practices. It is customary
+that a hands-on release manager of the most recent PHP version volunteers as the
+hands-off release manager for the upcoming PHP version.
 
 About four months prior to the scheduled release of the first alpha release of
 the upcoming PHP version (early March), the process to find release managers for
