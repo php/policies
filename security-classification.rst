@@ -100,7 +100,8 @@ We do not classify as a security issue any issue that:
    malicious
 
 -  requires passing malicious arguments to functions clearly not intended to
-   receive unsanitized values, e.g. $query in mysqli_query()
+   receive unsanitized values, e.g. mysqli_query(). escapeshellarg() on the
+   other hand should clearly be hardened against unsafe inputs.
 
 -  requires specific actions to be performed on the server, which are not
    commonly performed, or are not commonly permissible for the user (uid)
