@@ -35,9 +35,8 @@ text-based communication platforms. At the time of adoption, these include:
 -  Mastodon (`@php@fosstodon.org <https://fosstodon.org/@php>`_)
 -  LinkedIn (`@phpnet <https://www.linkedin.com/company/phpnet/>`_)
 
-Additional text-based platforms (for example, Bluesky, Threads) MAY be brought
-into scope at the discretion of the Social Media Team, subject to the
-credential and content rules in this policy.
+Changes to this list are governed by the Adding and Removing Official Accounts_ 
+section.
 
 Video platforms (for example, YouTube, TikTok, Instagram) require significant
 content-production resources and are explicitly out of scope. They MAY be
@@ -127,6 +126,8 @@ resolving disagreements.
    the team drops below this number, the remaining members SHOULD recruit
    replacements within thirty (30) days; if they cannot, the matter SHOULD
    be raised on the internals mailing list.
+-  While membership is below three, automated content SHALL continue; 
+   curated content and marketing initiatives are paused.
 
 Members of the Social Media Team do not, by virtue of that membership, hold
 account credentials. Credential custody remains with the Infrastructure Team.
@@ -140,8 +141,8 @@ Foundation`_ — for example, drafting marketing initiatives, curating content,
 or running coordinated campaigns. Such delegation:
 
 -  MAY be open-ended or scoped to particular content categories.
--  SHALL be recorded in a manner accessible to the community (for example,
-   in a note on this policy page or in a public team document).
+-  SHALL be recorded in this policy file or in a sub-document under this 
+   repository, linked from this section.
 -  MAY be revoked by the team at any time.
 
 Delegation does not transfer credential custody — credentials remain with the
@@ -205,7 +206,6 @@ Official PHP accounts MUST NOT post:
 -  Political statements unrelated to PHP
 -  Commercial endorsements of products or services unrelated to PHP
 -  Personal opinions presented as the PHP project's official position
--  Content that violates the PHP project Code of Conduct
 -  Personal grievances or interpersonal disputes between contributors
 
 ***********************
@@ -214,7 +214,6 @@ Official PHP accounts MUST NOT post:
 
 For each official account:
 
--  A minimum of three (3) Infrastructure Team members MUST hold credentials.
 -  Credentials MUST be stored securely with documented access procedures.
 -  When a credential holder steps down, replacement MUST be coordinated
    within thirty (30) days.
@@ -239,9 +238,6 @@ Upon adoption of this policy:
    #. Petition the platform for account recovery (where supported);
    #. Establish a new official account on that platform; or
    #. Mark the original account as non-official on PHP.net.
-
-#. For platforms where no official account currently exists, the Social Media
-   Team MAY request the Infrastructure Team to create one under this policy.
 
 ***************************************
  Adding and Removing Official Accounts
@@ -281,10 +277,11 @@ account is linked from PHP.net, the link SHOULD be updated or removed as
 part of the same change. The `Scope`_ list MUST be updated by pull request.
 
 Where an account has established public reach (for example, a sizable
-follower count or a long-standing presence), the Social Media Team SHOULD
-announce the proposed retirement on the internals mailing list before
-acting, to give the community an opportunity to comment. The community MAY
-request an RFC if it considers the retirement a project-level decision.
+follower count (≥1k followers) or a long-standing presence (≥2 years presence)), 
+the Social Media Team SHOULD announce the proposed retirement on the internals 
+mailing list before acting, to give the community an opportunity to comment. 
+The community MAY request an RFC if it considers the retirement a project-level 
+decision.
 
 Recognizing an Existing Third-Party-Controlled Account
 ======================================================
@@ -313,6 +310,9 @@ curated content does not require manual intervention for every post.
 This policy MAY be amended by a future RFC with a 2/3 majority approval.
 Updates to the `Current Members`_ list do not require an RFC and SHOULD be
 made by pull request.
+
+Routine additions and retirements per Adding and Removing Official Accounts_ do not
+  require an RFC unless escalated by the community.
 
 *****************
  Current Members
