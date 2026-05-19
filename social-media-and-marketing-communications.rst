@@ -277,8 +277,7 @@ Retiring or Removing an Account
 The Social Media Team MAY decide to retire an official account. Available
 options include:
 
--  **Pause posting.** Keep the account, stop posting, and optionally pin a
-   notice referring readers to other channels.
+-  **Pause posting.** Keep the account, stop posting, and pin a notice referring readers to other channels.
 -  **Mark non-official.** Retain the account but remove it from PHP.net and from
    the Scope_ list.
 -  **Archive or delete.** Close or delete the account through the platform,
