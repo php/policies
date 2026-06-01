@@ -438,7 +438,7 @@ The question for this section is about who will be allowed to vote:
 -  qa, phpt (yes, no)
 -  other sub projects like pear (yes, no)
 
-We have voting plugin for dokuwiki (doodle2) that allows voting on the wiki
+We have a voting plugin for dokuwiki (doodle2) that allows voting on the wiki
 (installed).
 
 **********
@@ -448,14 +448,14 @@ We have voting plugin for dokuwiki (doodle2) that allows voting on the wiki
 The roles of the release managers are about being a facilitator:
 
 -  Manage the release process
--  Create a roadmap and planing according to this RFC
+-  Create a roadmap and planning according to this RFC
 -  Package the releases (test and final releases)
 -  Decide which bug fixes can be applied to a release, within the cases defined
    in this RFC
 
-But they are not:
+But it is not their role to:
 
--  Decide which features, extension or SAPI get in a release or not
+-  Decide which features, extensions, or SAPIs get in a release or not
 
 ****************************
  Release managers selection
@@ -463,12 +463,12 @@ But they are not:
 
 The release manager team for each PHP version MUST consist of two hands-on
 release managers and one hands-off release manager. Hands-on release managers
-perform the actual release manager work as outlined above, in particular they
+perform the actual release manager work as outlined above - in particular they
 make the actual releases, usually alternating for every patch release, and are
-the main contact in case of questions regarding to and issues with the PHP
+the main contact in case of questions or issues with the PHP
 version they are responsible for. The hands-off release manager advises the
 hands-on release managers, helps resolve disagreements between the hands-on
-release managers as a “tie-breaker” and steps in if one of the hands-on release
+release managers as a “tie-breaker”, and steps in if one of the hands-on release
 managers becomes unavailable.
 
 Hands-on release managers of an actively supported PHP version (i.e. the first
@@ -507,18 +507,18 @@ https://news-web.php.net/php.internals/130240
 Voting is conducted using "Single Transferrable Vote" (STV) method.
 
 ***************************************************************
- Feature(s) preview release, solving the experimental features
+ Feature(s) preview release for experimental features
 ***************************************************************
 
-Some features require a lot of testing or users feedback before they can be
-considered as ready, stable enough, or proven as having made good design
-decisions. Having them in normal releases is dangerous. The past releases told
-us more than once that many good ideas ended as being not so good after all. But
-we had to keep them in and, even worst, maintain them forever.
+Some features require a lot of testing or user feedback before they can be
+considered as ready, stable enough, or proven as having a good design.
+Having them in normal releases is dangerous. Past releases demonstrated
+more than once that many good ideas ended up not being so good after all.
+But we had to keep them in and, even worse, maintain them forever.
 
 A feature preview release could solve this problem. A feature(s) preview release
 gives us and our users a way to try bleeding edge additions to the language or
-core while providing us with an invaluable feedback to actually valid both the
+core while providing us with invaluable feedback to actually validate both the
 implementation and the design choices.
 
 Non core features (engine, stream, etc.) could benefit from a feature preview
@@ -526,7 +526,7 @@ release while doing it via PECL should be the preferred way.
 
 Feature(s) preview releases can happen any time and can be platform specific.
 Whether a specific development branch is used or not is up to the developers of
-the given features (external repositories like github or bitbucket can obviously
+the given features (external repositories like GitHub or Bitbucket can obviously
 be used as well).
 
 *********************
