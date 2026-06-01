@@ -465,11 +465,11 @@ The release manager team for each PHP version MUST consist of two hands-on
 release managers and one hands-off release manager. Hands-on release managers
 perform the actual release manager work as outlined above - in particular they
 make the actual releases, usually alternating for every patch release, and are
-the main contact in case of questions or issues with the PHP
-version they are responsible for. The hands-off release manager advises the
-hands-on release managers, helps resolve disagreements between the hands-on
-release managers as a “tie-breaker”, and steps in if one of the hands-on release
-managers becomes unavailable.
+the main contact in case of questions or issues with the PHP version they are
+responsible for. The hands-off release manager advises the hands-on release
+managers, helps resolve disagreements between the hands-on release managers as a
+“tie-breaker”, and steps in if one of the hands-on release managers becomes
+unavailable.
 
 Hands-on release managers of an actively supported PHP version (i.e. the first
 two years after the GA release) MUST NOT apply to be a hands-on release manager
@@ -506,15 +506,15 @@ https://news-web.php.net/php.internals/130240
 
 Voting is conducted using "Single Transferrable Vote" (STV) method.
 
-***************************************************************
+******************************************************
  Feature(s) preview release for experimental features
-***************************************************************
+******************************************************
 
 Some features require a lot of testing or user feedback before they can be
-considered as ready, stable enough, or proven as having a good design.
-Having them in normal releases is dangerous. Past releases demonstrated
-more than once that many good ideas ended up not being so good after all.
-But we had to keep them in and, even worse, maintain them forever.
+considered as ready, stable enough, or proven as having a good design. Having
+them in normal releases is dangerous. Past releases demonstrated more than once
+that many good ideas ended up not being so good after all. But we had to keep
+them in and, even worse, maintain them forever.
 
 A feature preview release could solve this problem. A feature(s) preview release
 gives us and our users a way to try bleeding edge additions to the language or
