@@ -79,9 +79,16 @@ Adding an Account
 
 #. The Social Media Team agrees, per its internal process, that a new account on
    a given platform should be created.
+
+#. The Social Media Team assesses the platform — its developer audience and its
+   overall fit for an official PHP presence — per the policy's reach and
+   `discretion principles`_.
+
 #. The Social Media Team requests the Infrastructure Team to create the account
    and configure credentials per the policy's `Credential Management`_ section.
+
 #. The Infrastructure Team confirms creation.
+
 #. The Scope_ list is updated by pull request. The account becomes official once
    the pull request is merged.
 
@@ -122,6 +129,8 @@ of the policy's content rules.
 .. _credential management: ../social-media-and-marketing-communications.rst#credential-management
 
 .. _delegation to the php foundation: ../social-media-and-marketing-communications.rst#delegation-to-the-php-foundation
+
+.. _discretion principles: ../social-media-and-marketing-communications.rst#principles
 
 .. _prohibited content: ../social-media-and-marketing-communications.rst#prohibited-content
 

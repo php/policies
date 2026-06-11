@@ -52,15 +52,29 @@ scope of this document.
 
 Official PHP communications SHALL be governed by the following principles:
 
-#. **Reach.** PHP SHOULD maintain a presence on any text-based platform with a
-   significant developer audience.
+#. **Reach.** PHP SHOULD maintain a presence on text-based platforms with a
+   significant developer audience, subject to the discretion principle below.
+
+#. **Discretion.** Presence on any given platform is at the project's
+   discretion. Nothing in this policy obliges the project to establish or
+   maintain a presence on any particular platform. A decision to add or retire
+   an account MUST be deliberate and documented: it MUST follow the procedures
+   defined in the Social Media Team's `operational policies`_, and a retirement
+   MUST be announced on the internals mailing list before taking effect. The
+   community MAY escalate a contested decision to an RFC.
+
+#. **No silent abandonment.** While a platform is listed in the Scope_ section,
+   posting SHALL continue — at minimum, automated content where the platform
+   technically permits it. Ceasing activity on a listed platform other than
+   through the retirement procedure violates this policy.
 
 #. **Automation.** Communications SHOULD be automated where feasible, to
    minimize volunteer burden and ensure consistency.
 
 #. **Neutrality.** Communications MUST focus on PHP — the language, its
    releases, security advisories, and community events — and MUST NOT take
-   positions on platform politics or non-PHP commercial matters.
+   positions on platform politics or non-PHP commercial matters. Official
+   accounts MUST NOT be used as a venue for advocacy unrelated to PHP.
 
 #. **Shared stewardship.** Credentials for each official account MUST be held by
    multiple Infrastructure Team members, with documented succession.
@@ -75,6 +89,11 @@ Official PHP communications SHALL be governed by the following principles:
 PHP Infrastructure Team: Account Custody
 ========================================
 
+For the purposes of this policy, the *PHP Infrastructure Team* is the existing
+group of volunteers who maintain the PHP project's infrastructure, coordinated
+through the ``systems@php.net`` mailing list and the `php/infrastructure`_
+repository.
+
 The PHP Infrastructure Team is responsible for the technical custody and
 operation of official accounts. The Infrastructure Team:
 
@@ -87,6 +106,10 @@ operation of official accounts. The Infrastructure Team:
    platform supports it.
 
 -  MUST ensure credential succession when a holder steps down.
+
+-  MUST maintain a public list of the credential holders for each official
+   account (for example, in the `php/infrastructure`_ repository or in this
+   repository).
 
 -  SHALL handle technical operations such as account recovery, security
    incidents, and platform compliance.
@@ -148,6 +171,11 @@ resolving disagreements.
 -  The current roster is maintained in the `Current Members`_ section below and
    SHOULD be updated by pull request to this repository when membership changes.
 
+-  Additions to the roster SHALL be announced on the internals mailing list, and
+   the roster pull request SHOULD remain open for at least one (1) week to allow
+   community comment. Sustained objections SHOULD be resolved before the pull
+   request is merged.
+
 -  The team SHOULD have at least three (3) active members at all times. If the
    team drops below this number, the remaining members SHOULD recruit
    replacements within thirty (30) days; if they cannot, the matter SHOULD be
@@ -156,6 +184,10 @@ resolving disagreements.
 -  While membership is below three, automated posting SHALL continue; content
    requiring the team's approval (as defined in its operational policies) is
    paused.
+
+The team MAY remove a member according to its internal process. In addition, the
+team is accountable to the project as a whole: the community MAY remove a
+member, or reconstitute the team, through the project's RFC process.
 
 Members of the Social Media Team do not, by virtue of that membership, hold
 account credentials. Credential custody remains with the Infrastructure Team. An
@@ -189,6 +221,10 @@ policies, official PHP accounts MUST NOT post:
 -  Commercial endorsements of products or services unrelated to PHP
 -  Personal opinions presented as the PHP project's official position
 -  Personal grievances or interpersonal disputes between contributors
+
+Applying these rules — including judging whether a topic is related to PHP —
+requires contextual judgment. That judgment rests with the Social Media Team.
+Disagreements SHOULD be raised on the internals mailing list.
 
 ***********************
  Credential Management
@@ -261,6 +297,8 @@ request when membership changes.
 .. _operational policies: social-media/team-operations.rst
 
 .. _php foundation: https://thephp.foundation/
+
+.. _php/infrastructure: https://github.com/php/infrastructure
 
 .. _social media and marketing communications policy rfc: https://wiki.php.net/rfc/social-media-policy
 
