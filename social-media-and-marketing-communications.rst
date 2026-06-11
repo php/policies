@@ -34,8 +34,9 @@ text-based communication platforms. At the time of adoption, these include:
 -  Mastodon (`@php@fosstodon.org <https://fosstodon.org/@php>`_)
 -  LinkedIn (`@phpnet <https://www.linkedin.com/company/phpnet/>`_)
 
-Changes to this list are governed by the Adding and Removing Official Accounts_
-section.
+Changes to this list — adding a new official account or retiring an existing one
+— are made by pull request to this document, following the procedures defined in
+the Social Media Team's `operational policies`_.
 
 Video platforms (for example, YouTube, TikTok, Instagram) require significant
 content-production resources and are explicitly out of scope. They MAY be
@@ -90,10 +91,10 @@ operation of official accounts. The Infrastructure Team:
 -  SHALL handle technical operations such as account recovery, security
    incidents, and platform compliance.
 
--  SHALL act on posting requests from the Social Media Team for non-automated
-   content, and SHOULD provide the Social Media Team with the technical means
-   (for example, scoped access, automation hooks, or a posting workflow) to
-   publish approved content efficiently.
+-  SHALL act on posting requests from the Social Media Team for content that is
+   not posted automatically, and SHOULD provide the Social Media Team with the
+   technical means (for example, scoped access, automation hooks, or a posting
+   workflow) to publish approved content efficiently.
 
 The Infrastructure Team's role is operational and technical. It does not decide
 content.
@@ -105,14 +106,29 @@ The *PHP Social Media Team* is responsible for content on official PHP accounts.
 The Social Media Team:
 
 -  SHALL decide what is posted on official channels, including messaging,
-   timing, and tone, subject to the content rules below.
+   timing, and tone, subject to the `Prohibited Content`_ rules below.
+-  SHALL develop and maintain its own `operational policies`_ (see below).
 -  SHOULD coordinate with the Infrastructure Team on technical execution.
 -  SHOULD advise on platform presence, audience strategy, and communications
    priorities.
--  MAY initiate marketing efforts beyond automated content (see `Marketing
-   Initiatives`_).
+-  MAY initiate marketing efforts beyond automated content, as defined in its
+   operational policies.
 -  MAY delegate specific responsibilities to the PHP Foundation (see `Delegation
    to the PHP Foundation`_).
+
+Operational Policies
+--------------------
+
+The Social Media Team SHALL develop and maintain its own operational policies —
+for example, content categories and approval workflow, procedures for adding and
+retiring official accounts, and member onboarding. These operational policies:
+
+-  SHALL be maintained in the `Social Media Team Operations`_ document in this
+   repository.
+-  SHALL be developed and amended through an open and transparent process, by
+   pull request to this repository. Changes do NOT require an RFC.
+-  MUST NOT conflict with this policy. In case of conflict, this policy
+   prevails.
 
 Composition
 -----------
@@ -137,8 +153,9 @@ resolving disagreements.
    replacements within thirty (30) days; if they cannot, the matter SHOULD be
    raised on the internals mailing list.
 
--  While membership is below three, automated content SHALL continue; curated
-   content and marketing initiatives are paused.
+-  While membership is below three, automated posting SHALL continue; content
+   requiring the team's approval (as defined in its operational policies) is
+   paused.
 
 Members of the Social Media Team do not, by virtue of that membership, hold
 account credentials. Credential custody remains with the Infrastructure Team. An
@@ -161,58 +178,12 @@ Infrastructure Team. The Social Media Team retains overall content authority and
 remains accountable for content posted under delegated authority.
 
 ********************
- Content Categories
+ Prohibited Content
 ********************
 
-Automated Content
-=================
-
-The following content types are suitable for automated cross-platform posting
-and DO NOT require per-post approval:
-
--  Release announcements (major, minor, and patch versions)
--  Security advisories and CVE announcements
--  RFC voting results
--  Conference and event announcements published through official PHP channels
--  Other news and announcements published on the `PHP.net news feed
-   <https://www.php.net/archive/>`_
-
-Automated content is triggered by project events such as releases, security
-commits, vote closures, or new entries in the PHP.net news feed.
-
-Curated Content
-===============
-
-The following content types require approval from the Social Media Team before
-posting:
-
--  Milestone announcements
--  Anniversary and celebration posts
--  Blog post promotions
--  Any other non-automated content
-
-The Social Media Team MAY define lightweight internal procedures for approving
-curated content (for example, a minimum number of team members signing off). The
-Infrastructure Team SHALL post approved curated content.
-
-Marketing Initiatives
-=====================
-
-Proactive marketing efforts beyond the above categories MAY be undertaken by the
-Social Media Team. These MAY include:
-
--  Coordinated campaigns
--  Responses to industry narratives
--  Developer outreach initiatives
--  Cross-promotion with ecosystem projects
-
-The Social Media Team MAY delegate marketing initiatives to the PHP Foundation,
-as described in `Delegation to the PHP Foundation`_.
-
-Prohibited Content
-==================
-
-Official PHP accounts MUST NOT post:
+Content categories, approval workflows, and other content processes are defined
+by the Social Media Team in its `operational policies`_. Regardless of those
+policies, official PHP accounts MUST NOT post:
 
 -  Political statements unrelated to PHP
 -  Commercial endorsements of products or services unrelated to PHP
@@ -252,57 +223,6 @@ Upon adoption of this policy:
    #. Establish a new official account on that platform; or
    #. Mark the original account as non-official on PHP.net.
 
-***************************************
- Adding and Removing Official Accounts
-***************************************
-
-The official list of accounts is defined in the Scope_ section above. Changes to
-the list — adding a new official account or retiring an existing one — are made
-by pull request to this document.
-
-Adding an Account
-=================
-
-#. The Social Media Team agrees, per its internal process, that a new account on
-   a given platform should be created.
-#. The Social Media Team requests the Infrastructure Team to create the account
-   and configure credentials per the `Credential Management`_ section.
-#. The Infrastructure Team confirms creation.
-#. The Scope_ list is updated by pull request. The account becomes official once
-   the pull request is merged.
-
-Retiring or Removing an Account
-===============================
-
-The Social Media Team MAY decide to retire an official account. Available
-options include:
-
--  **Pause posting.** Keep the account, stop posting, and pin a notice referring
-   readers to other channels.
--  **Mark non-official.** Retain the account but remove it from PHP.net and from
-   the Scope_ list.
--  **Archive or delete.** Close or delete the account through the platform,
-   where supported by the platform's policies.
-
-The chosen action SHALL be executed by the Infrastructure Team. Where the
-account is linked from PHP.net, the link SHOULD be updated or removed as part of
-the same change. The Scope_ list MUST be updated by pull request.
-
-Where an account has established public reach (for example, a sizable follower
-count (≥1k followers) or a long-standing presence (≥2 years presence)), the
-Social Media Team SHOULD announce the proposed retirement on the internals
-mailing list before acting, to give the community an opportunity to comment. The
-community MAY request an RFC if it considers the retirement a project-level
-decision.
-
-Recognizing an Existing Third-Party-Controlled Account
-======================================================
-
-An existing community-run account MAY be recognized as official by following the
-`Account Transition`_ procedure: credential transfer to the Infrastructure Team,
-addition to the Scope_ list via pull request, and adoption of this policy's
-content rules.
-
 ****************
  Implementation
 ****************
@@ -312,19 +232,22 @@ automation, following the model already in use for the Mastodon account.
 Automations SHOULD be hosted under the PHP organization on GitHub and SHOULD be
 maintainable by the Infrastructure Team. Where feasible, the Infrastructure Team
 SHOULD provide the Social Media Team with self-serve mechanisms (for example, a
-posting workflow or PR-based trigger) so that curated content does not require
-manual intervention for every post.
+posting workflow or PR-based trigger) so that team-approved content does not
+require manual intervention for every post.
 
 ************
  Amendments
 ************
 
-This policy MAY be amended by a future RFC with a 2/3 majority approval. Updates
-to the `Current Members`_ list do not require an RFC and SHOULD be made by pull
-request.
+This policy MAY be amended by a future RFC with a 2/3 majority approval.
 
-Routine additions and retirements per Adding and Removing Official Accounts_ do not
-   require an RFC unless escalated by the community.
+The following changes do NOT require an RFC and SHOULD be made by pull request
+to this repository:
+
+-  Updates to the `Current Members`_ list.
+-  Updates to the account list in the Scope_ section, following the Social Media
+   Team's `operational policies`_, unless escalated by the community.
+-  Changes to the `Social Media Team Operations`_ document.
 
 *****************
  Current Members
@@ -335,6 +258,10 @@ request when membership changes.
 
 -  *(To be populated upon adoption.)*
 
+.. _operational policies: social-media/team-operations.rst
+
 .. _php foundation: https://thephp.foundation/
 
 .. _social media and marketing communications policy rfc: https://wiki.php.net/rfc/social-media-policy
+
+.. _social media team operations: social-media/team-operations.rst
