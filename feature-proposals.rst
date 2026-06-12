@@ -41,6 +41,11 @@ an official initiation post. In many cases that is encouraged to get a sense of
 how well received a proposal would be. However, that does not count toward the
 Discussion Phase.
 
+Since deprecation of individual features(i.e. functions, classes) is often not
+much to discuss and adds unnecessary overhead. A bulk deprecation RFC for each
+version will be constructed, and any intention of deprecation MAY consider to
+add a single entry in the bulk RFC instead of opening a separate one.
+
 ******************
  Discussion Phase
 ******************
