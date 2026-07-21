@@ -125,6 +125,8 @@ We do not classify as a security issue any issue that:
 
 -  requires an open_basedir bypass
 
+-  requires the built-in web server
+
 *****************
  Handling Issues
 *****************
