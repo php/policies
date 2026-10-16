@@ -135,9 +135,10 @@ High and medium severity fixes are merged into a private security repository,
 and then merged to the main repository before the release is tagged.
 
 Low severity fixes are merged immediately after the fix is available and handled
-like all regular bugs are handled consequently. However, release managers may
-choose to pull those fixes into the RC branch after the branch is created, and
-also backport them into a security-only release branch.
+like all regular bugs are handled consequently. They may also be merged into
+security-only release branches without release manager approval. Release
+managers may choose to pull those fixes into the RC branch after the branch is
+created.
 
 *****
  FAQ
