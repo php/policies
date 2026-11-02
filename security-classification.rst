@@ -166,6 +166,8 @@ release after the bug was reported. Some issues can take longer. After the fix
 is released (releases usually happen on Thursdays) please feel free to disclose
 the issue as you see fit.
 
+Without responsible disclosure you will not be credited in the report.
+
 What If I Think It's a Security Issue But The Developers Disagree?
 ==================================================================
 
