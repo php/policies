@@ -30,6 +30,11 @@ It contains the following items:
    PHP License, version 4, and the Zend Engine License, version 3, and their
    deprecation in favor of the Modified BSD License.
 
+-  `Social Media and Marketing Communications
+   <social-media-and-marketing-communications.rst>`_: Governs the PHP project's
+   official presence on social media and other marketing communication
+   platforms, including roles for account custody and content authority.
+
 ***********************
  Requirements Notation
 ***********************
