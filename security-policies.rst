@@ -48,7 +48,7 @@ To make changes to ``security.txt``:
 
    .. code::
 
-      cd /path/to/web-php/.well-known
+      cd /path/to/web-php/public/.well-known
 
 #. Remove the PGP signature that wraps the body of ``security.txt``:
 
