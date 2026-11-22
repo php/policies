@@ -86,13 +86,14 @@ charter, and the charter MUST specify at least the following:
 #. **Activities.** The project(s) and/or activity(ies) the working group will
    undertake.
 
-#. **Membership.** The process by which the working group will select its
-   members and chairperson and any qualifications for membership. The working
-   group MAY list initial members and chairperson as part of its charter, if
-   applicable.
+#. **Membership.** The initial Working Group members, including the Chair.
 
 #. **Communication Plan.** How the working group plans to communicate with its
    members, the PHP Project, and the Community.
+
+#. **Decision-making process** How the working group will make decisions about
+   actions it will take or procedures it will follow, other than those required
+   and specified in this document.
 
 The working group charter MAY include sections not defined here.
 
@@ -116,6 +117,44 @@ process.
 This authority does not extend to language or broader PHP Project policy
 changes. These types of changes continue to require an RFC, even if the working
 group is responsible for proposing or implementing the changes.
+
+Membership
+==========
+
+All working groups must consist of at least three (3) people, one of whom is
+designated the Chair.
+
+The initial working group members are specified in the RFC that establishes the
+Working Group.
+
+The Working Group MAY admit a new member at any time by 2/3 majority vote.
+
+The Working Group MAY expel any member at any time by 2/3 majority vote,
+excluding the member in question.
+
+The Working Group MAY remove or replace the Chair at any time by 2/3 majority
+vote, excluding the sitting chair.
+
+The Community MAY introduce an RFC at any time to recall a member from the
+Working Group. A member recalled from a Working Group by RFC is ineligible to
+rejoin the same or a substantially similar Working Group for a period of two (2)
+years.
+
+A member MAY resign from a Working Group at any time by notifying the PHP
+Internals mailing list.
+
+The Chair MAY resign as Chair at any time without resigning from the Working
+Group.
+
+No more than 1/3 of a Working Group's members may be employed or contracted by
+the same employer at any given time. Employees and contractors of The PHP
+Foundation are explicitly excluded from this requirement, however.
+
+Should a Working Group be without a Chair, have fewer than three members, or
+have more than 1/3 of its members employed by the same employer for more than 30
+days, the Working Group is automatically dissolved.
+
+All membership changes MUST be announced on the PHP Internals mailing list.
 
 Responsibilities
 ================
